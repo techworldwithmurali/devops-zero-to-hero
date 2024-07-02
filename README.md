@@ -1,4 +1,4 @@
-# Curriculum
+# 30 Days DevOps Zero to Hero
 
 ## Day 1:DevOps Overview
 
