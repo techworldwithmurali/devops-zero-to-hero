@@ -1,6 +1,6 @@
 # Curriculum
 
-## Day 1: Introduction to Methodologies and AWS Basics
+## Day 1:DevOps Overview
 
 - What is Waterfall & Agile Methodology
 - DevOps Overview
@@ -11,7 +11,7 @@
 - Create and Connect to the Ubuntu server
 - Create and Connect to the Windows server
 
-## Day 2: Linux Basics
+## Day 2: Linux Part 1
 
 - Linux Overview
 - Linux Basic commands with examples
@@ -23,7 +23,7 @@
 - Working with file permissions
 - Working with file ownership
 
-## Day 3: Advanced Linux
+## Day 3: Linux Part 2
 
 - Working with `rm` command
 - Creating and deleting users
@@ -33,7 +33,7 @@
 - Working with `yum` command
 - Working with `rpm`
 
-## Day 4: Linux Utilities
+## Day 4: Linux Part 3
 
 - Working with `find` command
 - Working with `df`, `du`, `kill`, `ps` commands
@@ -44,7 +44,7 @@
 - Working with `telnet` & `netstat` commands
 - Working with `nslookup` & `ifconfig`
 
-## Day 5: Introduction to Git
+## Day 5: Git Part 1
 
 - Git Overview
 - Installation of Git in Linux
@@ -54,7 +54,7 @@
 - Working with `git init` & `git config` commands
 - Creation and deletion of Git branches
 
-## Day 6: Working with GitHub
+## Day 6: Git Part 1
 
 - Creation of GitHub account
 - GitHub Dashboard Overview
@@ -64,7 +64,7 @@
 - Difference between `git pull` and `git fetch`
 - Working with `git merge` & `git rebase`
 
-## Day 7: Advanced Git
+## Day 7: Git Part 2
 
 - Working with `git reset` command
 - Working with `git revert` command
@@ -72,7 +72,7 @@
 - Working with `git diff` & `git HEAD`
 - Deletion of GitHub repository
 
-## Day 8: Introduction to GitLab and Bitbucket
+## Day 8: Git Part 3
 
 - Creation of GitLab account
 - GitLab Dashboard Overview
@@ -83,7 +83,7 @@
 - Overview of feature branching strategy
 - Overview of release branching strategy
 
-## Day 9: Maven Basics
+## Day 9: Maven Part 1
 
 - What is a Build Tool
 - What is Maven
@@ -94,7 +94,7 @@
 - What is `settings.xml`
 - Types of Maven Repository
 
-## Day 10: Working with Maven
+## Day 10: Maven Part 2
 
 - Creation of Java application using Maven
 - Maven Build Lifecycles
@@ -140,7 +140,7 @@
 - Setup Tomcat as a service in Linux
 - Deploy WAR file in Tomcat
 
-## Day 15: Jenkins Basics
+## Day 15: Jenkins Part 1
 
 - Jenkins Overview
 - Ways to install Jenkins in Linux
@@ -150,14 +150,14 @@
 - Jenkins Dashboard Overview
 - Exploring the options under Manage Jenkins
 
-## Day 16: Working with Jenkins
+## Day 16: Jenkins Part 2
 
 - Creation of a Jenkins job
 - How to reset Jenkins admin user's password
 - Setup Maven project in Jenkins
 - Integrating Nexus in Jenkins
 
-## Day 17: Jenkins Integration
+## Day 17: Jenkins Part 3
 
 - Integrating JFrog with Jenkins
 - Integrating SonarQube with Jenkins
@@ -166,7 +166,7 @@
 - Creation of Slack account
 - Send notifications from Jenkins to Slack
 
-## Day 18: Jenkins User Management
+## Day 18: Jenkins Part 4
 
 - Creation of users in Jenkins
 - Setting up role-based authorization strategy in Jenkins
@@ -184,10 +184,11 @@
 - Fields available in declarative pipeline
 - Exploring the options in declarative pipeline
 - Jenkins pipeline build & push to JFrog Artifactory
+## Day 20: Jenkins Pipeline Part 2
 - Jenkins pipeline build & deploy to Tomcat
-
-## Day 20: Ansible Basics
-
+- Store the Jenkinsfile in Github
+- 
+## Day 21: Ansible Part 1
 - Ansible Overview
 - Installation of Ansible in Linux
 - Ansible Workflow
@@ -196,7 +197,7 @@
 - Setting up the SSH connection manually
 - Ansible Modules Overview
 
-## Day 21: Working with Ansible Playbooks
+## Day 22: Ansible Part 2
 
 - Ansible Playbook Overview
 - Installation of `httpd` & Git using Ansible playbook
@@ -206,7 +207,7 @@
 - Installation of Tomcat using Ansible playbook
 - Explore Ansible playbook options
 
-## Day 22: Ansible Roles
+## Day 23: Ansible Part 3
 
 - Ansible Role Overview
 - Ansible Role Directory Structure
@@ -215,7 +216,7 @@
 - Overview of Ansible Vault
 - Working with Ansible Vault
 
-## Day 23: Introduction to Docker
+## Day 24: Docker Part 1
 
 - Difference between containerization and virtual machines
 - Docker Overview
@@ -226,7 +227,7 @@
 - Dockerfile Overview
 - Creating a Dockerfile
 
-## Day 24: Docker Hub and Images
+## Day 25: Docker Part 2
 
 - What is DockerHub
 - Creation of DockerHub account
@@ -234,8 +235,7 @@
 - What is Docker image
 - Docker image commands with examples
 
-## Day 25: Docker Containers and Networking
-
+## Day 26: Docker Part 3
 - What is Docker container
 - Docker container commands with examples
 - What is Docker network
@@ -243,7 +243,7 @@
 - What is Docker volume
 - Working with Docker volume
 
-## Day 26: Real-Time Project
+## Day 27: Real-Time Project
 
 - What is a Shared Library in Jenkins
 - Difference Between Without and With Jenkins Shared Library
@@ -251,7 +251,7 @@
   - Clone the repository
   - Build the code
 
-## Day 27: Real-Time Project
+## Day 28: Real-Time Project
 
 - Getting Started with Shared Libraries:
   - Build the Docker image
