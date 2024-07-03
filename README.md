@@ -12,8 +12,6 @@ There are several configuration management tools available, each with its own ap
 - **Chef**: Chef uses a declarative approach to infrastructure automation, focusing on defining system states.
 - **Puppet**: Puppet uses a declarative language to describe system configuration, enforcing desired state on managed systems.
 
-### Version
-
 # Installing Ansible on Linux
 
 ## Enable EPEL Repository
