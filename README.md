@@ -91,6 +91,7 @@ pipeline {
 2. **input**: Allows interactive input within a stage, where user input can control the flow of the pipeline.
 
 3. **options**: Specifies various options affecting the entire pipeline or specific stages, such as timeout or retry settings.
+ ```groovy
 pipeline {
   options {
   
@@ -103,9 +104,9 @@ buildDiscarder(logRotator(numToKeepStr: '10'))
 // Add the timestamps to the build logs
     timestamps()
   }
-  ...
+ 
 }
-
+```
 4. **parallel**: Enables parallel execution of multiple stages or steps within a stage.
 
 5. **Parameters**: Allows defining parameters for the pipeline, which can be used to customize pipeline behavior or pass values into the pipeline.
