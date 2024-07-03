@@ -4,6 +4,7 @@ Linux is a Unix-like operating system known for its stability, security, and ope
 ### Linux Distributions
 Linux distributions (distros) package the Linux kernel with a collection of software to create complete operating systems. Examples include:
 
+- **Amazon Linux:** Optimized for AWS EC2, integrates seamlessly with AWS services
 - **Ubuntu**: User-friendly and widely used for desktop and server environments.
 - **CentOS**: Popular for servers due to its stability and long-term support.
 - **Debian**: Known for its stability and package management system.
