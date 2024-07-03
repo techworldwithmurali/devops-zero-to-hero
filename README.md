@@ -112,6 +112,8 @@ Regarding your examples:
 These examples illustrate how you can perform various tasks using Ansible ad-hoc commands, either by specifying a module and its arguments, using a module alone, or providing arguments directly for execution.
 
 ----
+# What is SSH
+
 **SSH (Secure Shell)** is a network protocol that allows secure access to remote systems over an encrypted connection. It provides a secure channel over an unsecured network, such as the internet, allowing users to log into remote machines, execute commands, and transfer files securely.
 
 In Ansible, SSH is the default method used for communication between the control node (where Ansible is installed and executed) and the managed nodes (where tasks are performed). Ansible uses SSH to connect to managed nodes, execute commands, and transfer files.
