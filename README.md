@@ -218,3 +218,79 @@ pipeline {
 
 11. **when**: Defines conditional execution of stages or steps based on predefined conditions, such as success, failure, or specific environment variables.
 
+----
+To build and push artifacts to JFrog Artifactory using Jenkins Declarative Pipeline, you typically integrate with a build tool like Maven or Gradle and then use Artifactory's plugins or REST API for artifact deployment. Below is a basic example demonstrating how to achieve this:
+
+### Example Jenkins Declarative Pipeline
+
+```groovy
+pipeline {
+    agent any
+    
+    environment {
+        // Define environment variables as needed
+        ARTIFACTORY_URL = 'https://your-artifactory-url'
+        ARTIFACTORY_REPO = 'your-repository'
+        ARTIFACTORY_USER = credentials('artifactory-username')
+        ARTIFACTORY_PASS = credentials('artifactory-password')
+    }
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Example: Maven build
+                sh 'mvn clean package'
+            }
+        }
+        
+        stage('Publish to Artifactory') {
+            steps {
+                script {
+                    def server = Artifactory.server ARTIFACTORY_URL
+                    def buildInfo = Artifactory.newBuildInfo()
+                    
+                    // Publish artifacts to Artifactory
+                    server.upload spec: buildInfo, fileSpec: '''{
+                        "files": [
+                            {
+                                "pattern": "target/*.jar",
+                                "target": "libs/"
+                            }
+                        ]
+                    }'''
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Build and publish to Artifactory succeeded!'
+        }
+        failure {
+            echo 'Build or publish to Artifactory failed!'
+        }
+    }
+}
+```
+
+### Explanation:
+
+1. **Agent**: The pipeline runs on any available agent (`agent any`).
+
+2. **Environment**: Defines environment variables for Artifactory URL, repository, username, and password. Replace `your-artifactory-url`, `your-repository`, `artifactory-username`, and `artifactory-password` with your actual Artifactory details. Ensure that credentials are securely managed in Jenkins.
+
+3. **Stages**:
+   - **Build**: Executes the Maven build (`mvn clean package`). Replace with the build command appropriate for your project (e.g., `gradle build` for Gradle projects).
+   
+   - **Publish to Artifactory**: Uses the Artifactory plugin to upload artifacts (`*.jar` files in this example) to the specified repository (`libs/` directory in Artifactory). Adjust the `fileSpec` pattern and target as per your project's artifact structure and repository setup.
+
+4. **Post Build**:
+   - **Success/Failure**: Provides optional steps to execute after the pipeline completes, based on whether the pipeline succeeds or fails.
+
+### Notes:
+
+- Ensure that the Jenkins server has the Artifactory plugin installed and configured properly.
+- Replace `mvn clean package` with your build command (`gradle build`, `ant`, etc.) depending on your project's build tool.
+- Adjust the `fileSpec` JSON structure according to your artifact's file patterns and target directories in Artifactory.
+- Use Jenkins credentials (`credentials('credential-id')`) to securely manage sensitive information like Artifactory username and password.
