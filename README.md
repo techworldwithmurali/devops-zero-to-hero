@@ -10,7 +10,6 @@
 
 ---
 
-This summary highlights Nexus as a pivotal tool for managing artifacts in development environments, emphasizing its open-source nature, centralized management capabilities, default port setting, and the latest version information.
 # How to Install Nexus 3 on CentOS 7 / Amazon Linux
 
 ## Prerequisites:
@@ -136,9 +135,6 @@ Follow on-screen instructions to reset the password and disable anonymous access
 
 ## Conclusion
 Congratulations! Nexus 3 is now installed on your CentOS 7 / Amazon Linux instance. If you encounter any issues, feel free to ask in the comments.
-
-----------------
-Certainly! Here's how you might structure this in a GitHub README.md format:
 
 ---
 
