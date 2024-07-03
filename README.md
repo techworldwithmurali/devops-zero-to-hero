@@ -54,7 +54,7 @@
 - Working with `git init` & `git config` commands
 - Creation and deletion of Git branches
 
-## Day 6: Git Part 1
+## Day 6: Git Part 2
 
 - Creation of GitHub account
 - GitHub Dashboard Overview
@@ -64,24 +64,19 @@
 - Difference between `git pull` and `git fetch`
 - Working with `git merge` & `git rebase`
 
-## Day 7: Git Part 2
+## Day 7: Git Part 3
 
 - Working with `git reset` command
 - Working with `git revert` command
 - Working with `.gitignore` file
 - Working with `git diff` & `git HEAD`
 - Deletion of GitHub repository
-
-## Day 8: Git Part 3
-
+- Overview of feature branching strategy
+- Overview of release branching strategy
 - Creation of GitLab account
 - GitLab Dashboard Overview
 - Creation of Git repository in GitLab
 - Deletion of GitLab repository
-- Creation of Bitbucket account
-- Bitbucket Dashboard Overview
-- Overview of feature branching strategy
-- Overview of release branching strategy
 
 ## Day 9: Maven Part 1
 
