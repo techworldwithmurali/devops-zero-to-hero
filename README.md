@@ -129,7 +129,19 @@ buildDiscarder(logRotator(numToKeepStr: '10'))
 
 8. **tools**: Specifies tools or tool installations required for the pipeline, such as specific versions of Maven, JDK, or other tools.
 
-9. **Triggers**: Specifies triggers that start the pipeline, such as SCM triggers (e.g., GitHub webhook triggers).
+ ```groovy
+pipeline {
 
-10. **when**: Defines conditional execution of stages or steps based on predefined conditions, such as success, failure, or specific environment variables.
+tools{
+maven 'Maven-3.8.3' 
+jdk 'jdk8'
+gardle 'gradle-7.4.2'
+}
+}
+```
+
+
+10. **Triggers**: Specifies triggers that start the pipeline, such as SCM triggers (e.g., GitHub webhook triggers).
+
+11. **when**: Defines conditional execution of stages or steps based on predefined conditions, such as success, failure, or specific environment variables.
 
