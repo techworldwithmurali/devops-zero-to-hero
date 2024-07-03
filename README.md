@@ -293,3 +293,88 @@ This command skips tasks tagged with `java` and `git`, executing all other tasks
 ### Summary
 
 Tags in Ansible playbooks provide granular control over task execution, allowing you to manage playbook runs efficiently based on task categorization or requirements. They enhance playbook flexibility and maintainability by enabling selective task execution.
+
+----
+
+# Tomcat Installation Using Ansible Playbook
+
+This Ansible playbook automates the installation of Apache Tomcat on remote hosts.
+
+## Example Playbook: `tomcat.yml`
+
+```yaml
+---
+- hosts: tomcat
+  tasks:
+    - name: Make sure that we can connect to the machine
+      ping:
+
+    - name: Add group "tomcat"
+      group:
+        name: tomcat
+
+    - name: Add user "tomcat" and add to "tomcat" group
+      user:
+        name: tomcat
+        group: tomcat
+        createhome: yes
+      become: true
+
+    - name: Download Apache Tomcat
+      get_url:
+        url: https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.106/bin/apache-tomcat-7.0.106.tar.gz
+        dest: /opt/
+
+    - name: Extract Tomcat archive
+      unarchive:
+        src: /opt/apache-tomcat-7.0.106.tar.gz
+        dest: /opt/
+
+    - name: Change ownership of Tomcat installation directory
+      file:
+        path: /opt/apache-tomcat-7.0.106/
+        owner: tomcat
+        group: tomcat
+        state: directory
+        recurse: yes
+
+    - name: Copy Tomcat users configuration
+      copy:
+        src: tomcat-users.xml
+        dest: /opt/apache-tomcat-7.0.106/conf/
+
+    - name: Copy Tomcat systemd service file
+      copy:
+        src: tomcat.service
+        dest: /etc/systemd/system/
+        mode: 0755
+
+    - name: Start Tomcat service
+      service:
+        name: tomcat
+        state: started
+        enabled: yes
+```
+
+### Explanation
+
+In this playbook (`tomcat.yml`):
+
+- **Connection Check**: Ensures Ansible can connect to the target host (`ping` module).
+- **Group and User Creation**: Creates a `tomcat` group and a `tomcat` user, adding the user to the group with a home directory (`user` module).
+- **Download and Extract Tomcat**: Downloads Apache Tomcat from the specified URL (`get_url` module) and extracts it to `/opt/` (`unarchive` module).
+- **Change Ownership**: Sets ownership of the Tomcat installation directory to `tomcat:tomcat` (`file` module).
+- **Configuration Files**: Copies `tomcat-users.xml` to Tomcat's configuration directory (`copy` module).
+- **Service Installation**: Installs Tomcat as a systemd service (`copy` module for `tomcat.service` and `service` module to start and enable the service).
+
+### Usage
+
+1. **Save the playbook**: Save the above YAML content in a file named `tomcat.yml`.
+2. **Run the playbook**: Execute the playbook using the `ansible-playbook` command:
+
+   ```bash
+   ansible-playbook tomcat.yml
+   ```
+
+This playbook will automate the installation of Apache Tomcat on the specified `tomcat` hosts, performing all necessary setup steps including user and group creation, downloading Tomcat, configuring permissions, and starting the Tomcat service.
+```
