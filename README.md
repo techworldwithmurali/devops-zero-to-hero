@@ -219,3 +219,171 @@ In this example:
 - `# Dockerfile to print "Hello docker!"` is a comment explaining the purpose of the Dockerfile.
 - `RUN echo "Hello docker!"` is an instruction that tells Docker to execute the `echo "Hello docker!"` command during the image build process.
 
+
+### Dockerfile Instructions:
+
+1. **FROM:**
+   - **Purpose:** Specifies the base image that your Docker image will be built upon.
+   - **Examples:**
+     ```dockerfile
+     FROM tomcat:7
+     FROM tomcat:latest
+     ```
+   - **Explanation:** 
+     - `FROM tomcat:7` specifies the base image using the Tomcat version 7 image from Docker Hub.
+     - `FROM tomcat:latest` uses the latest available Tomcat image.
+
+2. **MAINTAINER:**
+   - **Purpose:** Specifies the author or maintainer of the Docker image.
+   - **Examples:**
+     ```dockerfile
+     MAINTAINER Administrator
+     MAINTAINER admin@techworldwithmurali.com
+     MAINTAINER Devops Engineer (admin@techworldwithmurali.com)
+     ```
+   - **Explanation:** 
+     - These examples show different formats for specifying the maintainer's information.
+
+3. **LABEL:**
+   - **Purpose:** Adds metadata to the Docker image as key-value pairs.
+   - **Examples:**
+     ```dockerfile
+     LABEL "Application_Environment"="Development Team"
+     LABEL "Application_Support"="TECHWORLDWITHMURALI"
+     ```
+   - **Explanation:** 
+     - Labels provide information about the environment or support contact for the image.
+
+4. **ADD:**
+   - **Purpose:** Copies files, directories, or remote URLs to the Docker image's filesystem.
+   - **Examples:**
+     ```dockerfile
+     ADD /root/file /data/
+     ADD ["/root/file", "/data/"]
+     ```
+   - **Explanation:** 
+     - The `ADD` instruction can be used in shell form or executable form.
+     - If `src` is a compressed file, it will be extracted at `dest` within the container's filesystem.
+
+5. **COPY:**
+   - **Purpose:** Copies files or directories from the Docker build context into the image's filesystem.
+   - **Examples:**
+     ```dockerfile
+     COPY /root/file /data/
+     COPY ["/root/file", "/data/"]
+     ```
+   - **Explanation:** 
+     - Similar to `ADD`, `COPY` also has shell and executable forms.
+     - If `src` is a compressed file, it will be copied as-is without extraction.
+
+
+6. **CMD:**
+   - **Purpose:** Sets the command to be executed when a container starts.
+   - **Usage:**
+     ```dockerfile
+     CMD python myapp.py
+     CMD ["python", "myapp.py"]
+     ```
+   - **Explanation:** 
+     - Shell form (`CMD python myapp.py`): Executes the command within a shell.
+     - Executable form (`CMD ["python", "myapp.py"]`): Runs the command directly without shell processing.
+
+7. **ENTRYPOINT:**
+   - **Purpose:** Configures a container to run as an executable.
+   - **Usage:**
+     ```dockerfile
+     ENTRYPOINT ping google.com
+     ENTRYPOINT python myapp.py
+     ENTRYPOINT ["ping", "google.com"]
+     ENTRYPOINT ["python", "myapp.py"]
+     ```
+   - **Explanation:** 
+     - Shell form (`ENTRYPOINT ping google.com`): Executes the command within a shell.
+     - Executable form (`ENTRYPOINT ["ping", "google.com"]`): Runs the command directly without shell processing.
+     - If `ENTRYPOINT` is combined with `CMD`, `CMD` arguments are passed as arguments to `ENTRYPOINT`.
+
+8. **EXPOSE:**
+   - **Purpose:** Informs Docker that the container listens on specific network ports at runtime.
+   - **Usage:**
+     ```dockerfile
+     EXPOSE 80 443
+     EXPOSE 80/tcp 8080/udp
+     ```
+   - **Explanation:** 
+     - Docker uses this information to interconnect containers and set up port redirection on the Docker host system.
+
+9. **RUN:**
+   - **Purpose:** Executes commands in a new layer on top of the current image and commits the results.
+   - **Usage:**
+     ```dockerfile
+     RUN yum update
+     RUN systemctl start httpd
+     RUN ["yum", "update"]
+     RUN ["systemctl", "start", "httpd"]
+     ```
+   - **Explanation:** 
+     - Shell form (`RUN yum update`): Commands are executed within a shell.
+     - Executable form (`RUN ["yum", "update"]`): Commands are run directly without shell processing.
+
+10. **VOLUME:**
+   - **Purpose:** Creates a mount point and/or assigns a volume to the container.
+   - **Usage:**
+     ```dockerfile
+     VOLUME /data
+     VOLUME /appdata:/appdata
+     ```
+   - **Explanation:** 
+     - The first form (`VOLUME /data`) creates a mount point with the specified path.
+     - The second form (`VOLUME /appdata:/appdata`) mounts a host directory (`/appdata` on the host) into the container.
+
+11. **WORKDIR:**
+   - **Purpose:** Sets the working directory for any `RUN`, `CMD`, `ENTRYPOINT`, `COPY`, and `ADD` instructions.
+   - **Usage:**
+     ```dockerfile
+     WORKDIR /app/
+     WORKDIR /java_dst/
+     ```
+   - **Explanation:** 
+     - Specifies the directory path within the Docker container where subsequent commands are executed.
+
+12. **ENV:**
+   - **Purpose:** Sets environment variables within the Docker image.
+   - **Usage:**
+     ```dockerfile
+     ENV APP_DIR /tmp/
+     ENV app_version 3.0
+     ```
+   - **Explanation:** 
+     - Defines environment variables that persist in the image and are available to containers created from the image.
+
+13. **ARG:**
+   - **Purpose:** Defines build-time variables that are set within the Dockerfile.
+   - **Usage:**
+     ```dockerfile
+     ARG TMP_NAME=my_image
+     ARG TMP_VER=3.0
+     ```
+   - **Explanation:** 
+     - These variables are only available during the build process and are not persisted in the final image.
+
+14. **USER:**
+   - **Purpose:** Sets the user and optionally the user group ID for subsequent instructions.
+   - **Usage:**
+     ```dockerfile
+     USER username
+     USER username:groupname
+     USER 1010
+     USER 1010:1205
+     ```
+   - **Explanation:** 
+     - Specifies the user or UID/GID under which the following commands are executed.
+
+15. **ONBUILD:**
+    - **Purpose:** Specifies a command that runs when the image is used as a base for another image.
+    - **Usage:**
+      ```dockerfile
+      ONBUILD ADD . /opt/data
+      ONBUILD RUN yum install httpd
+      ```
+    - **Explanation:** 
+      - Commands specified with `ONBUILD` are executed when the image is used as a base for another image.
