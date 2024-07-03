@@ -123,11 +123,20 @@ buildDiscarder(logRotator(numToKeepStr: '10'))
 
 5. **Parameters**: Allows defining parameters for the pipeline, which can be used to customize pipeline behavior or pass values into the pipeline.
 
-6. **post**: Defines actions or steps to be executed after all stages of the pipeline have completed, such as notifications or cleanup tasks.
+6. **post**: Defines actions or steps to be executed after all stages of the pipeline have completed, such as notifications or cleanup tasks
+ ```groovy
+   post{
 
-7. **Script**: Executes a block of Scripted Pipeline code within a Declarative Pipeline.
+always{
+echo ' Congratulations. Successfully run the jenkins job. '
+}
 
-8. **tools**: Specifies tools or tool installations required for the pipeline, such as specific versions of Maven, JDK, or other tools.
+}
+```
+
+8. **Script**: Executes a block of Scripted Pipeline code within a Declarative Pipeline.
+
+9. **tools**: Specifies tools or tool installations required for the pipeline, such as specific versions of Maven, JDK, or other tools.
 
  ```groovy
 pipeline {
