@@ -2,7 +2,13 @@
 Linux is a Unix-like operating system known for its stability, security, and open-source nature. It's widely used in servers, embedded systems, and desktop computers.
 
 ### Linux Distributions
-Linux distributions (distros) are variations of the Linux operating system packaged with different software bundles. Examples include Ubuntu, CentOS, Debian, and Fedora.
+Linux distributions (distros) package the Linux kernel with a collection of software to create complete operating systems. Examples include:
+
+- **Ubuntu**: User-friendly and widely used for desktop and server environments.
+- **CentOS**: Popular for servers due to its stability and long-term support.
+- **Debian**: Known for its stability and package management system.
+- **Fedora**: Rapidly evolving with the latest features for developers.
+- **Arch Linux**: Lightweight and customizable, favored by advanced users.
 
 ### Basic Commands
 
