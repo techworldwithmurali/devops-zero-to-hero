@@ -84,7 +84,19 @@ pipeline {
 6. **Stage**: Within the `stages` block, individual stages are defined using the `stage` directive.
 
 7. **steps**: Inside each `stage`, the `steps` directive is used to specify the sequence of steps to be executed.
-
+ ```groovy
+steps{
+sh '
+echo "A one line step"
+'
+sh '''
+echo "Multiple lines step"
+cd /opt/murali
+ls -ltr
+pwd
+'''
+}
+```
 ### Available Directives:
 1. **environment**: Defines environment variables scoped either at the pipeline level or within specific stages.
 
