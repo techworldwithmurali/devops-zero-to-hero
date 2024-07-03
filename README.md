@@ -111,3 +111,96 @@ If you are using an AWS EC2 instance, you need to open the inbound rules for por
 
 
 After completing these steps, you can access Jenkins by navigating to `http://<your_server_ip>:8080` in your web browser.
+
+To install Jenkins using Tomcat, you'll need to deploy Jenkins as a WAR (Web Application Archive) file into Tomcat. Here’s a step-by-step guide assuming you have Tomcat already installed:
+
+### Installing Jenkins on Tomcat
+
+#### Prerequisites
+- **Tomcat Installed**: Ensure Tomcat is installed and configured on your server.
+- **Java Installed**: Jenkins requires Java, so ensure Java JDK (preferably Java 11) is installed on your system.
+
+#### Steps:
+
+1. **Download Jenkins WAR file:**
+   - Visit the [Jenkins WAR download page](https://www.jenkins.io/download/) and get the latest stable Jenkins WAR file (e.g., `jenkins.war`).
+
+2. **Deploy Jenkins WAR to Tomcat:**
+   - Copy the `jenkins.war` file to the Tomcat `webapps` directory. This is typically located at `$CATALINA_HOME/webapps/` where `$CATALINA_HOME` is your Tomcat installation directory.
+
+     ```sh
+     cp jenkins.war $CATALINA_HOME/webapps/
+     ```
+
+3. **Start Tomcat:**
+   - Start or restart Tomcat to deploy Jenkins:
+     ```sh
+     sudo systemctl start tomcat   # Replace with your Tomcat start command
+     ```
+
+4. **Access Jenkins:**
+   - Once Tomcat has started successfully, Jenkins should be accessible at `http://<your_server_ip>:<tomcat_port>/jenkins`.
+     - Replace `<your_server_ip>` with your server's IP address.
+     - Replace `<tomcat_port>` with the port configured for Tomcat (usually 8080 by default).
+### Jenkins Dashboard Overview
+
+#### Jenkins Dashboard Components:
+
+1. **Navigation Menu:**
+   - Located on the left-hand side, it provides access to various Jenkins functionalities such as Jobs, Builds, Pipelines, Nodes, and more.
+
+2. **Build Executor Status:**
+   - Shows the current status of Jenkins build executors (workers or agents) and their availability.
+
+3. **Jobs:**
+   - Lists all configured Jenkins jobs, showing their status (success, failure, running) and last build status.
+
+4. **Build Queue:**
+   - Displays jobs queued up for execution, indicating waiting time and priority.
+
+5. **Views:**
+   - Allows organizing and filtering jobs into customized views for easier management.
+
+6. **Recent Builds:**
+   - Shows a summary of the most recent builds across all jobs.
+
+7. **System Information:**
+   - Provides an overview of Jenkins system information, including version, uptime, and system load.
+
+8. **Search Box:**
+   - Enables searching for specific jobs, builds, or configuration options within Jenkins.
+
+#### Exploring "Manage Jenkins":
+
+Under "Manage Jenkins," you'll find various options to configure and manage Jenkins itself. Here are some key sections and options typically available:
+
+1. **Configure System:**
+   - Allows configuring global Jenkins settings such as system paths, email notification settings, security settings, and plugin configurations.
+
+2. **Manage Plugins:**
+   - Enables installing, updating, and removing Jenkins plugins. Plugins extend Jenkins functionality for various purposes like version control systems, build tools, notifications, etc.
+
+3. **Global Tool Configuration:**
+   - Allows configuring tools like JDK installations, Git, Maven, Docker, etc., globally for all Jenkins jobs.
+
+4. **Manage Nodes and Clouds:**
+   - Provides options to manage Jenkins nodes (agents/workers) and configure cloud-based agents for scaling Jenkins jobs in cloud environments.
+
+5. **Security Configuration:**
+   - Configure Jenkins security settings, including authentication, authorization, and access control.
+
+6. **Manage Users:**
+   - Add, modify, and delete user accounts in Jenkins. Set permissions and roles for each user.
+
+7. **Script Console:**
+   - Execute Groovy scripts directly on Jenkins for administrative tasks and troubleshooting.
+
+8. **System Information:**
+   - Displays detailed information about the Jenkins environment, including Java version, Jenkins version, installed plugins, and system properties.
+
+9. **Plugin Manager:**
+   - Allows managing installed plugins, including checking for updates, enabling/disabling plugins, and configuring advanced plugin options.
+
+10. **Global Configuration Tools:**
+    - Configure global tools installations for Jenkins jobs, such as Git, JDK, Gradle, and others.
+
