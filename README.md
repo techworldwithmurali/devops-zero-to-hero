@@ -117,4 +117,72 @@ Setting up a Windows slave node in Jenkins allows you to distribute your build j
 - Ensure firewall rules allow communication between the Jenkins master and the Windows slave.
 - Maintain the security of your Jenkins setup by using secure communication methods and authentication.
 - Monitor the Jenkins slave node status regularly to ensure it remains online and available for build jobs.
+----------
+Setting up users and configuring role-based authorization in Jenkins allows you to control access to Jenkins resources and define permissions based on roles. Here’s how you can create users and set up role-based authorization in Jenkins:
 
+### Creating Users in Jenkins:
+
+1. **Access Jenkins Dashboard**:
+   - Open your Jenkins dashboard in a web browser.
+
+2. **Navigate to Manage Jenkins**:
+   - Click on **Manage Jenkins** on the left sidebar.
+
+3. **Manage Users**:
+   - Select **Manage Users** from the options.
+
+4. **Add User**:
+   - Click on **Create User** to add a new user.
+
+5. **Enter User Details**:
+   - Fill in the user details:
+     - **Username**: Choose a username for the user.
+     - **Password**: Set a secure password for the user.
+     - **Full Name**: Enter the full name of the user (optional).
+     - **Email Address**: Provide the email address of the user (optional).
+   - Click **Create User** to save the new user.
+
+6. **User Confirmation**:
+   - Once created, the user will receive an email with login details if email notifications are configured in Jenkins.
+
+7. **Manage User Roles** (Optional):
+   - You can assign specific roles or permissions to the user later based on your authorization strategy.
+
+### Setting up Role-Based Authorization Strategy in Jenkins:
+
+1. **Install Role-Based Authorization Plugin**:
+   - If not already installed, go to **Manage Jenkins > Manage Plugins > Available** and search for "Role-Based Authorization Strategy". Install the plugin and restart Jenkins if required.
+
+2. **Configure Global Security**:
+   - Go to **Manage Jenkins > Configure Global Security**.
+
+3. **Enable Security**:
+   - Check **Enable Security**.
+
+4. **Access Control**:
+   - Select **Role-Based Strategy** from the **Authorization** dropdown.
+
+5. **Add Roles**:
+   - Scroll down to **Role-Based Authorization Strategy** section.
+   - Click on **Add Role** to define new roles.
+
+6. **Define Role Permissions**:
+   - For each role, define permissions based on what actions and resources users assigned to this role can access.
+   - Click on **Add** to add specific permissions.
+   - Choose from various permissions like **Overall**, **Job**, **Run**, **View**, etc., depending on what you want to restrict or allow.
+
+7. **Assign Roles to Users**:
+   - After defining roles and permissions, go to **Manage Jenkins > Manage Users**.
+   - Click on a user to edit their details.
+   - Under **Role Membership**, assign them to one or more roles defined earlier.
+   - Save the changes.
+
+8. **Test Authorization**:
+   - Log out and log back in as the newly created user or other users with different roles to verify access restrictions and permissions.
+
+### Notes:
+- Always ensure that users have appropriate permissions based on their roles to avoid unauthorized access or misuse of Jenkins resources.
+- Regularly review and update roles and permissions as the team and project requirements change.
+- Consider integrating Jenkins with your organization's authentication systems (like LDAP or Active Directory) for centralized user management and authentication.
+
+By following these steps, you can effectively manage users and configure role-based authorization in Jenkins, ensuring secure and controlled access to Jenkins resources based on organizational needs.
