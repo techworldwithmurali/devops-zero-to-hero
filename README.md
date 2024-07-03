@@ -110,3 +110,40 @@ Regarding your examples:
   This command gathers facts about the server (localhost) using the `setup` module.
 
 These examples illustrate how you can perform various tasks using Ansible ad-hoc commands, either by specifying a module and its arguments, using a module alone, or providing arguments directly for execution.
+
+----
+**SSH (Secure Shell)** is a network protocol that allows secure access to remote systems over an encrypted connection. It provides a secure channel over an unsecured network, such as the internet, allowing users to log into remote machines, execute commands, and transfer files securely.
+
+In Ansible, SSH is the default method used for communication between the control node (where Ansible is installed and executed) and the managed nodes (where tasks are performed). Ansible uses SSH to connect to managed nodes, execute commands, and transfer files.
+
+### Ways to Set Up SSH in Ansible
+
+There are generally two main ways to set up SSH for use with Ansible:
+
+1. **Password-Based Authentication**: This is the simpler method where Ansible connects to managed nodes using SSH with passwords. However, this method is less secure and less commonly used in production environments due to security concerns.
+
+2. **Key-Based Authentication (Public Key Authentication)**: This is the recommended and more secure method for SSH authentication in Ansible. It involves generating SSH key pairs (public and private keys) on the control node and then copying the public key to the managed nodes. Ansible then uses the private key to authenticate SSH connections to the managed nodes.
+
+### Setting Up SSH in Ansible
+
+Here’s how you typically set up SSH for Ansible:
+
+- **Generate SSH Key Pair**: On the control node (where Ansible is installed):
+  ```bash
+  ssh-keygen -t rsa
+  ```
+  Follow the prompts to generate a new SSH key pair.
+
+- **Copy Public Key to Managed Nodes**: Use `ssh-copy-id` or manually copy the public key to each managed node:
+  ```bash
+  ssh-copy-id username@hostname
+  ```
+  Replace `username` and `hostname` with the appropriate values for your managed nodes.
+
+- **Test SSH Connectivity**: Verify that Ansible can connect to managed nodes using SSH:
+  ```bash
+  ansible all -m ping
+  ```
+  This command uses the `ping` module to test connectivity to all managed nodes.
+
+- **Configure Ansible Inventory**: Ensure your Ansible inventory (`hosts` file) contains the appropriate details (hostname, IP address, SSH port, etc.) for your managed nodes.
