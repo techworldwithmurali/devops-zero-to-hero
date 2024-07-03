@@ -147,3 +147,75 @@ Before deploying a WAR file in Tomcat using Jenkins, ensure you have:
 
 - Ensure the WAR file is compatible with the version of Tomcat you are using.
 - Verify deployment logs in Jenkins to troubleshoot any issues.
+
+-----
+# Exploring Build Periodically, Poll SCM, and Webhook in Jenkins
+
+[Jenkins](https://www.jenkins.io/) provides several mechanisms to trigger builds based on time intervals (`build periodically`), changes in source code (`poll SCM`), and external events (`webhook`). These features are essential for automating builds and deployments in CI/CD pipelines.
+
+## Build Periodically
+
+The `build periodically` option in Jenkins allows you to schedule builds at specified time intervals using cron syntax.
+
+### Setup
+
+1. Open your Jenkins job configuration.
+2. Under `Build Triggers`, select `Build periodically`.
+3. Enter a cron expression to define when Jenkins should trigger builds.
+   - Example: `H/15 * * * *` triggers a build every 15 minutes.
+4. Save the job configuration.
+
+## Poll SCM
+
+The `poll SCM` option in Jenkins periodically checks the version control system (SCM) for changes and triggers a build if changes are detected.
+
+### Setup
+
+1. Open your Jenkins job configuration.
+2. Under `Build Triggers`, select `Poll SCM`.
+3. Specify a polling schedule using cron syntax.
+   - Example: `*/5 * * * *` polls the SCM every 5 minutes.
+4. Save the job configuration.
+
+## Webhook
+
+A webhook in Jenkins allows external systems (like version control systems or issue trackers) to trigger Jenkins builds automatically when specific events occur.
+
+### Setup
+
+1. Configure your external system (e.g., GitHub, Bitbucket) to send webhook notifications to Jenkins.
+2. Open your Jenkins job configuration.
+3. Under `Build Triggers`, select `GitHub hook trigger for GITScm polling` (or similar webhook trigger option based on your SCM).
+4. Save the job configuration.
+
+## Example
+
+Here's an example of using `build periodically` and `poll SCM` together:
+
+```groovy
+pipeline {
+    agent any
+
+    triggers {
+        cron('H/15 * * * *') // Build periodically every 15 minutes
+        pollSCM('*/5 * * * *') // Poll SCM every 5 minutes
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                // Define your build steps here
+                echo 'Building...'
+            }
+        }
+    }
+}
+```
+
+Adjust the cron expressions (`H/15 * * * *` and `*/5 * * * *`) as per your requirements.
+
+## Additional Notes
+
+- Ensure your Jenkins server's clock is synchronized for accurate cron-based scheduling.
+- Webhooks are preferable for real-time triggering of builds based on external events.
+- Polling SCM can impact performance, especially with large repositories or frequent polling intervals.
