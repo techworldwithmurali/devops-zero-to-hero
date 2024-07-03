@@ -188,34 +188,3 @@ A webhook in Jenkins allows external systems (like version control systems or is
 3. Under `Build Triggers`, select `GitHub hook trigger for GITScm polling` (or similar webhook trigger option based on your SCM).
 4. Save the job configuration.
 
-## Example
-
-Here's an example of using `build periodically` and `poll SCM` together:
-
-```groovy
-pipeline {
-    agent any
-
-    triggers {
-        cron('H/15 * * * *') // Build periodically every 15 minutes
-        pollSCM('*/5 * * * *') // Poll SCM every 5 minutes
-    }
-
-    stages {
-        stage('Build') {
-            steps {
-                // Define your build steps here
-                echo 'Building...'
-            }
-        }
-    }
-}
-```
-
-Adjust the cron expressions (`H/15 * * * *` and `*/5 * * * *`) as per your requirements.
-
-## Additional Notes
-
-- Ensure your Jenkins server's clock is synchronized for accurate cron-based scheduling.
-- Webhooks are preferable for real-time triggering of builds based on external events.
-- Polling SCM can impact performance, especially with large repositories or frequent polling intervals.
