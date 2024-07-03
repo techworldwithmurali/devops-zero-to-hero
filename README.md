@@ -355,6 +355,40 @@ This Ansible playbook automates the installation of Apache Tomcat on remote host
         state: started
         enabled: yes
 ```
+```xml
+[Unit]
+Description=Tomcat 9.0.87 service
+After=network.target
+[Service]
+Type=forking
+LimitNOFILE=65536
+User=tomcat1
+Group=tomcat1
+ExecStart=/opt/tomcat/bin/startup.sh
+ExecStop=/opt/tomcat/bin/shutdown.sh
+Restart=Always
+[Install]
+WantedBy=multi-user.target
+```
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<tomcat-users xmlns="http://tomcat.apache.org/xml"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://tomcat.apache.org/xml tomcat-users.xsd"
+              version="1.0">
+
+    <role rolename="manager-gui"/>
+    <role rolename="manager-status"/>
+    <role rolename="manager-script"/>
+    <role rolename="manager-jmx"/>
+    <role rolename="admin-gui"/>
+    <role rolename="admin-script"/>
+
+    <user username="tomcat" password="tomcat" roles="manager-gui,admin-gui,manager-status,manager-script,manager-jmx,admin-script"/>
+</tomcat-users>
+```
+
 
 ### Explanation
 
