@@ -365,8 +365,8 @@ After=network.target
 [Service]
 Type=forking
 LimitNOFILE=65536
-User=tomcat1
-Group=tomcat1
+User=tomcat
+Group=tomcat
 ExecStart=/opt/tomcat/bin/startup.sh
 ExecStop=/opt/tomcat/bin/shutdown.sh
 Restart=Always
