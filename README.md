@@ -387,3 +387,87 @@ In this example:
       ```
     - **Explanation:** 
       - Commands specified with `ONBUILD` are executed when the image is used as a base for another image.
+
+```dockerfile
+# Example Dockerfile with various instructions
+
+# Set the base image
+FROM ubuntu:latest
+
+# Maintainer information
+LABEL maintainer="admin@techworldwithmurali.com"
+
+# Set environment variables
+ENV APP_DIR /app
+ENV APP_VERSION 1.0
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
+WORKDIR $APP_DIR
+
+# Copy application files
+COPY . $APP_DIR/
+
+# Expose ports
+EXPOSE 80/tcp
+EXPOSE 443/tcp
+
+# Define default command
+CMD ["python3", "app.py"]
+
+# Example of using ARG
+ARG BUILD_DATE
+ARG VCS_REF
+LABEL org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-ref=$VCS_REF
+
+# Example of using ENTRYPOINT
+ENTRYPOINT ["python3", "app.py"]
+
+# Example of using VOLUME
+VOLUME /data
+
+# Example of using USER
+USER 1001
+
+# Example of using ONBUILD
+ONBUILD ADD . /opt/data
+ONBUILD RUN apt-get update && apt-get install -y apache2
+
+# Example of using ADD with tar.gz
+ADD https://example.com/myapp.tar.gz /opt/
+
+# Example of using ENV in executable form
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk \
+    PATH="$JAVA_HOME/bin:$PATH"
+
+# Cleanup
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Specify the default argument for CMD
+CMD ["python3", "myapp.py"]
+```
+
+### Explanation:
+- **FROM:** Uses the latest Ubuntu image as the base.
+- **LABEL:** Sets the maintainer's email as metadata.
+- **ENV:** Defines environment variables for the application directory and version.
+- **RUN:** Installs Python3, Pip, and Curl.
+- **WORKDIR:** Sets the working directory for subsequent instructions.
+- **COPY:** Copies the current directory's contents to the app directory in the image.
+- **EXPOSE:** Exposes ports 80 and 443 for incoming traffic.
+- **CMD:** Sets the default command to run when the container starts.
+- **ARG:** Defines build-time arguments for labels.
+- **ENTRYPOINT:** Configures the container to run as an executable with Python.
+- **VOLUME:** Creates a mount point for `/data` directory.
+- **USER:** Sets the user ID to 1001 for subsequent instructions.
+- **ONBUILD:** Specifies commands that run when this image is used as a base for another image.
+- **ADD:** Downloads and extracts a `myapp.tar.gz` file from a remote URL.
+- **ENV (executable form):** Sets JAVA_HOME and updates PATH variable.
+- **Cleanup:** Removes unnecessary files and cleans up the package manager cache.
