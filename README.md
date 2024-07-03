@@ -165,10 +165,8 @@
 
 - Creation of users in Jenkins
 - Setting up role-based authorization strategy in Jenkins
-- Backup and restore Jenkins
 - Restart, safe restart, copy, and move jobs
 - Upstream and downstream jobs
-- Setting up build pipeline
 - What is master and slave node
 - Setting up the Linux slave node in Jenkins
 - Setting up the Windows slave node in Jenkins
