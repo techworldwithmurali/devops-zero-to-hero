@@ -63,3 +63,89 @@ A Docker image is a lightweight, standalone, executable package that includes ev
 4. **Isolation**: Images ensure that applications and their dependencies are isolated from the underlying host system and other applications running on the same host, enhancing security and reducing conflicts.
 
 5. **Reproducibility**: Docker images capture the exact state of an application at a specific point in time, ensuring that the application behaves consistently when deployed in different environments or by different teams.
+
+### Docker Image Management Commands with Examples
+
+1. **Build**: Build an image from a Dockerfile
+
+   ```bash
+   docker build -t mytomcat:v1 .
+   ```
+   - Builds an image named `mytomcat` with tag `v1` from the Dockerfile in the current directory (`.`).
+
+2. **History**: Show the history of an image
+
+   ```bash
+   docker history mytomcat:v1
+   ```
+   - Displays the history of changes for the `mytomcat:v1` image.
+
+3. **Import**: Import the contents from a tarball to create a filesystem image
+
+   ```bash
+   docker import mycontainer.tar tomcat:latest
+   ```
+   - Imports the contents of `mycontainer.tar` to create a new image named `tomcat` with tag `latest`.
+
+4. **Inspect**: Display detailed information on one or more images
+
+   ```bash
+   docker inspect tomcat:latest
+   ```
+   - Provides detailed information about the `tomcat:latest` image.
+
+5. **Load**: Load an image from a tar archive or STDIN
+
+   ```bash
+   docker load -i tomcat.tar
+   ```
+   - Loads an image from `tomcat.tar` into Docker.
+
+6. **List (ls)**: List images
+
+   ```bash
+   docker image ls
+   ```
+   - Lists all images currently available on the local Docker host.
+
+7. **Prune**: Remove unused images
+
+   ```bash
+   docker image prune
+   ```
+   - Removes all dangling (unused) images from the Docker host.
+
+8. **Pull**: Download an image from a registry
+
+   ```bash
+   docker pull tomcat:latest
+   ```
+   - Downloads the latest version of the `tomcat` image from the Docker Hub registry.
+
+9. **Push**: Upload an image to a registry
+
+   ```bash
+   docker push myrepo/tomcat:v1
+   ```
+   - Uploads the `tomcat` with tag `v1` to the Docker registry under the repository `myrepo`.
+
+10. **Remove (rm)**: Remove one or more images
+
+    ```bash
+    docker rmi tomcat:latest
+    ```
+    - Removes the `tomcat:latest` image from the local Docker host.
+
+11. **Save**: Save one or more images to a tar archive (streamed to STDOUT by default)
+
+    ```bash
+    docker save -o tomcat_images.tar tomcat:latest
+    ```
+    - Saves `tomcat:latest` as a tar archive named `tomcat_images.tar`.
+
+12. **Tag**: Create a tag `TARGET_IMAGE` that refers to `SOURCE_IMAGE`
+
+    ```bash
+    docker tag tomcat:latest myrepo/tomcat:v1
+    ```
+    - Creates a new tag `v1` for the `tomcat:latest` image as `myrepo/tomcat:v1`.
