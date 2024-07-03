@@ -150,7 +150,71 @@ gardle 'gradle-7.4.2'
 ```
 
 
-10. **Triggers**: Specifies triggers that start the pipeline, such as SCM triggers (e.g., GitHub webhook triggers).
+10. **Triggers**: Specifies triggers that start the pipeline, such as SCM triggers (e.g., GitHub webhook triggers).Certainly! Here are examples of different trigger configurations in Jenkins Declarative Pipeline:
+
+### Crontab Trigger Example
+
+```groovy
+pipeline {
+    agent any
+    
+    triggers {
+        cron('H/5 * * * *')  // Job will run every five minutes
+    }
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        // Add more stages as needed
+    }
+}
+```
+
+### Poll SCM Trigger Example
+
+```groovy
+pipeline {
+    agent any
+    
+    triggers {
+        pollSCM('H/5 * * * *')  // Job will run every five minutes if there are SCM changes
+    }
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        // Add more stages as needed
+    }
+}
+```
+
+### Upstream Trigger Example
+
+```groovy
+pipeline {
+    agent any
+    
+    triggers {
+        upstream(upstreamProjects: 'job1, job2', threshold: 'SUCCESS')  // Execute when job1 or job2 are successful
+    }
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        // Add more stages as needed
+    }
+}
+```
+
 
 11. **when**: Defines conditional execution of stages or steps based on predefined conditions, such as success, failure, or specific environment variables.
 
