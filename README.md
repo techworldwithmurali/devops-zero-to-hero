@@ -153,6 +153,84 @@ A Docker container is a runtime instance of a Docker image. It encapsulates an a
      docker container stats <container_id>
      ```
   ---
+
+  # Dockedr Network 
+
+  Docker Network enables containers to communicate with each other and with external systems. Here are the key points about Docker networking:
+
+### Key Points About Docker Networking
+
+1. **Communication**:
+   - Docker Network allows containers to communicate with each other within the same host or across different hosts.
+
+2. **Isolation**:
+   - Networks provide isolation for containers, ensuring that they can only communicate with other containers that are part of the same network.
+
+3. **Types of Docker Networks**:
+   - **Bridge Network**:
+     - The default network type for standalone containers. Containers on the same bridge network can communicate with each other.
+   - **Host Network**:
+     - Removes network isolation between the Docker host and Docker containers, using the host's networking directly.
+   - **Overlay Network**:
+     - Used for Docker Swarm services. It allows containers running on different Docker hosts to communicate securely.
+   - **Macvlan Network**:
+     - Assigns a MAC address to each container, making it appear as a physical device on the network.
+   - **None Network**:
+     - Disables all networking for a container. The container is completely isolated from the network.
+
+4. **Network Management**:
+   - Docker provides commands to create, manage, and remove networks.
+
+### Example Commands for Docker Networking
+
+- **List Networks**:
+  ```bash
+  docker network ls
+  ```
+
+- **Create a Network**:
+  ```bash
+  docker network create mynetwork
+  ```
+
+- **Inspect a Network**:
+  ```bash
+  docker network inspect mynetwork
+  ```
+
+- **Connect a Container to a Network**:
+  ```bash
+  docker network connect mynetwork mycontainer
+  ```
+
+- **Disconnect a Container from a Network**:
+  ```bash
+  docker network disconnect mynetwork mycontainer
+  ```
+
+- **Remove a Network**:
+  ```bash
+  docker network rm mynetwork
+  ```
+
+### Example of Creating and Using a Bridge Network
+
+1. **Create a Bridge Network**:
+   ```bash
+   docker network create mybridge
+   ```
+
+2. **Run Containers on the Bridge Network**:
+   ```bash
+   docker run -d --name container1 --network mybridge nginx
+   docker run -d --name container2 --network mybridge nginx
+   ```
+
+3. **Ping from One Container to Another**:
+   ```bash
+   docker exec -it container1 ping container2
+   ```
+   
 # Docker Volume 
 
 Docker volumes are the best way to persist data in Docker. Here are the key points about Docker volumes:
