@@ -20,13 +20,14 @@ Linux distributions (distros) package the Linux kernel with a collection of soft
   ```
 - **cd** (Change Directory):
   ```bash
-  cd /path/to/directory
+  cd /opt
   ```
 - **ls** (List Directory Contents):
   ```bash
   ls
-  ls -l  # Detailed list
+  ll  # Detailed list
   ls -a  # Show hidden files
+  ls -ltr
   ```
 - **cal** (Display a Calendar):
   ```bash
@@ -62,7 +63,7 @@ Linux distributions (distros) package the Linux kernel with a collection of soft
   ```
 - **curl** (Transfer Data with URLs):
   ```bash
-  curl https://example.com
+  curl https://google.com
   ```
 
 #### User and System Information
@@ -73,7 +74,7 @@ Linux distributions (distros) package the Linux kernel with a collection of soft
   ```
 - **grep** (Search Text):
   ```bash
-  grep "pattern" file.txt
+  history |grep ls
   ```
 - **last** (Display Last Logins):
   ```bash
@@ -101,7 +102,8 @@ Linux organizes files in a hierarchical directory structure:
   ```bash
   touch file.txt  # Create a new file
   cat file.txt    # View file content
-  rm file.txt     # Delete a file
+  rm -f file.txt     # Delete a file
+  rm -rf file.txt     # Delete a file
   ```
 - **Creating, Viewing, and Deleting Directories**:
   ```bash
