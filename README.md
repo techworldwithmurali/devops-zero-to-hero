@@ -80,3 +80,104 @@ Here’s how you can use a shared library in a Jenkins pipeline:
        }
    }
    ```
+-----
+Without using a Jenkins shared library, you would need to duplicate the common code across multiple Jenkins pipeline scripts. This approach can lead to maintenance challenges and code redundancy. However, you can still organize and reuse code within the same pipeline script by using functions and script blocks.
+
+## Example of a Jenkins Pipeline Script Without Shared Library
+
+Imagine you have several Jenkins pipelines that need to perform the same tasks with a build tool like Maven. Without a shared library, you would need to include the Maven functions directly in each pipeline script.
+
+### Pipeline Script with Common Functions
+
+```groovy
+pipeline {
+    agent any
+
+    environment {
+        MAVEN_HOME = tool 'Maven'  // Assuming Maven is configured in Jenkins tools
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    mavenBuild()
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    mavenTest()
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                script {
+                    mavenPackage()
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
+
+def mavenBuild() {
+    echo 'Running Maven Build...'
+    sh "${MAVEN_HOME}/bin/mvn clean compile"
+}
+
+def mavenTest() {
+    echo 'Running Maven Tests...'
+    sh "${MAVEN_HOME}/bin/mvn test"
+}
+
+def mavenPackage() {
+    echo 'Packaging with Maven...'
+    sh "${MAVEN_HOME}/bin/mvn package"
+}
+```
+
+### Explanation:
+
+1. **Define Environment Variables**:
+   - `MAVEN_HOME`: Path to the Maven installation.
+
+2. **Pipeline Stages**:
+   - `Checkout`: Checks out the source code from the repository.
+   - `Build`: Calls the `mavenBuild` function to compile the code.
+   - `Test`: Calls the `mavenTest` function to run tests.
+   - `Package`: Calls the `mavenPackage` function to package the application.
+
+3. **Common Functions**:
+   - `mavenBuild()`: Defines the steps for building the project using Maven.
+   - `mavenTest()`: Defines the steps for running tests using Maven.
+   - `mavenPackage()`: Defines the steps for packaging the application using Maven.
+
+4. **Post Actions**:
+   - `cleanWs()`: Cleans the workspace after the pipeline finishes.
+
+### Pros and Cons of Not Using Shared Libraries
+
+#### Pros:
+- **Simplicity**: Easier to get started without additional configuration.
+- **Self-contained Pipelines**: Each pipeline script is self-contained and doesn't depend on external libraries.
+
+#### Cons:
+- **Code Duplication**: Common code needs to be copied across multiple pipeline scripts, leading to duplication.
+- **Maintenance Overhead**: Updates to common functions need to be made in each pipeline script individually.
+- **Inconsistency**: Higher risk of inconsistencies if changes are not propagated to all pipeline scripts.
