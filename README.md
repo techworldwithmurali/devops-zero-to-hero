@@ -181,3 +181,64 @@ def mavenPackage() {
 - **Code Duplication**: Common code needs to be copied across multiple pipeline scripts, leading to duplication.
 - **Maintenance Overhead**: Updates to common functions need to be made in each pipeline script individually.
 - **Inconsistency**: Higher risk of inconsistencies if changes are not propagated to all pipeline scripts.
+
+This Jenkins pipeline script utilizes a shared library to streamline common tasks like cloning a Git repository and building the code. 
+
+# Clone and build the 
+### 1. Shared Library Scripts
+
+**gitClone.groovy**
+```groovy
+def call(String branch, String credentialsId, String url) {
+    git branch: branch, credentialsId: credentialsId, url: url
+}
+```
+This function allows you to clone a Git repository using specified branch, credentials, and URL.
+
+**buildCode.groovy**
+```groovy
+def call() {
+    sh 'mvn clean install'
+}
+```
+This function runs the Maven clean install command to build the code.
+
+### 2. Jenkinsfile
+
+```groovy
+@Library('shared-library') _
+
+pipeline {
+    agent any
+    tools {
+        maven 'Maven-3.9.6'
+    }
+    parameters {
+        string(name: 'branchName', defaultValue: 'main', description: 'Branch name')
+    }
+    stages {
+        stage('Git clone') {
+            steps {
+                gitClone(params.branchName, 'github-credentials', 'https://github.com/telugudevopsguru/microservice-one.git')
+            }
+        }
+
+        stage('Build the Code') {
+            steps {
+                buildCode()
+            }
+        }     
+    }
+}
+```
+- **@Library('shared-library') _**: This directive imports the shared library named `shared-library`.
+- **pipeline**: Defines the Jenkins pipeline.
+- **agent any**: Runs the pipeline on any available agent.
+- **tools { maven 'Maven-3.9.6' }**: Specifies the Maven tool version to use.
+- **parameters { string(name: 'branchName', defaultValue: 'main', description: 'Branch name') }**: Declares a parameter for the branch name, defaulting to 'main'.
+- **stages**: Contains the stages of the pipeline.
+
+#### Stages
+- **Git clone**: Clones the specified Git repository using the `gitClone` function from the shared library.
+- **Build the Code**: Builds the code using the `buildCode` function from the shared library.
+
