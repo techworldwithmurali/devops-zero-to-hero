@@ -11,6 +11,7 @@ The Waterfall methodology is a linear and sequential approach to software develo
 
 Each phase must be completed before moving on to the next, and there is little to no overlap between the phases.
 
+----
 ### What is Agile Methodology?
 
 Agile methodology is an iterative and incremental approach to software development that emphasizes flexibility, collaboration, and customer satisfaction. Agile involves continuous planning, testing, integration, and feedback throughout the development cycle. Key features of Agile include:
@@ -23,6 +24,7 @@ Agile methodology is an iterative and incremental approach to software developme
 
 ### Difference between Waterfall & Agile Methodology
 
+----
 ### What is DevOps?
 
 DevOps is a collaboration between development and operation teams which enables continuous delivery of applications and services to our end users.
@@ -43,5 +45,29 @@ DevOps is a collaboration between development and operation teams which enables 
 
 5. **Increased Customer Satisfaction**
    - Faster, more reliable releases and quicker bug fixes lead to higher customer satisfaction. A satisfied customer means more business, highlighting the importance of DevOps for organizations.
+----
+  ### Creating an AWS (Amazon Web Services) account
 
-  
+1. **Visit the AWS Website**: Go to the AWS homepage at [aws.amazon.com](https://aws.amazon.com/).
+
+2. **Click on "Create an AWS Account"**: Look for the "Create an AWS Account" button on the AWS homepage and click on it.
+
+3. **Provide Your Email Address**: Enter your email address. This will be used as your AWS account username.
+
+4. **Enter Your Password**: Choose a strong password that meets AWS security requirements.
+
+5. **Fill in Your Account Information**: Provide your full name, company name (if applicable), and contact information.
+
+6. **Payment Information**: Enter your payment details. AWS requires a valid credit card to verify your identity, although some services may offer a free tier for new accounts.
+
+7. **Verify Your Phone Number**: AWS will send a verification code to the phone number you provide. Enter the code to verify your identity.
+
+8. **Choose an AWS Support Plan**: You can choose from different support plans depending on your needs. AWS offers a free basic support plan by default.
+
+9. **Accept the AWS Customer Agreement**: Read the AWS Customer Agreement and click on the checkbox to confirm that you have read and accepted it.
+
+10. **Click "Create Account and Continue"**: After reviewing your information, click the "Create Account and Continue" button to complete the account creation process.
+
+11. **Confirmation**: AWS will send a verification email to the address you provided. Click the verification link in the email to activate your account.
+
+12. **Sign In to Your AWS Account**: Once your account is activated, you can sign in to the AWS Management Console using your email address and password.
