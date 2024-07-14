@@ -168,3 +168,65 @@ To convert an existing `.pem` file (like `dev.pem`) into a format that PuTTYgen 
    - PuTTYgen will automatically recognize the `.pem` file format and convert it.
    - Once loaded, click on the "Save private key" button to save the converted private key in `.ppk` format.
    - Choose a secure location to save the `.ppk` file and give it a recognizable name (e.g., `dev.ppk`).
+  
+   ----
+###  Connecting to a Linux server using PuTTY
+   Connecting to a Linux server using PuTTY with a `.pem` file involves a few steps to ensure proper setup and configuration. Here’s a detailed guide on how to do it:
+
+### Prerequisites:
+
+1. **PuTTY and PuTTYgen**:
+   - Ensure you have PuTTY and PuTTYgen installed. If not, download them from the official PuTTY website: [www.putty.org](https://www.putty.org/).
+
+2. **SSH Key Pair (`.pem` file)**:
+   - You should already have an SSH key pair in `.pem` format, such as `dev.pem`, which you downloaded or generated previously.
+
+### Steps to Connect Using PuTTY:
+
+1. **Convert `.pem` File to `.ppk` Format (if not done already)**:
+
+   - Open PuTTYgen (`puttygen.exe`).
+   - Click on `Load` and select your `.pem` file (`dev.pem`).
+   - PuTTYgen will automatically recognize the `.pem` format.
+   - Click `Save private key` to save it as a `.ppk` file (`dev.ppk`).
+
+2. **Configure PuTTY Session**:
+
+   - Open PuTTY (`putty.exe`).
+   - In the PuTTY Configuration window:
+     - Under "Session", enter your server's IP address or hostname in the "Host Name (or IP address)" field.
+     - Specify the SSH port (default is 22).
+     - Ensure the connection type is set to SSH.
+   
+3. **Configure SSH Auth with `.ppk` File**:
+
+   - In the PuTTY Configuration window:
+     - Navigate to `Connection` -> `SSH` -> `Auth`.
+     - Click `Browse` and select the `.ppk` file (`dev.ppk`) you saved earlier.
+   
+4. **(Optional) Save the Session**:
+
+   - Go back to the "Session" category.
+   - Enter a name for your session in the "Saved Sessions" field (e.g., `MyLinuxServer`).
+   - Click `Save` to save these settings for future use.
+   
+5. **Open the SSH Connection**:
+
+   - Click `Open` at the bottom of the PuTTY Configuration window to initiate the SSH connection.
+   - If this is your first time connecting to the server, PuTTY may ask you to confirm the server's host key. Click `Yes` to proceed.
+
+6. **Authenticate and Login**:
+
+   - Once connected, PuTTY will open a terminal window prompting you to login.
+   - Depending on the Linux distribution, use the appropriate username:
+     - For Amazon Linux: `ec2-user`
+     - For Ubuntu: `ubuntu`
+     - For CentOS: `centos`
+   - Press `Enter` after entering the username.
+   - If configured with a passphrase during the `.ppk` conversion, enter it when prompted.
+
+7. **Connected to Your Linux Server**:
+
+   - You are now connected to your Linux server via SSH using PuTTY. You can now execute commands and manage your server as needed.
+
+----
