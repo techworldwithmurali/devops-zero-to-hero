@@ -32,13 +32,12 @@
 - Working with `top` & `free` commands
 - Working with `yum` command
 - Working with `rpm`
-
-## Day 4: Linux Part 3
-
 - Working with `find` command
 - Working with `df`, `du`, `kill`, `ps` commands
 - Working with `echo`, `env`, `tac` commands
 - Working with `sleep`, `exit`, `host`, `diff` commands
+
+## Day 4: Linux Part 3
 - Working with `scp`, `ssh` commands
 - Working with `crontab` & `sed` commands
 - Working with `telnet` & `netstat` commands
