@@ -2,14 +2,14 @@
 
 ## Day 1:DevOps Overview
 
-- What is Waterfall & Agile Methodology
+- Waterfall & Agile Methodology Overview
 - DevOps Overview
-- Creation of AWS account
-- Creation of Linux EC2 instance
+- Creating an AWS Account
+- Creating a Linux EC2 Instance
 - Downloading PuTTY and PuTTYgen
-- Connecting to the Linux server
-- Create and Connect to the Ubuntu server
-- Create and Connect to the Windows server
+- Connecting to the Linux Server
+- Creating and Connecting to an Ubuntu Server
+- Creating and Connecting to a Windows Server
 
 ## Day 2: Linux Part 1
 
