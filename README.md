@@ -230,3 +230,100 @@ To convert an existing `.pem` file (like `dev.pem`) into a format that PuTTYgen 
    - You are now connected to your Linux server via SSH using PuTTY. You can now execute commands and manage your server as needed.
 
 ----
+### Lab Session - Creation of a Windows EC2 Instance
+
+1. **Sign in to AWS Management Console:**
+   - Navigate to the EC2 Dashboard at [AWS Management Console](https://console.aws.amazon.com/ec2/).
+
+2. **Launch Instance:**
+   - Click on "Launch Instance" to start the instance creation process.
+
+3. **Choose AMI:**
+   - In the "Step 1: Choose an Amazon Machine Image (AMI)" section, click on "AWS Marketplace" on the left sidebar.
+   - Search for "Windows Server" and select a suitable Windows Server AMI. Ensure you choose a version that suits your requirements (e.g., Windows Server 2019 Base).
+
+4. **Choose Instance Type:**
+   - Select an instance type based on your requirements (e.g., t2.micro for a free-tier eligible instance). Click "Next: Configure Instance Details" when ready.
+
+5. **Configure Instance:**
+   - Configure instance details such as:
+     - Number of instances to launch.
+     - Network settings (usually default VPC and subnet settings are fine).
+     - Optionally, configure advanced settings like IAM role, monitoring, and instance shutdown behavior. Click "Next: Add Storage" when ready.
+
+6. **Add Storage:**
+   - Specify the storage requirements for your instance. The default settings are typically sufficient for basic needs. Click "Next: Add Tags" when ready.
+
+7. **Add Tags:**
+   - Optionally, add tags to your instance for easier identification and management. Click "Next: Configure Security Group" when ready.
+
+8. **Configure Security Group:**
+   - Configure security group settings to control inbound and outbound traffic to your instance. At least allow RDP (Remote Desktop Protocol) access (port 3389) for Windows instances. You may also want to allow HTTP (port 80) or HTTPS (port 443) depending on your application needs.
+
+9. **Review Instance Launch:**
+   - Review all your instance details. Ensure everything is configured correctly. Click "Launch" when ready.
+
+10. **Select Key Pair:**
+    - In the pop-up window, select an existing key pair or create a new key pair. Note that for Windows instances, you typically do not need to use SSH keys directly. Instead, you will use RDP to connect.
+
+11. **Access Windows Instance:**
+    - Once the instance is launched, note the public IP address or DNS name of your instance from the EC2 dashboard.
+
+12. **Connect to Windows Instance:**
+    - Use Remote Desktop Protocol (RDP) to connect to your Windows instance. On your local machine:
+      - Search for "Remote Desktop Connection" in the Start menu (Windows).
+      - Enter the public IP address or DNS name of your instance. Click "Connect."
+      - Enter the credentials (username and password) specified during instance launch.
+
+13. **Start Using Windows Instance:**
+    - You are now connected to your Windows EC2 instance. Start configuring Windows settings, installing applications, and exploring the capabilities of Windows on AWS.
+
+
+### Lab Session - Creation of a Ubuntu EC2 Instance
+
+1. **Sign in to AWS Management Console:**
+   - Navigate to the EC2 Dashboard at [AWS Management Console](https://console.aws.amazon.com/ec2/).
+
+2. **Launch Instance:**
+   - Click on "Launch Instance" to start the instance creation process.
+
+3. **Choose AMI:**
+   - In the "Step 1: Choose an Amazon Machine Image (AMI)" section, search for "Ubuntu" in the search bar.
+   - Select the Ubuntu AMI of your choice (e.g., Ubuntu Server 20.04 LTS).
+
+4. **Choose Instance Type:**
+   - Select an instance type based on your requirements (e.g., t2.micro for a free-tier eligible instance). Click "Next: Configure Instance Details" when ready.
+
+5. **Configure Instance:**
+   - Configure instance details such as:
+     - Number of instances to launch.
+     - Network settings (usually default VPC and subnet settings are fine).
+     - Optionally, configure advanced settings like IAM role, monitoring, and instance shutdown behavior. Click "Next: Add Storage" when ready.
+
+6. **Add Storage:**
+   - Specify the storage requirements for your instance. The default settings are typically sufficient for basic needs. Click "Next: Add Tags" when ready.
+
+7. **Add Tags:**
+   - Optionally, add tags to your instance for easier identification and management. Click "Next: Configure Security Group" when ready.
+
+8. **Configure Security Group:**
+   - Configure security group settings to control inbound and outbound traffic to your instance. At least allow SSH (port 22) access for Linux instances. You may also want to allow HTTP (port 80) or HTTPS (port 443) depending on your application needs.
+
+9. **Review Instance Launch:**
+   - Review all your instance details. Ensure everything is configured correctly. Click "Launch" when ready.
+
+10. **Select Key Pair:**
+    - In the pop-up window, select an existing key pair or create a new key pair. Key pairs are used to securely connect to your instance via SSH.
+
+11. **Access Instance:**
+    - Once the instance is launched, note the public IP address or DNS name of your instance from the EC2 dashboard.
+
+12. **Connect to Ubuntu Instance:**
+    - Use SSH to connect to your Ubuntu instance. Open a terminal on your local machine (Linux/Mac) or use PuTTY on Windows:
+      ```
+      ssh -i /path/to/private-key.pem ubuntu@public-ip-address
+      ```
+      Replace `/path/to/private-key.pem` with the path to your private key file, `ubuntu` with the default username for Ubuntu instances, and `public-ip-address` with the public IP address of your instance.
+
+13. **Start Using Ubuntu Instance:**
+    - You are now connected to your Ubuntu EC2 instance. Start installing applications, configuring services, and exploring the capabilities of Ubuntu on AWS.
