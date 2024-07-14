@@ -1,6 +1,10 @@
 ### Linux Overview
-Linux is a Unix-like operating system known for its stability, security, and open-source nature. It's widely used in servers, embedded systems, and desktop computers.
+- Linux is an operating system.
+- It is open source.
+- It is similar to other operating systems such as Microsoft Windows, Apple macOS, iOS, and Google Android.
+- An operating system is software that enables communication between computer hardware and software.
 
+---
 ### Advantages of Linux:
 
 - Open source
