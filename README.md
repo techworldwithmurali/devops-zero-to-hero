@@ -93,8 +93,8 @@
 - Creation of Java application using Maven
 - Maven Build Lifecycles
 - Creation of web application using Maven
-- Explain about skip test cases & JaCoCo plugin
-- Explore `pom.xml` options
+- Explanation of skipping test cases and the JaCoCo plugin
+- Exploring pom.xml options
 
 ## Day 11: Nexus
 
