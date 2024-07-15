@@ -172,52 +172,52 @@
 
 ## Day 19: Jenkins Pipeline Part 1
 
-- Jenkins Pipeline Overview
+- What is Jenkins Pipeline
 - Fields available in declarative pipeline
 - Exploring the options in declarative pipeline
-- Jenkins pipeline build & push to JFrog Artifactory
+- Jenkins pipeline- build & push to Nexus
 ## Day 20: Jenkins Pipeline Part 2
-- Jenkins pipeline build & deploy to Tomcat
+- Jenkins pipeline - build & deploy to Tomcat
 - Store the Jenkinsfile in Github
 - 
 ## Day 21: Ansible Part 1
-- Ansible Overview
+- What is Ansible
 - Installation of Ansible in Linux
 - Ansible Workflow
-- Overview of Ansible ad-hoc with examples
-- SSH Overview
+- What is ansible ad-hoc
+- ansible ad-hoc commands with examples
+- What is SSH
 - Setting up the SSH connection manually
-- Ansible Modules Overview
+- What is Ansible Modules
 
 ## Day 22: Ansible Part 2
 
-- Ansible Playbook Overview
-- Installation of `httpd` & Git using Ansible playbook
-- Exploring `with_items`
+- What is ansible playbook
+- Installation of httpd & Git using Ansible playbook
+- Exploring with_items
 - Exploring variables
 - Exploring tags
 - Installation of Tomcat using Ansible playbook
 - Explore Ansible playbook options
-
 ## Day 23: Ansible Part 3
 
-- Ansible Role Overview
+- What is ansible role
 - Ansible Role Directory Structure
-- Installation of `httpd` using Ansible role
-- Working with Ansible role
-- Overview of Ansible Vault
+- Installation of httpd using Ansible role
+- Ansible role Examples
+- What is Ansible Vault
 - Working with Ansible Vault
 
 ## Day 24: Docker Part 1
 
 - Difference between containerization and virtual machines
-- Docker Overview
+- What is Docker
 - Exploring the available Docker components
 - Installation of Docker in Linux
 - Installation of Docker in Ubuntu
 - Installation of Docker in Windows
-- Dockerfile Overview
-- Creating a Dockerfile
+- What is Dockerfile
+- Writing a Dockerfile
 
 ## Day 25: Docker Part 2
 
