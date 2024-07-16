@@ -158,8 +158,7 @@
 - Integrating SonarQube with Jenkins
 - Deploying WAR file in Tomcat using Jenkins
 - Exploring build periodically, poll SCM, webhook
-- Creation of Slack account
-- Send notifications from Jenkins to Slack
+- How To Send Email Notification Using Jenkins ?
 
 ## Day 18: Jenkins Part 4
 
