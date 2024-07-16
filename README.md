@@ -133,6 +133,7 @@
 - Tomcat Dashboard Overview
 - Setup Tomcat as a service in Linux
 - Deploy WAR file in Tomcat
+- Install multiple Tomcat instances on a single server
 
 ## Day 15: Jenkins Part 1
 
