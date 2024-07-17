@@ -83,7 +83,8 @@ To delete a GitHub repository:
 - If everything functions correctly, the changes are merged into the master branch.
 - The master branch is then deployed to production.
 - If an issue is detected in the master branch, a hotfix branch is created from it
-
+  
+![feature Branching Strategy - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-7/images/Day%20%207-feature%20Branching%20Strategy%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
 
 ### Overview of Release Branching Strategy
 - A release branch is created from the master branch or another release branch.
@@ -92,7 +93,9 @@ To delete a GitHub repository:
 - The master branch is subsequently deployed to production.
 - If an issue is detected in the master branch, a hotfix branch is created from it.
 
-  ----
+![Release Branching Strategy - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-7/images/Day%20%207-Release%20Branching%20Strategy%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
+----
 ### Creation of GitLab Account
 1. Visit [GitLab](https://gitlab.com/users/sign_in) and click "Register".
 2. Follow the prompts to create your GitLab account.
