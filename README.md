@@ -290,7 +290,7 @@ To convert an existing `.pem` file (like `dev.pem`) into a format that PuTTYgen 
 13. **Start Using Windows Instance:**
     - You are now connected to your Windows EC2 instance. Start configuring Windows settings, installing applications, and exploring the capabilities of Windows on AWS.
 
-
+----
 ### Lab Session - Creation of a Ubuntu EC2 Instance
 
 1. **Sign in to AWS Management Console:**
