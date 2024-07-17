@@ -282,3 +282,12 @@ nslookup [OPTION] [NAME | -] [SERVER]
    ```
    This command queries DNS to find the IP address associated with the domain `www.example.com`.
 ----
+### What is ifconfig 
+- ifconfig is a system administration utility for configuring network interfaces in Linux, primarily used to initialize interfaces during system boot.
+- It offers features such as configuring, controlling, and querying TCP/IP network interface parameters.
+- Common tasks include setting the IP address and netmask of any network interface, as well as enabling or disabling interfaces.
+
+##### Viewing All Network Interfaces:
+- ifconfig
+
+----
