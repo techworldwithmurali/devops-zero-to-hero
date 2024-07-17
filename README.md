@@ -1,51 +1,74 @@
-### Working with `git reset` command
-- **git reset**: Resets the current HEAD to a specified state.
+### Working with `git reset`
 
-Example:
-```bash
-# Reset staged changes (keep modifications)
-git reset --soft HEAD^
+The `git reset` command is used to undo changes by moving the current `HEAD` to a specified commit. It has three modes:
 
-# Reset staged changes and modifications
-git reset --hard HEAD^
-```
+1. **Soft Reset**:
+   - Moves the `HEAD` to a specified commit but leaves changes in the staging area.
+   - Example:
+     ```sh
+     git reset --soft [commit_id]
+     ```
 
-### Working with `git revert` command
-- **git revert**: Reverts specified commits by creating a new commit.
+2. **Mixed Reset** (default mode):
+   - Moves the `HEAD` to a specified commit, clears the staging area, but leaves the working directory unchanged.
+   - Example:
+     ```sh
+     git reset --mixed [commit_id]
+     ```
 
-Example:
-```bash
-# Revert the last commit
-git revert HEAD
+3. **Hard Reset**:
+   - Moves the `HEAD` to a specified commit and discards all changes in the staging area and working directory.
+   - Example:
+     ```sh
+     git reset --hard [commit_id]
+     ```
+----
+### Working with `git revert`
 
-# Revert a specific commit
-git revert <commit_hash>
-```
+The `git revert` command is used to reverse changes by creating a new commit that inverts the specified changes. This approach preserves the commit history.
 
-### Working with `.gitignore` file
-`.gitignore` file specifies files to ignore in Git operations.
+- Example:
+  ```sh
+  git revert [commit_id]
+  ```
+----
+### Working with `.gitignore`
 
-Example content:
-```
-# Ignore .log files
-*.log
+A `.gitignore` file specifies which files and directories to ignore in a Git repository. You can create multiple `.gitignore` files in different directories within your repository.
 
-# Ignore directory
-logs/
-```
+- Example:
+  ```
+  # .gitignore
+  *.log
+  /node_modules
+  /build
+  ```
+----
+### Working with `git diff`
 
-### Working with `git diff` & `git HEAD`
-- **git diff**: Shows changes between commits, commit and working tree, etc.
-- **git HEAD**: Points to the most recent commit in the current branch.
+The `git diff` command is used to display the differences between various Git data sources (e.g., files, commits, branches).
 
-Example:
-```bash
-# Show changes between HEAD and working tree
-git diff HEAD
+- Example:
+  ```sh
+  git diff
+  ```
+----
+### Working with `git HEAD`
 
-# Show changes between two commits
-git diff commit1 commit2
-```
+`HEAD` is a reference to the last commit in the current checked-out branch. It is like a pointer to any reference.
+
+- **View the latest commit**:
+  ```sh
+  git show HEAD
+  ```
+
+- **Switch branches**:
+  When you switch branches with `checkout`, the `HEAD` is updated to point to the new branch.
+
+  ```sh
+  git checkout [branch_name]
+  ```
+  ----
 
 ### Deletion of GitHub Repository
 To delete a GitHub repository:
