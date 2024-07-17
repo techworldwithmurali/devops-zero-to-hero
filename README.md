@@ -199,14 +199,9 @@ For example:
 - A Maven repository is a directory containing packaged JAR files along with their corresponding pom.xml files.
 - Maven searches for dependencies in these repositories.
 - There are three types of Maven repositories:
-**Local Repository:**
-- This repository is on the developer's local machine and stores all dependencies that have been downloaded.
-**Central Repository:**
-- The default repository used by Maven, maintained by the Maven community. It contains a vast number of commonly used libraries.
-**Remote Repository:**
-- Any other repository accessed over the network, typically used for sharing internal or proprietary libraries across a team or organization.
-
-
-1. **Local Repository**: Stores locally installed artifacts (`~/.m2/repository`).
-2. **Central Repository**: Default public repository for Maven dependencies.
-3. **Remote Repository**: Custom repositories for specific projects or organizations.
+- **Local Repository:**
+ - This repository is on the developer's local machine and stores all dependencies that have been downloaded.
+- **Central Repository:**
+ - The default repository used by Maven, maintained by the Maven community. It contains a vast number of commonly used libraries.
+- **Remote Repository:**
+ - Any other repository accessed over the network, typically used for sharing internal or proprietary libraries across a team or organization.
