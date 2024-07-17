@@ -181,26 +181,31 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 - **`artifactId`**: Specifies the name of the project's artifact (e.g., JAR file) without versioning.
 - **`version`**: Indicates the version of the artifact produced by the project.
 ----
+### What is settings.xml
+- The Maven settings.xml file is commonly used to define the local repository location, alternate remote repository servers, and authentication information for private repositories.
+For example:
+- Nexus username and password can be declared within the <server> tag inside the settings.xml.
+##### settings.xml location
 
-### `pom.xml`
-1. **Definition**: Project Object Model XML file used by Maven.
-2. **Contents**:
-   - Project configuration.
-   - Dependencies.
-   - Plugins.
-   - Build profiles.
+- Maven can utilize two settings.xml files simultaneously:
+- Maven installation directory:
+- $M2_HOME/conf/settings.xml (global settings)
+- User's home directory:
+- ${user.home}/.m2/settings.xml (user settings)
+- Both files are optional. If both files are present, the values in the user home settings file override the values from the global settings file.
 
-### `settings.xml`
-1. **Definition**: XML file used by Maven to configure build settings.
-2. **Location**:
-   - Maven installation directory (`$M2_HOME/conf/settings.xml`).
-   - User's home directory (`~/.m2/settings.xml`).
-3. **Configurations**:
-   - Repositories.
-   - Proxy settings.
-   - Build profiles.
-
+----
 ### Types of Maven Repository
+- A Maven repository is a directory containing packaged JAR files along with their corresponding pom.xml files.
+- Maven searches for dependencies in these repositories. There are three types of Maven repositories:
+**Local Repository:**
+- This repository is on the developer's local machine and stores all dependencies that have been downloaded.
+**Central Repository:**
+- The default repository used by Maven, maintained by the Maven community. It contains a vast number of commonly used libraries.
+**Remote Repository:**
+- Any other repository accessed over the network, typically used for sharing internal or proprietary libraries across a team or organization.
+
+
 1. **Local Repository**: Stores locally installed artifacts (`~/.m2/repository`).
 2. **Central Repository**: Default public repository for Maven dependencies.
 3. **Remote Repository**: Custom repositories for specific projects or organizations.
