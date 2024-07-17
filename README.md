@@ -107,8 +107,12 @@
   ```
   free -h
   ```
-You've provided a good overview of using YUM (Yellowdog Updater Modified) on RPM-based Linux systems. Here's a breakdown of the commands you mentioned with examples:
-
+## What is YUM
+- YUM (Yellowdog Updater Modified) is an open source command-line as well as graphical based package management tool for RPM (RedHat Package Manager) based Linux systems. 
+- It allows users and system administrator to easily install, update, remove or search software packages on a systems.
+- If you want to keep your system up-to-date, you can enable automatic updates via yum-cron.
+- By default yum is installed in server so you do not need to install it separately.
+  
 ### YUM Commands and Examples
 
 1. **Installing a Package:**
@@ -161,6 +165,14 @@ You've provided a good overview of using YUM (Yellowdog Updater Modified) on RPM
      ```
 ----
 
+### What is RPM
+- RPM (Red Hat Package Manager) is an default open source and most popular package management utility for Red Hat based systems like (RHEL,  CentOS and Fedora). 
+- The tool allows system administrators and users to  install,  update,  uninstall,  query, verify and manage system software packages in Unix/Linux operating systems. 
+- The RPM formerly known as .rpm file, that includes compiled software programs and libraries needed by the packages. 
+- This utility only works with packages that built on .rpm format.
+- RPM doesn’t allow you to automatically update/upgrade packages installed on your system.
+- It doesn’t resolve dependencies, you must install them manually.
+
 ### RPM Commands and Examples
 
 1. **Installing a Package:**
@@ -209,6 +221,11 @@ You've provided a good overview of using YUM (Yellowdog Updater Modified) on RPM
      - `-q`: Query mode.
      - `-p`: Specify the package file.
      - `-R`: List dependencies.
+    
+----
+### What is find command
+- find command is  used to find the files and directories and perform subsequent operations on them. 
+- It supports searching by file, folder, name, creation date, modification date, owner and permissions.
 
 ### Working with `find` Command
 
