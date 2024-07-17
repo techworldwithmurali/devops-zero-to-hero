@@ -1,83 +1,109 @@
-### Working with `rm` command
-The `rm` command is used to remove or delete files and directories.
+### Working with `rm`
 
-Example:
-```bash
-# Remove a file
-rm file.txt
+1. **Removing Files:**
+   - To remove a file `filename` forcefully (`-f`):
+     ```
+     rm -f filename
+     ```
+   - The `-f` flag ensures that the file is deleted without prompting for confirmation.
 
-# Remove a directory and its contents recursively
-rm -r directory/
-```
+2. **Removing Directories:**
+   - To remove a directory `directory` recursively and forcefully (`-r` and `-f`):
+     ```
+     rm -rf directory
+     ```
+   - Use with caution as it deletes the directory and its contents recursively without confirmation.
 
-### Creating and deleting users
-For user management, you typically use `useradd` to add users and `userdel` to delete users.
+### Creating and Deleting Users
 
-Example:
-```bash
-# Add a new user
-sudo useradd newuser
+1. **Creating Users:**
+   - To create a user `user_name`:
+     ```
+     useradd user_name
+     ```
+     or
+     ```
+     adduser user_name
+     ```
 
-# Delete a user
-sudo userdel newuser
-```
+2. **Checking User Information:**
+   - To check if a user exists and view their details:
+     ```
+     id user_name
+     ```
+     or
+     ```
+     cat /etc/passwd
+     ```
 
-### Creating and deleting groups
-Groups are managed using `groupadd` to add groups and `groupdel` to delete groups.
+3. **Deleting Users:**
+   - To delete a user `user_name` and remove their home directory and mail spool (`-r`):
+     ```
+     userdel -r user_name
+     ```
 
-Example:
-```bash
-# Add a new group
-sudo groupadd newgroup
+### Creating and Deleting Groups
 
-# Delete a group
-sudo groupdel newgroup
-```
+1. **Creating Groups:**
+   - To create a group `group_name`:
+     ```
+     groupadd group_name
+     ```
 
-### Working with `head` & `tail` commands
-These commands are used to display the beginning (`head`) or end (`tail`) of files.
+2. **Checking Group Information:**
+   - To view groups and their details:
+     ```
+     cat /etc/group
+     ```
 
-Example:
-```bash
-# Display first 10 lines of a file
-head file.txt
+3. **Deleting Groups:**
+   - To delete a group `group_name`:
+     ```
+     groupdel group_name
+     ```
 
-# Display last 10 lines of a file
-tail file.txt
-```
+4. **Adding Users to Groups:**
+   - To add `user_name` to an existing `group_name`:
+     ```
+     usermod -a -G group_name user_name
+     ```
 
-### Working with `top` & `free` commands
-These commands provide information about system resources (`top` for processes, `free` for memory).
+### Working with `head`
 
-Example:
-```bash
-# Display dynamic real-time view of processes
-top
+- The `head` command displays the first few lines of a file.
+- To display the first 10 lines of `filename`:
+  ```
+  head filename
+  ```
+- To display the first `num` lines (e.g., 5 lines) of `filename`:
+  ```
+  head -n 5 filename
+  ```
 
-# Display memory usage statistics
-free -h
-```
+### Working with `tail`
 
-### Working with `yum` command
-`yum` is used for package management on RPM-based Linux distributions like CentOS and Red Hat.
+- The `tail` command displays the last few lines of a file.
+- To display the last 10 lines of `filename`:
+  ```
+  tail filename
+  ```
+- To display the last `num` lines (e.g., 5 lines) of `filename`:
+  ```
+  tail -n 5 filename
+  ```
 
-Example:
-```bash
-# Install a package
-sudo yum install package_name
+### Working with `top`
 
-# Remove a package
-sudo yum remove package_name
-```
+- The `top` command provides a dynamic view of processes running on the system.
+- To view system summary and processes:
+  ```
+  top
+  ```
 
-### Working with `rpm` command
-The `rpm` command is used for installing, querying, verifying, updating, and removing software packages.
+### Working with `free`
 
-Example:
-```bash
-# Install an RPM package
-sudo rpm -i package.rpm
-
-# Query information about an installed package
-rpm -q package_name
-```
+- The `free` command displays memory usage information.
+- To display memory usage in a human-readable format:
+  ```
+  free -h
+  ```
