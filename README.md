@@ -165,3 +165,94 @@ Once connected, you're in a terminal session on the remote server. Here are some
 - **`quit`:** Close the Telnet session and exit.
 
 ----
+### what is netstat
+The `netstat` command is used to display network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
+It's a powerful utility for network troubleshooting and monitoring. 
+
+### Basic Syntax:
+```
+netstat [OPTIONS]
+```
+
+### Common `netstat` Options:
+
+1. **-a, --all**
+   - Displays all sockets (both listening and non-listening), including server sockets.
+   ```bash
+   netstat -a
+   ```
+
+2. **-t, --tcp**
+   - Displays TCP connections.
+   ```bash
+   netstat -at
+   ```
+
+3. **-u, --udp**
+   - Displays UDP connections.
+   ```bash
+   netstat -au
+   ```
+
+4. **-l, --listening**
+   - Displays only listening sockets (server sockets).
+   ```bash
+   netstat -l
+   ```
+
+5. **-x**
+   - Displays Unix socket connections.
+   ```bash
+   netstat -lx
+   ```
+
+6. **-s, --statistics**
+   - Displays networking statistics (such as packets and errors).
+   ```bash
+   netstat -s
+   ```
+
+7. **-c**
+   - Continuously displays information (updating every second).
+   ```bash
+   netstat -c
+   ```
+
+8. **--verbose**
+   - Displays detailed output.
+   ```bash
+   netstat --verbose
+   ```
+
+9. **-r, --route**
+   - Displays the kernel routing table.
+   ```bash
+   netstat -r
+   ```
+
+10. **-n, --numeric**
+    - Shows numerical addresses instead of resolving hosts.
+    ```bash
+    netstat -an | grep 8080
+    ```
+    This command displays all connections and listening ports with their numeric addresses, and `grep 8080` filters for connections on port 8080.
+
+### Example Usage:
+- To list all TCP connections:
+  ```bash
+  netstat -at
+  ```
+
+- To continuously monitor network connections:
+  ```bash
+  netstat -c
+  ```
+
+- To display detailed statistics:
+  ```bash
+  netstat -s
+  ```
+
+### Note:
+- Running `netstat` commands may require administrative privileges (`sudo`).
+----
