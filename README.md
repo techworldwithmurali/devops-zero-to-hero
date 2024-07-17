@@ -75,12 +75,23 @@ To delete a GitHub repository:
 1. Go to the repository on GitHub.
 2. Go to "Settings" > "Options".
 3. Scroll down to the "Danger Zone" section and click "Delete this repository".
-
+----
 ### Overview of Feature Branching Strategy
-Feature branching involves creating a separate branch for each new feature or change. This isolates development work and facilitates collaboration.
+- Feature branches are created from the development branch.
+- Once development on the feature branch is completed by developers, they merge the feature branch into the development branch.
+- Subsequently, the code from the development branch is deployed to lower environments.
+- If everything functions correctly, the changes are merged into the master branch.
+- The master branch is then deployed to production.
+- If an issue is detected in the master branch, a hotfix branch is created from it
+
 
 ### Overview of Release Branching Strategy
-Release branching involves creating a branch dedicated to preparing a release version of the software. It allows stabilization and last-minute changes before deployment.
+- A release branch is created from the master branch or another release branch.
+- Once development on the release branch is completed by developers, the code is deployed to lower environments.
+- If everything is functioning correctly, it is then merged into the master branch.
+- The master branch is subsequently deployed to production.
+- If an issue is detected in the master branch, a hotfix branch is created from it.
+
 
 ### Creation of GitLab Account
 1. Visit [GitLab](https://gitlab.com/users/sign_in) and click "Register".
