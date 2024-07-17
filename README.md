@@ -178,23 +178,31 @@ curl -v -X POST -u admin:admin123 \
 
 ## Integrating Nexus in Maven
 
-Nexus integration with Maven allows seamless management of artifacts and dependencies in development workflows.
+**Prerequisites:**
+- Java is installed.
+- Maven is installed.
+- Nexus is installed.
+**Configuration:**
+- Declare the Nexus snapshot and release repositories in the pom.xml under the <distributionManagement> tag.
+- To authenticate with Nexus from Maven, declare the Nexus username and password in the settings.xml under the <server> tag.
 
-### Steps to Integrate Nexus with Maven:
-
-1. **Configure Maven Settings**: Edit `settings.xml` located in Maven's `conf` directory.
-   
-2. **Add Nexus Repository**: Specify Nexus repository details including URL, username, and password in `settings.xml`.
-   
-3. **Build Configuration**: Update Maven build configurations to include Nexus repositories for artifact resolution and deployment.
-   
-4. **Testing**: Validate integration by performing Maven builds, ensuring artifacts are fetched from and deployed to Nexus repositories.
-
-### Example `settings.xml` Configuration:
+**pom.xml**
 
 ```xml
-<settings>
-  ...
+<distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://your-host:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://your-host:8081/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
+```
+
+**settings.xml**
+```xml
   <servers>
     <server>
       <id>nexus-releases</id>
@@ -207,15 +215,4 @@ Nexus integration with Maven allows seamless management of artifacts and depende
       <password>your_password</password>
     </server>
   </servers>
-
-  <mirrors>
-    <mirror>
-      <id>nexus</id>
-      <mirrorOf>*</mirrorOf>
-      <url>http://localhost:8081/repository/maven-public/</url>
-    </mirror>
-  </mirrors>
-  ...
-</settings>
 ```
-
