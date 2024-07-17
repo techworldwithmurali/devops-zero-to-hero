@@ -67,3 +67,59 @@ This command copies the `example.txt` file from your local machine's `/home/user
 - Replace `43.205.113.179` with the actual IP address or hostname of the remote server.
 
 ----
+### What is crontab
+The `crontab` command is used to schedule tasks (commands or scripts) to run automatically at specified intervals using the cron daemon in Unix-like operating systems. Let's break down the syntax and your example:
+
+### Crontab Syntax
+
+The general syntax of a cron job entry is:
+
+```
+MIN HOUR DOM MON DOW CMD
+```
+
+Where:
+- **MIN**: Minute (0 - 59)
+- **HOUR**: Hour (0 - 23)
+- **DOM**: Day of Month (1 - 31)
+- **MON**: Month (1 - 12)
+- **DOW**: Day of Week (0 - 6, where 0 is Sunday)
+- **CMD**: Command or script to be executed
+
+### Example
+
+Your example:
+
+```bash
+15 * * * * /opt/script.sh
+```
+
+- **15**: Executes the command at 15 minutes past every hour.
+- **\***: For the other fields (HOUR, DOM, MON, DOW), \* means any value, so the command will run every hour, every day of the month, every month, and every day of the week.
+- **/opt/script.sh**: Specifies the command to run, which is `/opt/script.sh`.
+
+### Explanation:
+- This cron job will execute `/opt/script.sh` at 15 minutes past every hour, every day of the month, every month, and every day of the week.
+- Make sure `/opt/script.sh` is executable (`chmod +x /opt/script.sh`) and contains the necessary commands or scripts you want to automate.
+
+### Adding or Editing Cron Jobs
+
+To edit or add cron jobs for the current user, use:
+
+```bash
+crontab -e
+```
+
+----
+### What is sed
+The `sed` command, short for **Stream EDitor**, is a powerful utility in Unix-like operating systems for parsing and transforming text streams. It is commonly used for text manipulation tasks such as search and replace, editing, and filtering.
+
+### Basic Syntax:
+```
+sed OPTIONS 'COMMAND' FILE
+```
+- **OPTIONS:** Various options to modify the behavior of `sed`.
+- **COMMAND:** The operation to perform (e.g., search and replace).
+- **FILE:** The input file to process.
+
+----
