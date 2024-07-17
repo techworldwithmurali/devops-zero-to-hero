@@ -7,13 +7,13 @@
 
 ---
 
-# How to Install Nexus 3 on Amazon Linux
+### How to Install Nexus 3 on Amazon Linux
 
-## Prerequisites:
+### Prerequisites:
 - Your user must have sudo privileges to install packages.
 - Minimum 2 VCPU & 4 GB Memory.
 
-## Step-by-Step Installation Guide:
+### Step-by-Step Installation Guide:
 
 ### Step 1: Install OpenJDK 8 in CentOS 7 / Amazon Linux
 ```bash
@@ -135,7 +135,7 @@ Congratulations! Nexus 3 is now installed on your Amazon Linux instance. If you 
 
 ---
 
-## Nexus Dashboard Overview
+### Nexus Dashboard Overview
 
 The Nexus Dashboard provides a comprehensive interface for managing repositories, users, and artifacts within Nexus Repository Manager.
 
@@ -148,7 +148,7 @@ The Nexus Dashboard provides a comprehensive interface for managing repositories
 
 ---
 
-## Creation of Users and Roles in Nexus
+### Creation of Users and Roles in Nexus
 
 Nexus allows administrators to create users and define roles with specific permissions for accessing repositories and performing actions.
 
@@ -166,7 +166,7 @@ Nexus allows administrators to create users and define roles with specific permi
 
 ---
 
-## Integrating Nexus in Maven
+### Integrating Nexus in Maven
 
 **Prerequisites:**
 - Java is installed.
