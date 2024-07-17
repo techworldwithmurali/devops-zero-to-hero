@@ -218,7 +218,7 @@ The vi / vim editor is a popular and classic text editor in the Linux family:
      mkdir -p /opt/sunil/naresh/siva
      ```
    - Note the correct usage of `-p` to create parent directories if they don't exist.
-
+----
 ### Working with `cp`
 
 2. **Copying Files and Directories:**
@@ -231,7 +231,7 @@ The vi / vim editor is a popular and classic text editor in the Linux family:
      cp -r naresh /opt
      ```
    - Ensure `-r` is used for recursive copying of directories.
-
+----
 ### Working with `mv`
 
 3. **Moving or Renaming Files and Directories:**
@@ -244,7 +244,7 @@ The vi / vim editor is a popular and classic text editor in the Linux family:
      mv muni sunil
      ```
    - The `mv` command is used for both moving and renaming.
-
+----
 ### Working with Symbolic Links (`ln -s`)
 
 4. **Creating Symbolic Links:**
@@ -253,7 +253,7 @@ The vi / vim editor is a popular and classic text editor in the Linux family:
      ln -s originalname softlinkname
      ```
    - Symbolic links can point to files or directories.
-
+----
 ### Working with Hard Links (`ln`)
 
 5. **Creating Hard Links:**
@@ -263,7 +263,7 @@ The vi / vim editor is a popular and classic text editor in the Linux family:
      ```
    - Hard links can only be created for files, not directories.
    - They share the same inode number with the original file.
-
+----
 ### Inode Numbers
 
 6. **Understanding Inode Numbers:**
@@ -301,7 +301,7 @@ The vi / vim editor is a popular and classic text editor in the Linux family:
      chmod -R 666 directoryname/
      ```
      - This gives read (`r`) and write (`w`) permissions (`6`) to owner, group, and others.
-
+----
 ### File Ownership (`chown`)
 
 1. **Changing Ownership:**
