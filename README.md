@@ -124,3 +124,44 @@ sed OPTIONS 'COMMAND' FILE
 - **FILE:** The input file to process.
 
 ----
+
+### What is telnet
+
+The `telnet` command is a network protocol that allows you to communicate with another host using the Telnet protocol, typically over a TCP/IP network. It's commonly used for remote terminal connections, but due to security concerns, it's often replaced by SSH (Secure Shell). Here's how you can use `telnet`:
+
+### Basic Syntax:
+```
+telnet [OPTIONS] HOST [PORT]
+```
+
+- **HOST:** The hostname or IP address of the remote server.
+- **PORT:** The port number to connect to on the remote server (default is 23 for Telnet).
+
+### Examples:
+
+1. **Connect to a Remote Host:**
+   ```bash
+   telnet example.com
+   ```
+   This connects to `example.com` using the default Telnet port (23).
+
+2. **Specify a Port:**
+   ```bash
+   telnet example.com 8080
+   ```
+   This connects to `example.com` on port 8080.
+
+3. **Additional Options:**
+   - `-l`: Specify a username for the remote login.
+   - `-a`: Attempt automatic login.
+
+### Commands within Telnet Session:
+
+Once connected, you're in a terminal session on the remote server. Here are some basic Telnet commands:
+
+- **`open [host] [port]`:** Open a connection to the specified host and port.
+- **`close` or `logout`:** Close the current Telnet session.
+- **`send [text]`:** Send text to the remote server.
+- **`quit`:** Close the Telnet session and exit.
+
+----
