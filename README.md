@@ -171,4 +171,36 @@ In Linux, the Filesystem Hierarchy Standard (FHS) defines the structure and layo
 These directories help organize different types of files and provide a structured way to manage the filesystem in Linux systems.
 
 ----
+### Working with files
+## touch Command
+
+The `touch` command is used to create an empty file:
+```bash
+touch filename.txt
+```
+## cat Command
+
+The `cat` command is widely used in Linux:
+- Displays the contents of a file on the standard output (stdout).
+- Can be used to concatenate multiple files or redirect output.
+- To view a file:
+  ```bash
+  cat filename.txt
+  ```
+- To copy contents from one file to another:
+  ```bash
+  cat sourcefile.txt > destinationfile.txt
+  ``` 
+ 
+## vi/vim Editor
+
+The vi / vim editor is a popular and classic text editor in the Linux family:
+- It is available in almost all Linux distributions.
+- Works consistently across different platforms and distributions.
+- User-friendly interface, favored by millions of Linux users for editing needs.
+- Basic modes include:
+  - **Insert mode**: For writing and editing text.
+  - **Command mode**: For navigating, saving, and quitting.
+  - **Visual mode**: For selecting and manipulating blocks of text.
+  - **Escape mode**: For switching between modes and executing commands.
 
