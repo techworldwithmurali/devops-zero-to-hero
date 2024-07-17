@@ -204,3 +204,72 @@ The vi / vim editor is a popular and classic text editor in the Linux family:
   - **Visual mode**: For selecting and manipulating blocks of text.
   - **Escape mode**: For switching between modes and executing commands.
 
+----
+
+### Working with Directories
+
+1. **Creating Directories:**
+   - To create a directory named `murali`, you use:
+     ```
+     mkdir murali
+     ```
+   - To create nested directories such as `/opt/sunil/naresh/siva`:
+     ```
+     mkdir -p /opt/sunil/naresh/siva
+     ```
+   - Note the correct usage of `-p` to create parent directories if they don't exist.
+
+### Working with `cp`
+
+2. **Copying Files and Directories:**
+   - To copy a file `murali` from `/root` to `/opt`:
+     ```
+     cp murali /opt
+     ```
+   - To copy a directory `naresh` recursively from `/root` to `/opt`:
+     ```
+     cp -r naresh /opt
+     ```
+   - Ensure `-r` is used for recursive copying of directories.
+
+### Working with `mv`
+
+3. **Moving or Renaming Files and Directories:**
+   - To move a file `murali` from `/root` to `/opt`:
+     ```
+     mv murali /opt
+     ```
+   - To rename a file or directory `muni` to `sunil` in the same directory:
+     ```
+     mv muni sunil
+     ```
+   - The `mv` command is used for both moving and renaming.
+
+### Working with Symbolic Links (`ln -s`)
+
+4. **Creating Symbolic Links:**
+   - To create a symbolic link `softlinkname` pointing to `originalname`:
+     ```
+     ln -s originalname softlinkname
+     ```
+   - Symbolic links can point to files or directories.
+
+### Working with Hard Links (`ln`)
+
+5. **Creating Hard Links:**
+   - To create a hard link `hardlinkname` for `originalname`:
+     ```
+     ln originalname hardlinkname
+     ```
+   - Hard links can only be created for files, not directories.
+   - They share the same inode number with the original file.
+
+### Inode Numbers
+
+6. **Understanding Inode Numbers:**
+   - An inode number uniquely identifies each file on a Unix-like filesystem.
+   - To view inode numbers with file details, you use:
+     ```
+     ls -li
+     ```
+   - The `-i` option with `ls` displays inode numbers along with other file details.
