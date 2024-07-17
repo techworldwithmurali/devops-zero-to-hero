@@ -1,8 +1,8 @@
-## What is a Build Tool?
+### What is a Build Tool?
 
 Build tools are used to build the code and generate executable applications from the source code (e.g., `.war` for a Java application). Building incorporates compiling, linking, and packaging the code into a usable or executable form.
 
-## Types of Build Tools
+### Types of Build Tools
 
 There are different types of build tools available in DevOps. The main ones are:
 
@@ -11,11 +11,11 @@ There are different types of build tools available in DevOps. The main ones are:
 - **Gradle**
 
 ----
-## What is Maven?
+### What is Maven?
 
 Maven is an open-source build tool. It primarily supports Java-based applications and assists developers throughout the entire process of a software project.
 
-## What Maven Does
+### What Maven Does
 
 ### Compiling the Source Code
 - Converts source code into executable bytecode.
