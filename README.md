@@ -127,6 +127,11 @@ Linux distributions (distros) package the Linux kernel with a collection of soft
 
 In Linux, the Filesystem Hierarchy Standard (FHS) defines the structure and layout of the filesystem. Here are some of the default directories commonly found under the root directory `/` according to the FHS:
 
+![Linux directory structure 1 - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-2/images/Day%20%202-Linux%20directory%20structure%201-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
+![Linux directory structure 2 - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-2/images/Day%20%202-%20%20Linux%20directory%20structure%202-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
+
 1. **/bin**: Essential command binaries that are required for system operation (e.g., `ls`, `cp`, `mv`).
 
 2. **/boot**: Static files of the bootloader.
