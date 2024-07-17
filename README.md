@@ -288,6 +288,32 @@ nslookup [OPTION] [NAME | -] [SERVER]
 - Common tasks include setting the IP address and netmask of any network interface, as well as enabling or disabling interfaces.
 
 ##### Viewing All Network Interfaces:
-- ifconfig
-
+```bash
+ifconfig
+ ```
 ----
+
+### wht is ipconfig
+- The ipconfig command in Windows is used to display the current TCP/IP network configuration values, including IP address, subnet mask, default gateway, and DNS servers.
+- It's a command-line tool that provides essential information about the network interface cards (NICs) installed on the system.
+- This command is particularly useful for troubleshooting network connectivity issues, verifying IP configuration settings, and diagnosing network problems.
+Here are some commonly used `ipconfig` commands in Windows:
+
+1. **Display IP Configuration for All Adapters**:
+   ```
+   ipconfig
+   ```
+
+2. **Display Detailed IP Configuration (including MAC address)**:
+   ```
+   ipconfig /all
+   ```
+
+3. **Flush DNS Resolver Cache**:
+   ```
+   ipconfig /flushdns
+   ```
+4. **Display DNS Resolver Cache**:
+   ```
+   ipconfig /displaydns
+   ```
