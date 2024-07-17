@@ -36,6 +36,8 @@ Agile methodology is an iterative and incremental approach to software developme
 
 DevOps is a collaboration between development and operation teams which enables continuous delivery of applications and services to our end users.
 
+![ Devops Diagaram- Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-1/images/DevOps%20Diagram%20%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 ### Benefits of DevOps
 
 1. **Collaboration between Developers and Operations**
