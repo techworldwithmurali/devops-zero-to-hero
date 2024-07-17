@@ -119,12 +119,30 @@ If you have any more questions or need further clarification, feel free to ask!
 ----
 
 ### Skip Test Cases & JaCoCo Plugin
-1. **Skipping Test Cases**: Use `-DskipTests` or `-Dmaven.test.skip=true` to skip running test cases during Maven build.
-   - `-DskipTests`: Skips compiling and running tests.
-   - `-Dmaven.test.skip=true`: Skips compiling tests but runs pre-existing compiled tests.
-2. **JaCoCo Plugin**: A Maven plugin for code coverage reports.
-   - Configured in `pom.xml`.
-   - Generates reports on code coverage metrics.
+Skipping test cases in a Maven project allows developers to exclude certain unit tests from running during the build process. 
+
+### Using Command-line Options:
+- **-DskipTests=true**: This option skips compiling and executing tests altogether.
+- **-Dmaven.test.skip=true**: This option skips compiling tests but still executes other phases of the build lifecycle.
+
+### In POM Configuration:
+Test skipping can also be configured directly in the `pom.xml` file under the `<build>` section. Here’s an example of how it can be configured:
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <skipTests>true</skipTests>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+Setting `<skipTests>true</skipTests>` inside the `<configuration>` block of the `maven-surefire-plugin` plugin will skip running tests during the build.
+
+-----
 
 ### Explore `pom.xml` Options
 1. **`pom.xml`**: Project Object Model XML file for Maven configuration.
