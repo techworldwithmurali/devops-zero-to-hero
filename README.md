@@ -18,7 +18,10 @@ Each phase must be completed before moving on to the next, and there is little t
 
 Agile methodology is an iterative and incremental approach to software development that emphasizes flexibility, collaboration, and customer satisfaction. Agile involves continuous planning, testing, integration, and feedback throughout the development cycle. Key features of Agile include:
 
-![Agile Methodology - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-1/images/Day%20%201-Agile%20Methodology%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+<p align="center">
+  <img src="https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-1/images/DevOps%20Diagram%20%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png" alt="Devops Diagaram - Tech World with Murali - Moole Muralidhara Reddy">
+</p>
+
 
 1. **Iterative Development:** Developing the software in small, manageable increments.
 2. **Flexibility:** Adapting to changes even late in the development process.
