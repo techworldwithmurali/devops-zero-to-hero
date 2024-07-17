@@ -92,19 +92,19 @@ To delete a GitHub repository:
 - The master branch is subsequently deployed to production.
 - If an issue is detected in the master branch, a hotfix branch is created from it.
 
-
+  ----
 ### Creation of GitLab Account
 1. Visit [GitLab](https://gitlab.com/users/sign_in) and click "Register".
 2. Follow the prompts to create your GitLab account.
-
+  ----
 ### GitLab Dashboard Overview
 After logging in, GitLab dashboard provides access to projects, issues, merge requests, pipelines, and settings.
-
+  ----
 ### Creation of Git Repository in GitLab
 To create a new Git repository in GitLab:
 1. Navigate to your GitLab dashboard.
 2. Click on "New Project" and follow the prompts to set up your repository.
-
+  ----
 ### Deletion of GitLab Repository
 To delete a GitLab repository:
 1. Go to the repository in GitLab.
