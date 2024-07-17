@@ -31,17 +31,108 @@ Maven is an open-source build tool. It primarily supports Java-based application
 1. **Purpose**: Provides a terminal with an SSH client, X11 server, and tabbed terminal for Windows.
 2. **Download**: Available from the [official MobaXterm website](https://mobaxterm.mobatek.net/download.html).
 
-### Maven Installation (Linux)
-1. **Steps**:
-   - Update package index: `sudo apt update`
-   - Install Maven: `sudo apt install maven`
+----
 
-### Maven Installation (Windows)
-1. **Steps**:
-   - Download Maven from [Apache Maven website](https://maven.apache.org/download.cgi).
-   - Extract the archive to a directory.
-   - Set `M2_HOME` environment variable.
-   - Add `%M2_HOME%\bin` to `PATH` environment variable.
+###  Installation of Maven on Linux
+
+### Prerequisites
+- Ensure sudo privileges for your user.
+
+### Step 1: Install OpenJDK 8
+```bash
+sudo yum install java-1.8.0-devel -y
+```
+
+### Step 2: Install Apache Maven
+#### 2.1 Download Maven
+```bash
+cd /opt/
+wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+```
+
+#### 2.2 Extract Maven
+```bash
+sudo tar -xvf apache-maven-3.8.6-bin.tar.gz
+```
+
+#### 2.3 Rename Maven Directory
+```bash
+sudo mv apache-maven-3.8.6 maven
+```
+
+#### 2.4 Configure Maven Environment
+Create `maven.sh` in `/etc/profile.d/` and add:
+```bash
+export M2_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}
+```
+
+#### 2.5 Set Execute Permissions
+```bash
+sudo chmod +x /etc/profile.d/maven.sh
+```
+
+#### 2.6 Load Configuration
+```bash
+source /etc/profile.d/maven.sh
+```
+Alternatively:
+```bash
+sudo source /etc/profile.d/maven.sh
+```
+
+### Step 3: Verify Installation
+```bash
+mvn --version
+```
+
+### Conclusion
+You've successfully installed Apache Maven 3.8.6 on Amazon Linux. If any issues arise, feel free to ask for further assistance.
+
+----
+
+### Installation of Maven on Windows
+To install Apache Maven on Windows, follow these steps:
+
+### Step 1: Install Java
+Before installing Maven, ensure Java Development Kit (JDK) is installed on your system. You can download it from [Oracle's website](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) or use OpenJDK.
+
+### Step 2: Download Maven
+1. Go to the [Apache Maven website](https://maven.apache.org/download.cgi).
+2. Download the latest Maven binary zip file to your desired location (e.g., `C:\`).
+
+### Step 3: Unzip Maven
+1. Navigate to `C:\` or the directory where you downloaded Maven.
+2. Extract the contents of the Maven zip file.
+
+### Step 4: Rename Maven Directory (Optional)
+If you wish to rename the Maven directory:
+- Right-click on the Maven folder.
+- Select "Rename" and enter the new name (e.g., `apache-maven-3.8.6` to `maven`).
+
+### Step 5: Set Environment Variables
+1. Right-click on "This PC" or "Computer" on your desktop or File Explorer.
+2. Select "Properties" → "Advanced system settings" → "Environment Variables...".
+3. Under "System variables", click "New":
+   - Variable name: `M2_HOME`
+   - Variable value: `C:\apache-maven-3.8.6` (or your Maven installation path)
+
+4. Find the "Path" variable in the "System variables" section, click "Edit", and add `%M2_HOME%\bin` at the end.
+
+### Step 6: Verify Maven Installation
+1. Open Command Prompt:
+   - Type `cmd` in the Start menu and press Enter.
+
+2. Check Maven version:
+   ```bash
+   mvn -version
+   ```
+
+This command should display Maven's version and other information if it's installed correctly.
+
+### Conclusion
+You have now installed Apache Maven on your Windows system. If you encounter any issues or have further questions, feel free to ask!
+----
 
 ### `pom.xml`
 1. **Definition**: Project Object Model XML file used by Maven.
