@@ -1,12 +1,9 @@
-### Nexus Overview
+### What is Nexus
 
-- **Open Source Artifact Repository**: Nexus is an open-source repository manager that organizes, stores, and distributes artifacts crucial for development.
-  
-- **Centralized Artifact Management**: It enables developers to centrally manage access to and deployment of all artifacts within an organization from a unified location, simplifying software distribution.
-
-- **Default Port**: Nexus operates on the default port number 8081.
-
-- **Current Version**: The latest version of Nexus is 3.0+.
+- Nexus is an open-source repository manager tool.
+- It organizes, stores, and distributes artifacts required for development. With Nexus, developers can centrally control access to and deployment of every artifact within an organization, simplifying software distribution.
+- The default port number for Nexus is 8081.
+- Current version is 3.0+.
 
 ---
 
