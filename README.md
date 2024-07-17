@@ -256,3 +256,29 @@ netstat [OPTIONS]
 ### Note:
 - Running `netstat` commands may require administrative privileges (`sudo`).
 ----
+
+### What is nslookup
+Nslookup ('Name Server Lookup') is a network administration command-line tool used to query DNS servers interactively and non-interactively, retrieving domain name or IP address mappings and DNS resource records (RR).
+
+### Basic Syntax:
+```
+nslookup [OPTION] [NAME | -] [SERVER]
+```
+
+- **NAME:** Domain name or IP address to query.
+- **SERVER:** Optional DNS server to query (if not specified, uses the default DNS server configured on your system).
+
+### Examples:
+
+1. **Querying an IP Address:**
+   ```bash
+   nslookup 8.8.8.8
+   ```
+   This command queries DNS to find the domain name associated with the IP address `8.8.8.8`.
+
+2. **Querying a Domain Name:**
+   ```bash
+   nslookup www.example.com
+   ```
+   This command queries DNS to find the IP address associated with the domain `www.example.com`.
+----
