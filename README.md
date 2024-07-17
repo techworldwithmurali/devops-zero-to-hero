@@ -282,13 +282,13 @@
 - **Examples:**
   - `df -h`: Displays disk space in human-readable format.
   - `df -a`: Displays all file systems, including those with 0 blocks.
-
+----
 ### du (Disk Usage)
 - **Usage:** Displays disk usage of files and directories.
 - **Examples:**
   - `du -h`: Displays disk usage in human-readable format.
   - `du /root -h`: Checks disk usage of the `/root` directory.
-
+----
 ### ps (Process Status)
 - **Usage:** Displays information about processes running in the system.
 - **Examples:**
@@ -297,7 +297,7 @@
   - `ps -T`: Displays processes associated with the current terminal.
   - `ps -u tomcat`: Displays processes associated with the user `tomcat`.
   - `ps -ef | grep 8080`: Checks if a process with port 8080 is running.
-
+----
 ### kill
 - **Usage:** Terminates processes.
 - **Examples:**
