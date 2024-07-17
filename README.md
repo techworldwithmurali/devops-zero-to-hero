@@ -9,6 +9,7 @@ There are different types of build tools available in DevOps. The main ones are:
 - **Ant**
 - **Maven**
 - **Gradle**
+
 ----
 ## What is Maven?
 
@@ -24,7 +25,7 @@ Maven is an open-source build tool. It primarily supports Java-based application
 
 ### Uploading Packages
 - Uploads the packaged artifacts to remote repositories like Nexus or JFrog Artifactory.
-```
+
 ----
 ### MobaXterm (Downloading in Windows)
 1. **Purpose**: Provides a terminal with an SSH client, X11 server, and tabbed terminal for Windows.
