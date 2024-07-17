@@ -30,123 +30,95 @@ Linux distributions (distros) package the Linux kernel with a collection of soft
 - **Fedora**: Rapidly evolving with the latest features for developers.
 - **Arch Linux**: Lightweight and customizable, favored by advanced users.
 ----
-### Basic Commands
+## Linux Basic Commands
 
-#### Navigation and File Management
-- **pwd** (Print Working Directory):
+- `pwd`: Used to check the present working directory.
   ```bash
   pwd
   ```
-- **cd** (Change Directory):
+
+- `cd`: Used to change the directory.
   ```bash
-  cd /opt
+  cd /path/to/directory
   ```
-- **ls** (List Directory Contents):
+
+- `ls`: Used to list the files and directories in Linux.
   ```bash
   ls
-  ll  # Detailed list
-  ls -a  # Show hidden files
-  ls -ltr
   ```
-- **cal** (Display a Calendar):
+
+- `cal`: Used to check the calendar.
   ```bash
   cal
-  cal 2024  # Specific year
   ```
-- **date** (Display Current Date and Time):
+
+- `date`: Used to check the date and time.
   ```bash
   date
   ```
-- **history** (Display Command History):
+
+- `history`: Used to check the command history.
   ```bash
   history
   ```
-- **clear** (Clear the Terminal Screen):
+
+- `clear`: Used to clear the terminal.
   ```bash
   clear
   ```
-- **man** (Manual Pages for Commands):
+
+- `man`: Displays the user manual of any command.
   ```bash
-  man ls  # Get help for 'ls' command
+  man ls
   ```
 
-#### System Information
-- **Checking CPU and Memory Info**:
+- `cat /etc/cpuinfo`: Checks CPU information in Linux.
   ```bash
-  cat /proc/cpuinfo
-  cat /proc/meminfo
+  cat /etc/cpuinfo
   ```
-- **ping** (Check Network Connectivity):
+
+- `cat /etc/meminfo`: Checks memory information in Linux.
+  ```bash
+  cat /etc/meminfo
+  ```
+
+- `ping`: Checks network connectivity.
   ```bash
   ping google.com
   ```
-- **curl** (Transfer Data with URLs):
+
+- `curl`: Transfers data to or from a server using various protocols.
   ```bash
-  curl https://google.com
+  curl https://example.com
   ```
 
-#### User and System Information
-- **who** and **whoami** (Display Current Users):
+- `who`: Displays users currently logged in.
   ```bash
   who
+  ```
+
+- `who -a` (or `who -all`): Displays all details of currently logged-in users.
+  ```bash
+  who -a
+  ```
+
+- `who -u`: Displays the system's username.
+  ```bash
+  who -u
+  ```
+
+- `whoami`: Displays the current username.
+  ```bash
   whoami
   ```
-- **grep** (Search Text):
-  ```bash
-  history |grep ls
-  ```
-- **last** (Display Last Logins):
+
+- `last`: Displays the list of all users logged in and out.
   ```bash
   last
   ```
-- **shutdown** (Shutdown or Restart System):
+
+- `shutdown`: Brings the system down in a secure way.
   ```bash
-  shutdown -h now  # Shutdown immediately
-  shutdown -r now  # Restart immediately
+  shutdown -h now
   ```
-----
-### Linux Directory Structure
-Linux organizes files in a hierarchical directory structure:
-- **/bin, /sbin, /usr/bin, /usr/sbin**: Executable binaries
-- **/etc**: Configuration files
-- **/home**: User directories
-- **/var**: Variable data
-- **/tmp**: Temporary files
-- **/proc**: Process information
-- **/dev**: Device files
-- **/mnt, /media**: Mount points for external devices
-----
-### Working with Files and Directories
-- **Creating, Viewing, and Deleting Files**:
-  ```bash
-  touch file.txt  # Create a new file
-  cat file.txt    # View file content
-  rm -f file.txt     # Delete a file
-  rm -rf file.txt     # Delete a file
-  ```
-- **Creating, Viewing, and Deleting Directories**:
-  ```bash
-  mkdir directory  # Create a directory
-  ls -l            # Check directory contents
-  rmdir directory  # Delete an empty directory
-  ```
-- **Copying and Moving Files**:
-  ```bash
-  cp file.txt /path/to/destination  # Copy file
-  mv file.txt /path/to/destination  # Move file
-  ```
-- **Working with Links and Inodes**:
-  ```bash
-  ln -s /path/to/source /path/to/symlink  # Create a symbolic link
-  ls -i file.txt                          # Show inode number
-  ```
-----
-### Working with File Permissions and Ownership
-- **chmod** (Change File Permissions):
-  ```bash
-  chmod +x script.sh   # Add execute permission
-  ```
-- **chown** (Change File Ownership):
-  ```bash
-  chown user:group file.txt  # Change owner and group
-  ```
+
