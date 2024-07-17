@@ -46,18 +46,14 @@ git --version
 4. **Follow the Prompts**: Click "Next" through the prompts to continue with the installation.
 5. **Default Options**: The default options are suitable for most users. Click "Finish" to complete the installation.
 
-### Overview of Git Workflow
+### Git Workflow
+![Git Workflow - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-5/images/Day%20%205-%20Git%20Workflow%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 Git workflow typically involves:
 - **Working Directory**: Where you modify files.
 - **Index (Staging Area)**: Where you stage changes before committing.
 - **Local Repository**: Your local copy of the Git repository.
 - **Remote Repository**: A shared repository (like GitHub) where your project is stored.
-
-Common workflow steps:
-1. Modify files in the working directory.
-2. Stage changes using `git add`.
-3. Commit changes to the local repository using `git commit`.
-4. Push changes to a remote repository using `git push`.
 
 ### Working with `git init` & `git config` commands
 - `git init`: Initializes a new Git repository.
