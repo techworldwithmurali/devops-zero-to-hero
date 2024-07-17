@@ -7,7 +7,7 @@
 
 ---
 
-# How to Install Nexus 3 on CentOS 7 / Amazon Linux
+# How to Install Nexus 3 on Amazon Linux
 
 ## Prerequisites:
 - Your user must have sudo privileges to install packages.
@@ -131,7 +131,7 @@ Login using:
 Follow on-screen instructions to reset the password and disable anonymous access.
 
 ## Conclusion
-Congratulations! Nexus 3 is now installed on your CentOS 7 / Amazon Linux instance. If you encounter any issues, feel free to ask in the comments.
+Congratulations! Nexus 3 is now installed on your Amazon Linux instance. If you encounter any issues, feel free to ask in the comments.
 
 ---
 
