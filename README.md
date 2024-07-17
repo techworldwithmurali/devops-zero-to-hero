@@ -303,4 +303,43 @@
 - **Examples:**
   - `kill -9 PID`: Sends a SIGKILL signal to terminate a process by its PID.
   - `kill -3 PID`: Sends a SIGQUIT signal to a process for a thread dump.
+----
 
+### env
+- **Usage:** Displays or modifies environment variables for the current shell session or executes a command in a modified environment.
+- **Example:** 
+  - `env`: Displays all environment variables.
+  - `env VAR=value command`: Executes `command` with `VAR` set to `value` in its environment.
+----
+### export
+- **Usage:** Sets an environment variable.
+- **Example:** 
+  - `export PATH=$PATH:/new/directory`: Adds `/new/directory` to the `PATH` environment variable.
+  - `export VAR=value`: Sets `VAR` to `value` in the current shell environment.
+----
+### echo
+- **Usage:** Prints text or variables to the terminal.
+- **Example:** 
+  - `echo "Hello, World!"`: Prints `Hello, World!` to the terminal.
+  - `echo $HOME`: Prints the value of the `HOME` environment variable.
+----
+### tac
+- **Usage:** Concatenates and prints files in reverse order line by line.
+- **Example:** 
+  - `tac file.txt`: Prints lines of `file.txt` in reverse order.
+----
+### sleep
+- **Usage:** Delays for a specified amount of time.
+- **Example:** 
+  - `sleep 5`: Pauses execution for 5 seconds.
+----
+### exit
+- **Usage:** Exits a shell or script.
+- **Example:** 
+  - `exit`: Exits the current shell session.
+  - `exit 1`: Exits a script with a status code indicating an error (non-zero status).
+----
+### diff
+- **Usage:** Compares files line by line and outputs the differences.
+- **Example:** 
+  - `diff file1.txt file2.txt`: Compares `file1.txt` and `file2.txt`, showing differences.
