@@ -273,3 +273,45 @@ The vi / vim editor is a popular and classic text editor in the Linux family:
      ls -li
      ```
    - The `-i` option with `ls` displays inode numbers along with other file details.
+----
+
+### File Permissions (`chmod`)
+
+1. **Understanding Permission Notation:**
+   - Permissions are represented by nine characters in Linux, where:
+     - The first character (`d` in your example) indicates the type of the file (`d` for directory, `-` for regular file).
+     - The next three characters (`rwx` for owner permissions).
+     - The next three characters (`r-x` for group permissions).
+     - The last three characters (`r-x` for others permissions).
+
+2. **Numeric Representation of Permissions:**
+   - Each permission (`r`, `w`, `x`) has a numeric value:
+     - `r` (Read) = 4
+     - `w` (Write) = 2
+     - `x` (Execute) = 1
+   - To set permissions using numeric notation:
+     - Example: `chmod 777 filename`
+       - Owner gets `rwx` (4+2+1 = 7)
+       - Group gets `rwx` (4+2+1 = 7)
+       - Others get `rwx` (4+2+1 = 7)
+
+3. **Recursively Changing Permissions:**
+   - To apply permissions recursively to all files and directories within a directory:
+     ```
+     chmod -R 666 directoryname/
+     ```
+     - This gives read (`r`) and write (`w`) permissions (`6`) to owner, group, and others.
+
+### File Ownership (`chown`)
+
+1. **Changing Ownership:**
+   - The `chown` command changes the user and/or group ownership of files and directories.
+   - Example: `chown user1:group1 filename`
+     - Changes `filename` to be owned by `user1` and assigned to `group1`.
+   
+2. **Recursively Changing Ownership:**
+   - To change ownership recursively for all files and directories within a directory:
+     ```
+     chown -R user:group directoryname/
+     ```
+     - This changes ownership to `user` and `group` for all files and directories within `directoryname`.
