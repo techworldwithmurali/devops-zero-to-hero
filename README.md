@@ -182,7 +182,7 @@ curl -v -X POST -u admin:admin123 \
 - Java is installed.
 - Maven is installed.
 - Nexus is installed.
-**Configuration:**
+### **Configuration:**
 - Declare the Nexus snapshot and release repositories in the pom.xml under the <distributionManagement> tag.
 - To authenticate with Nexus from Maven, declare the Nexus username and password in the settings.xml under the <server> tag.
 
