@@ -1,14 +1,31 @@
-### Build Tools
-1. **Definition**: Software tools that automate the process of compiling source code, packaging it, and deploying it.
-2. **Purpose**: Manage dependencies, execute tests, and facilitate continuous integration and delivery (CI/CD) pipelines.
+## What is a Build Tool?
 
-### Maven
-1. **Definition**: Build automation tool primarily for Java projects.
-2. **Functions**:
-   - Manages project dependencies.
-   - Builds and packages projects into distributable formats (e.g., JAR, WAR).
-   - Provides uniform build processes via Project Object Model (POM) files (`pom.xml`).
+Build tools are used to build the code and generate executable applications from the source code (e.g., `.war` for a Java application). Building incorporates compiling, linking, and packaging the code into a usable or executable form.
 
+## Types of Build Tools
+
+There are different types of build tools available in DevOps. The main ones are:
+
+- **Ant**
+- **Maven**
+- **Gradle**
+----
+## What is Maven?
+
+Maven is an open-source build tool. It primarily supports Java-based applications and assists developers throughout the entire process of a software project.
+
+## What Maven Does
+
+### Compiling the Source Code
+- Converts source code into executable bytecode.
+
+### Packaging the Results
+- Packages the compiled code into distributable formats such as JAR, WAR, or EAR files.
+
+### Uploading Packages
+- Uploads the packaged artifacts to remote repositories like Nexus or JFrog Artifactory.
+```
+----
 ### MobaXterm (Downloading in Windows)
 1. **Purpose**: Provides a terminal with an SSH client, X11 server, and tabbed terminal for Windows.
 2. **Download**: Available from the [official MobaXterm website](https://mobaxterm.mobatek.net/download.html).
