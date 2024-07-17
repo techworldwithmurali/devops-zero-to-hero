@@ -72,6 +72,7 @@ git init
 - **git config** command is a convenience function that is used to set Git configuration values on a global or local project level.
 
 Examples:
+```bash
 # Configure Git username and email
 git config --global user.name "Your Name"
 git config --global user.name "Muralidhara Reddy"
