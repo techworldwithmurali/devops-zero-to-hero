@@ -164,16 +164,6 @@ Nexus allows administrators to create users and define roles with specific permi
    
 5. **Assign Roles to Users**: Assign roles to users to control their access and capabilities within Nexus.
 
-### Example:
-
-```bash
-# Example command to create a user in Nexus using API
-curl -v -X POST -u admin:admin123 \
-  -H "Content-Type: application/json" \
-  -d '{"userId":"newuser", "firstName":"New", "lastName":"User", "email":"newuser@example.com", "password":"password123"}' \
-  http://localhost:8081/service/rest/beta/security/users
-```
-
 ---
 
 ## Integrating Nexus in Maven
