@@ -132,15 +132,17 @@ This command should display Maven's version and other information if it's instal
 
 ### Conclusion
 You have now installed Apache Maven on your Windows system. If you encounter any issues or have further questions, feel free to ask!
+
 ----
-The `pom.xml` file is a crucial part of a Maven project, serving as the Project Object Model (POM). Here's a breakdown of its key aspects and mandatory elements:
+
 
 ### What is `pom.xml`?
 
-The `pom.xml` file:
-- **Project Object Model**: Defines the structure and configuration of your Maven project.
-- **Contains**: Information necessary for Maven to manage the project's build, dependencies, plugins, and more.
-- **Usage**: Maven reads this file to understand how to build the project and execute tasks.
+- POM stands for Project Object Model.
+- It contains Maven project and configuration information needed to build the project, such as dependencies, build directory, source directory, test source directory, plugins, goals, etc.
+- Maven reads the pom.xml file and then executes the specified goals. Before Maven 2, this file was named project.xml.
+- Since Maven 2 (and in Maven 3), it has been renamed to pom.xml.
+
 
 ### Mandatory Elements in `pom.xml`:
 
