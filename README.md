@@ -1,122 +1,69 @@
-### Working with `find` command
-The `find` command is used to search for files in a directory hierarchy based on various criteria.
+### What is ssh
+The `ssh` command is used to securely connect to a remote server or machine. 
 
-Example:
+### ssh Command
+- **Usage:** Connects to a remote server using the SSH protocol.
+- **Syntax:** `ssh [options] [user@]hostname [command]`
+
+### Example:
 ```bash
-# Find all .txt files in the current directory
-find . -name "*.txt"
+ssh -i dev.pem ec2-user@43.205.113.179
+```
+- `-i dev.pem`: Specifies the identity file (`dev.pem`) used for authentication. This is often a private key file (.pem) used to authenticate with the server.
+- `ec2-user`: Specifies the username (`ec2-user`) to log in as on the remote server.
+- `43.205.113.179`: Specifies the IP address or hostname of the remote server you want to connect to.
 
-# Find files modified in the last 7 days
-find . -mtime -7
+### Notes:
+- Make sure `dev.pem` file is in the current directory or provide the full path to it.
+- Replace `ec2-user` with the appropriate username if you are connecting to a different type of server (e.g., `ubuntu` for Ubuntu instances, `centos` for CentOS instances, etc.).
+- Replace `43.205.113.179` with the actual IP address or hostname of the server you want to connect to.
+
+----
+
+### What is SCP
+The `scp` (secure copy) command is used to securely copy files or directories between hosts on a network using SSH encryption. Here's how you can use `scp` to copy files both from a remote server to your local machine and from your local machine to a remote server:
+
+### Copy from Remote Server to Local Machine
+
+```bash
+scp -i dev.pem ec2-user@43.205.113.179:/remote/path/to/file /local/path/to/destination
 ```
 
-### Working with `df`, `du`, `kill`, `ps` commands
-- `df`: Displays disk space usage of file systems.
-- `du`: Shows disk usage of files and directories.
-- `kill`: Terminates a process by its PID.
-- `ps`: Provides information about active processes.
+- `-i dev.pem`: Specifies the identity file (`dev.pem`) used for authentication.
+- `ec2-user@43.205.113.179`: Specifies the username (`ec2-user`) and IP address or hostname of the remote server.
+- `:/remote/path/to/file`: Specifies the path to the file or directory on the remote server you want to copy.
+- `/local/path/to/destination`: Specifies the path on your local machine where the file or directory will be copied.
 
-Examples:
+#### Example:
 ```bash
-# Check disk space usage
-df -h
+scp -i dev.pem ec2-user@43.205.113.179:/home/ec2-user/example.txt /home/user/Documents/
+```
+This command copies the `example.txt` file from the remote server located at `/home/ec2-user/`
 
-# Display disk usage of a directory
-du -sh directory/
+----
+To copy files or directories from your local machine to a remote server using `scp`, you reverse the source and destination in the command. Here’s how you do it:
 
-# Kill a process by PID
-kill PID
+### Copy from Local Machine to Remote Server
 
-# List all processes
-ps aux
+```bash
+scp -i dev.pem /local/path/to/file ec2-user@43.205.113.179:/remote/path/to/destination
 ```
 
-### Working with `echo`, `env`, `tac` commands
-- `echo`: Prints arguments to the standard output.
-- `env`: Displays environment variables.
-- `tac`: Prints lines of a file in reverse order.
+- `-i dev.pem`: Specifies the identity file (`dev.pem`) used for authentication.
+- `/local/path/to/file`: Specifies the path to the file or directory on your local machine that you want to copy.
+- `ec2-user@43.205.113.179`: Specifies the username (`ec2-user`) and IP address or hostname of the remote server.
+- `:/remote/path/to/destination`: Specifies the path on the remote server where the file or directory will be copied.
 
-Examples:
+#### Example:
 ```bash
-# Print a message to the console
-echo "Hello, World!"
-
-# Display all environment variables
-env
-
-# Print lines of a file in reverse
-tac file.txt
+scp -i dev.pem /home/user/Documents/example.txt ec2-user@43.205.113.179:/home/ec2-user/
 ```
 
-### Working with `sleep`, `exit`, `host`, `diff` commands
-- `sleep`: Delays execution for a specified amount of time.
-- `exit`: Terminates a script or shell with an exit status.
-- `host`: Performs DNS lookups.
-- `diff`: Compares files line by line.
+This command copies the `example.txt` file from your local machine's `/home/user/Documents/` directory to the remote server located at `/home/ec2-user/`.
 
-Examples:
-```bash
-# Sleep for 5 seconds
-sleep 5
+### Notes:
+- Ensure that the path to the identity file (`-i dev.pem`) is correct and accessible from your current location.
+- Replace `ec2-user` with the appropriate username for the remote server if it differs from `ec2-user`.
+- Replace `43.205.113.179` with the actual IP address or hostname of the remote server.
 
-# Exit a script with success status
-exit 0
-
-# Perform a DNS lookup
-host example.com
-
-# Compare two files
-diff file1.txt file2.txt
-```
-
-### Working with `scp`, `ssh` commands
-- `scp`: Securely copies files between hosts.
-- `ssh`: Connects to a remote host securely.
-
-Examples:
-```bash
-# Copy file from local to remote host
-scp file.txt user@remote_host:/path/to/destination/
-
-# SSH into a remote host
-ssh user@remote_host
-```
-
-### Working with `crontab` & `sed` commands
-- `crontab`: Manages cron jobs, scheduled tasks.
-- `sed`: Stream editor for filtering and transforming text.
-
-Examples:
-```bash
-# Edit the crontab file
-crontab -e
-
-# Replace text in a file using sed
-sed 's/old_text/new_text/g' file.txt
-```
-
-### Working with `telnet` & `netstat` commands
-- `telnet`: Communicates with another host using the Telnet protocol.
-- `netstat`: Displays network connections, routing tables, interface statistics, etc.
-
-Examples:
-```bash
-# Connect to a remote host via Telnet
-telnet remote_host 80
-
-# Display network connections and listening ports
-netstat -antp
-```
-
-### Working with `nslookup` & `ifconfig` commands
-- `nslookup`: Queries DNS for IP addresses and domain names.
-- `ifconfig`: Displays or configures network interface parameters.
-
-Examples:
-```bash
-# Lookup DNS information for a domain
-nslookup example.com
-
-# Display network interface details
-ifconfig
-```
+----
