@@ -1,4 +1,4 @@
-### Creation of Java application using Maven
+## Creation of Java application using Maven
 
 #### Step 1: Run `mvn archetype:generate`
 Open your terminal or command prompt and execute the following Maven command:
@@ -57,8 +57,44 @@ Following these steps will generate a new Maven project based on your inputs. Th
 If you have any more questions or need further clarification, feel free to ask!
 
 ----
+### Maven Build Lifecycles
+- A Build Lifecycle is a predefined sequence of phases that dictate the order in which goals are executed.
 
-### Creation of Web Application using Maven
+The Maven Build Lifecycle includes these standard phases:
+
+### Maven Build Lifecycle Phases:
+
+1. **validate**:
+   - **Description**: Validate the project configuration, including validating that all necessary information is available.
+   - **Use**: This phase typically checks whether the project is correct and all necessary information is available to proceed with the build.
+
+2. **compile**:
+   - **Description**: Compile the source code of the project.
+   - **Use**: During this phase, Maven compiles the source code (Java, Kotlin, etc.) found in `src/main/java` and places the compiled bytecode in `target/classes`.
+
+3. **test**:
+   - **Description**: Run tests using a suitable unit testing framework. These tests should not require the code be packaged or deployed.
+   - **Use**: Maven executes unit tests found in `src/test/java`. Tests are executed to ensure code quality and correctness.
+
+4. **package**:
+   - **Description**: Take the compiled code and package it in its distributable format, such as a JAR, WAR, or EAR.
+   - **Use**: Maven takes the compiled bytecode from `target/classes`, along with resources and other necessary files, and packages them into an archive format specified by the project's packaging type.
+
+5. **verify**:
+   - **Description**: Run any checks to verify the package is valid and meets quality criteria.
+   - **Use**: Maven runs checks to validate the package, ensuring it meets quality standards and integrity checks.
+
+6. **install**:
+   - **Description**: Install the package into the local repository, for use as a dependency in other projects locally.
+   - **Use**: Maven installs the packaged artifact into the local repository (`~/.m2/repository`), making it available for other projects on the same machine.
+
+7. **deploy**:
+   - **Description**: Copy the final package to the remote repository for sharing with other developers and projects.
+   - **Use**: Maven deploys the packaged artifact to a remote repository (like Nexus, Artifactory), making it available to other developers and projects.
+
+
+----
+## Creation of Web Application using Maven
 
 #### Step 1: Run `mvn archetype:generate`
 Open your terminal or command prompt and execute the following Maven command:
@@ -145,7 +181,7 @@ Setting `<skipTests>true</skipTests>` inside the `<configuration>` block of the 
 
 -----
 
-### Explore `pom.xml` Options
+## Explore `pom.xml` Options
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
