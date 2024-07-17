@@ -297,7 +297,8 @@ ifconfig
 - The ipconfig command in Windows is used to display the current TCP/IP network configuration values, including IP address, subnet mask, default gateway, and DNS servers.
 - It's a command-line tool that provides essential information about the network interface cards (NICs) installed on the system.
 - This command is particularly useful for troubleshooting network connectivity issues, verifying IP configuration settings, and diagnosing network problems.
-Here are some commonly used `ipconfig` commands in Windows:
+
+- Here are some commonly used `ipconfig` commands in Windows:
 
 1. **Display IP Configuration for All Adapters**:
    ```
