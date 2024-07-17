@@ -197,7 +197,8 @@ For example:
 ----
 ### Types of Maven Repository
 - A Maven repository is a directory containing packaged JAR files along with their corresponding pom.xml files.
-- Maven searches for dependencies in these repositories. There are three types of Maven repositories:
+- Maven searches for dependencies in these repositories.
+- There are three types of Maven repositories:
 **Local Repository:**
 - This repository is on the developer's local machine and stores all dependencies that have been downloaded.
 **Central Repository:**
