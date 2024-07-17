@@ -112,7 +112,8 @@ crontab -e
 
 ----
 ### What is sed
-The `sed` command, short for **Stream EDitor**, is a powerful utility in Unix-like operating systems for parsing and transforming text streams. It is commonly used for text manipulation tasks such as search and replace, editing, and filtering.
+- The `sed` command, short for **Stream EDitor**, is a powerful utility in Unix-like operating systems for parsing and transforming text streams.
+- It is commonly used for text manipulation tasks such as search and replace, editing, and filtering.
 
 ### Basic Syntax:
 ```
