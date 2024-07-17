@@ -2,6 +2,8 @@
 
 The Waterfall methodology is a linear and sequential approach to software development. It consists of distinct phases, each following the other in a predefined order. The typical phases include:
 
+![Waterfall methodology - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-1/images/Day%20%201-%20Waterfall%20methodology%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 1. **Requirement Analysis:** Gathering and documenting the requirements.
 2. **System Design:** Creating the system architecture and design.
 3. **Implementation:** Writing and compiling the code.
@@ -16,6 +18,8 @@ Each phase must be completed before moving on to the next, and there is little t
 
 Agile methodology is an iterative and incremental approach to software development that emphasizes flexibility, collaboration, and customer satisfaction. Agile involves continuous planning, testing, integration, and feedback throughout the development cycle. Key features of Agile include:
 
+![Agile Methodology - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-1/images/Day%20%201-Agile%20Methodology%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 1. **Iterative Development:** Developing the software in small, manageable increments.
 2. **Flexibility:** Adapting to changes even late in the development process.
 3. **Customer Collaboration:** Frequent communication with stakeholders to gather feedback and make adjustments.
@@ -23,6 +27,9 @@ Agile methodology is an iterative and incremental approach to software developme
 5. **Continuous Improvement:** Regularly reflecting on the process and seeking ways to improve.
 
 ### Difference between Waterfall & Agile Methodology
+
+![Difference bwteen Waterfall methodology and agile - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-1/images/Day%20%201-%20Difference%20bwteen%20Waterfall%20methodology%20and%20agile%20%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 
 ----
 ### What is DevOps?
