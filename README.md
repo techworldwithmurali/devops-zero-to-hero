@@ -41,9 +41,9 @@ scp -i dev.pem ec2-user@43.205.113.179:/home/ec2-user/example.txt /home/user/Doc
 This command copies the `example.txt` file from the remote server located at `/home/ec2-user/`
 
 ----
-To copy files or directories from your local machine to a remote server using `scp`, you reverse the source and destination in the command. Here’s how you do it:
 
 ### Copy from Local Machine to Remote Server
+To copy files or directories from your local machine to a remote server using `scp`.
 
 ```bash
 scp -i dev.pem /local/path/to/file ec2-user@43.205.113.179:/remote/path/to/destination
