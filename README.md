@@ -122,3 +122,48 @@ Linux distributions (distros) package the Linux kernel with a collection of soft
   shutdown -h now
   ```
 
+----
+### Linux directory structure
+
+In Linux, the Filesystem Hierarchy Standard (FHS) defines the structure and layout of the filesystem. Here are some of the default directories commonly found under the root directory `/` according to the FHS:
+
+1. **/bin**: Essential command binaries that are required for system operation (e.g., `ls`, `cp`, `mv`).
+
+2. **/boot**: Static files of the bootloader.
+
+3. **/dev**: Device files representing hardware devices (e.g., disks, printers).
+
+4. **/etc**: Host-specific system configuration files.
+
+5. **/home**: User home directories.
+
+6. **/lib** and **/lib64**: Essential shared libraries and kernel modules.
+
+7. **/media**: Mount points for removable media (e.g., USB drives).
+
+8. **/mnt**: Temporarily mounted filesystems.
+
+9. **/opt**: Optional application software packages.
+
+10. **/proc**: Virtual filesystem providing process and kernel information.
+
+11. **/root**: Home directory for the root user.
+
+12. **/run**: Runtime data for processes.
+
+13. **/sbin**: Essential system binaries (usually for system administration).
+
+14. **/srv**: Data for services provided by the system.
+
+15. **/sys**: Kernel and system information.
+
+16. **/tmp**: Temporary files.
+
+17. **/usr**: Secondary hierarchy containing read-only user data and programs.
+
+18. **/var**: Variable data files (e.g., logs, spool files).
+
+These directories help organize different types of files and provide a structured way to manage the filesystem in Linux systems.
+
+----
+
