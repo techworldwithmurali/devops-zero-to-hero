@@ -185,7 +185,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 - The Maven settings.xml file is commonly used to define the local repository location, alternate remote repository servers, and authentication information for private repositories.
 For example:
 - Nexus username and password can be declared within the <server> tag inside the settings.xml.
-##### settings.xml location
+### settings.xml location
 
 - Maven can utilize two settings.xml files simultaneously:
 - Maven installation directory:
@@ -199,9 +199,9 @@ For example:
 - A Maven repository is a directory containing packaged JAR files along with their corresponding pom.xml files.
 - Maven searches for dependencies in these repositories.
 - There are three types of Maven repositories:
-- **Local Repository:**
+### Local Repository:
  - This repository is on the developer's local machine and stores all dependencies that have been downloaded.
-- **Central Repository:**
+### Central Repository:
  - The default repository used by Maven, maintained by the Maven community. It contains a vast number of commonly used libraries.
-- **Remote Repository:**
+### Remote Repository:
  - Any other repository accessed over the network, typically used for sharing internal or proprietary libraries across a team or organization.
