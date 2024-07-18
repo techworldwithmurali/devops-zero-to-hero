@@ -184,9 +184,9 @@ There are two ways to set up SSH:
    Follow the prompts to save the key in the default location (`/home/your_username/.ssh/id_rsa`).
 
 2. **Copy the `id_rsa.pub` key to the destination server's `authorized_keys` file:**
-   ```sh
+```sh
   cat  ~/.ssh/id_rsa.pub
-   ```
+```
 
 3. **Connect to the destination server from the source server:**
    ```sh
