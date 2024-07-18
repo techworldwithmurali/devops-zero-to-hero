@@ -1,4 +1,4 @@
-# Integrating JFrog with Jenkins
+## Integrating JFrog with Jenkins
 
 ### Step 1: Install Required Plugins
 
@@ -64,7 +64,7 @@ Follow these steps to effectively integrate JFrog Artifactory with Jenkins for m
 
 ----
 
-# Integrating SonarQube with Jenkins
+## Integrating SonarQube with Jenkins
 
 [SonarQube](https://www.sonarqube.org/) is an open-source platform for continuous inspection of code quality. Integrating SonarQube with Jenkins allows you to automatically analyze and track the quality of your codebase during your CI/CD pipeline.
 
@@ -117,7 +117,7 @@ Follow these steps to effectively integrate SonarQube with Jenkins for continuou
 
 ----
 
-# Deploying WAR File in Tomcat using Jenkins
+## Deploying WAR File in Tomcat using Jenkins
 
 [Jenkins](https://www.jenkins.io/) can automate the deployment of a WAR (Web Application Archive) file into [Apache Tomcat](http://tomcat.apache.org/) using various plugins and configurations.
 
@@ -168,7 +168,7 @@ Before deploying a WAR file in Tomcat using Jenkins, ensure you have:
 - Verify deployment logs in Jenkins to troubleshoot any issues.
 
 -----
-# Exploring Build Periodically, Poll SCM, and Webhook in Jenkins
+## Exploring Build Periodically, Poll SCM, and Webhook in Jenkins
 
 [Jenkins](https://www.jenkins.io/) provides several mechanisms to trigger builds based on time intervals (`build periodically`), changes in source code (`poll SCM`), and external events (`webhook`). These features are essential for automating builds and deployments in CI/CD pipelines.
 
