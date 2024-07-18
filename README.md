@@ -1,42 +1,59 @@
 # Integrating JFrog with Jenkins
 
-[JFrog](https://jfrog.com/) provides Artifactory, a universal artifact repository manager, which integrates well with Jenkins for managing build artifacts.
+### Step 1: Install Required Plugins
 
-## Prerequisites
+1. **Log in to Jenkins:**
+   - Open your Jenkins dashboard.
 
-Before integrating JFrog with Jenkins, ensure you have:
+2. **Install the JFrog Artifactory Plugin:**
+   - Go to **Manage Jenkins** > **Manage Plugins**.
+   - Select the **Available** tab.
+   - Search for **Artifactory**.
+   - Check the box next to **Artifactory Plugin** and click **Install without restart**.
 
-- Access to JFrog Artifactory with appropriate permissions.
-- Jenkins installed and configured on your system.
+3. **Install the Maven Integration Plugin:**
+   - Go to **Manage Jenkins** > **Manage Plugins**.
+   - Select the **Available** tab.
+   - Search for **Maven Integration Plugin**.
+   - Check the box next to **Maven Integration Plugin** and click **Install without restart**.
 
-## Integration Steps
+### Step 2: Configure Artifactory in Jenkins
 
-### Step 1: Install JFrog Artifactory Plugin for Jenkins
+1. **Configure Artifactory Server:**
+   - Go to **Manage Jenkins** > **Configure System**.
+   - Scroll down to the **JFrog Artifactory** section.
+   - Click **Add Artifactory Server**.
+   - Enter the **Artifactory server URL**, **Username**, and **Password**.
+   - Click **Test Connection** to ensure Jenkins can communicate with Artifactory.
+   - Click **Save**.
 
-1. Navigate to Jenkins Dashboard.
-2. Go to `Manage Jenkins` -> `Manage Plugins`.
-3. Search for `JFrog Artifactory Plugin` and install it.
-4. Restart Jenkins if prompted.
+### Step 3: Configure a Jenkins Job to Use Artifactory
 
-### Step 2: Configure JFrog Artifactory in Jenkins
+1. **Create a New Maven Job:**
+   - On the Jenkins dashboard, click **New Item**.
+   - Enter a name for your job and select **Maven Project**.
+   - Click **OK**.
 
-1. Go to Jenkins Dashboard.
-2. Click on `Manage Jenkins` -> `Configure System`.
-3. Scroll down to `Artifactory` section.
-4. Configure the Artifactory server URL, username, password, and other necessary details.
-5. Test the connection to ensure Jenkins can communicate with JFrog Artifactory.
+2. **Configure the Source Code Management (SCM):**
+   - In the job configuration, go to the **Source Code Management** section.
+   - Select the appropriate SCM (e.g., Git) and enter the repository URL and credentials.
 
-### Step 3: Setup Jenkins Jobs to Deploy Artifacts to JFrog Artifactory
+2. **Configure the Build Section:**
+   - Go to the **Build** section.
+   - Add a **Invoke Artifactory Maven 3** build step.
+   - Select your configured **Artifactory server**.
+   - Specify the **Goals and options** for your Maven build (e.g., `clean install`).
+   - Specify the **Release repository** and **Snapshot repository** for deploying artifacts.
 
-1. Create or configure a Jenkins job for your project.
-2. In the job configuration, add a build step to deploy artifacts to JFrog Artifactory.
-3. Specify the repository, target path, and other deployment settings as per your project requirements.
-4. Save the job configuration.
+3. **Deploy Artifacts to Artifactory:**
+   - In the **Post-build Actions** section, add a **Deploy artifacts to Artifactory** action.
+   - Select your Artifactory server.
+   - Specify the target **Release repository** and **Snapshot repository**.
+   - Configure additional deployment options as needed.
 
-### Step 4: Use JFrog Artifactory for Build Artifacts Management
-
-1. As your Jenkins jobs build and create artifacts, they will be deployed to JFrog Artifactory.
-2. Use JFrog Artifactory's web interface or API to manage and distribute your artifacts.
+4. **Save and Build:**
+   - Click **Save** to save the job configuration.
+   - Run the job by clicking **Build Now**.
 
 ## Additional Resources
 
@@ -45,7 +62,8 @@ Before integrating JFrog with Jenkins, ensure you have:
 
 Follow these steps to effectively integrate JFrog Artifactory with Jenkins for managing and deploying your build artifacts.
 
--------
+----
+
 # Integrating SonarQube with Jenkins
 
 [SonarQube](https://www.sonarqube.org/) is an open-source platform for continuous inspection of code quality. Integrating SonarQube with Jenkins allows you to automatically analyze and track the quality of your codebase during your CI/CD pipeline.
