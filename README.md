@@ -6,6 +6,7 @@
 - In tomcat you can deployed the war file.
 - The default port number is 8080
 
+----
 ### Types of Roles Available in Tomcat
 
 In Tomcat, roles are used to define access permissions for users. Here are the common types of roles available:
@@ -16,6 +17,8 @@ In Tomcat, roles are used to define access permissions for users. Here are the c
 4. **Manager-jmx**: Allows JMX proxy access to the Manager application.
 5. **Admin-gui**: Allows access to the HTML interface of the Host Manager application.
 6. **Admin-script**: Allows access to the text interface of the Host Manager application.
+
+----
 
 ### How to Install Tomcat 7 in Amazon Linux
 
