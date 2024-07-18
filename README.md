@@ -1,4 +1,110 @@
-Setting up a Maven project in Jenkins involves a few straightforward steps. Here's a general outline to guide you through the process:
+### Creating a Jenkins Job
+
+Follow these steps to create a new Jenkins job named `sample-project`.
+
+#### Step 1: Access Jenkins Dashboard
+Open your web browser and navigate to your Jenkins instance URL:
+```
+http://your_ip_or_domain:8080
+```
+Log in with your Jenkins admin credentials.
+
+#### Step 2: Create a New Job
+1. On the Jenkins dashboard, click on **New Item** or **New Job**.
+2. In the **Enter an item name** field, type `sample-project`.
+3. Select **Freestyle project** or the job type you want to create.
+4. Click **OK**.
+
+#### Step 3: Configure the Job
+1. **General**:
+   - Add a description for your job if needed.
+   
+2. **Source Code Management**:
+   - If you are using a version control system like Git, select **Git** and enter the repository URL and credentials.
+
+3. **Build Triggers**:
+   - Choose the appropriate triggers to start the build, such as **Build periodically** or **GitHub hook trigger for GITScm polling**.
+
+4. **Build Environment**:
+   - Select any necessary build environment options.
+
+5. **Build**:
+   - Add build steps, such as **Execute shell** or **Invoke Gradle script**, to specify the build commands or scripts.
+   - Example for a shell command:
+     ```bash
+     echo "Building the project"
+     # Add your build commands here
+     ```
+
+6. **Post-build Actions**:
+   - Specify any post-build steps, such as **Publish JUnit test result report** or **Archive the artifacts**.
+
+#### Step 4: Save the Job
+1. After configuring the job, scroll down and click **Save**.
+
+#### Step 5: Build the Job
+1. On the job's page, click **Build Now** to start the build process.
+2. You can view the build status and console output by clicking on the build number in the **Build History** section.
+
+----
+Here are the steps to reset the administrator password in Jenkins:
+
+1. **Log in to your Jenkins controller.**
+
+2. **Stop the Jenkins process.**
+   ```sh
+   systemctl stop jenkins
+   ```
+
+3. **Edit the Jenkins configuration file (`config.xml`).**
+   - Locate the `config.xml` file inside your `jenkins/` or `$JENKINS_HOME` directory.
+   - Open the `config.xml` file with a text editor.
+
+4. **Disable security.**
+   - Find the line containing `<useSecurity>true</useSecurity>`.
+   - Change `true` to `false`.
+   ```xml
+   <useSecurity>false</useSecurity>
+   ```
+
+5. **Save the file and close the text editor.**
+
+6. **Restart the Jenkins service.**
+   ```sh
+   systemctl start jenkins
+   ```
+
+7. **Sign in to Jenkins.**
+   - Open your web browser and navigate to your Jenkins controller.
+
+8. **Access Manage Jenkins.**
+   - On the Jenkins dashboard, select **Manage Jenkins** from the navigation pane on the left side.
+
+9. **Configure Global Security.**
+   - On the **Manage Jenkins** page, under the **Security** section, select **Configure Global Security**.
+   - Under **Security Realm**, select **Jenkins' own user database** from the dropdown menu.
+   - Ensure the option **Allow users to sign up** is unchecked.
+   - Save your changes.
+
+10. **Manage Users.**
+    - On the **Manage Jenkins** page, select **Users**.
+    - You will see a list showing User IDs. Select the User ID that you want to change the password for.
+
+11. **Change the password.**
+    - Select **Configure** using the gear icon or the dropdown menu from the User ID.
+    - Locate the **Password** section to change your password.
+
+12. **Re-enable security (optional).**
+    - After changing the password and confirming you can log in, you may want to re-enable security.
+    - Edit the `config.xml` file again, changing `<useSecurity>false</useSecurity>` back to `true`.
+    - Restart the Jenkins service once more.
+
+After completing these steps, you should be able to log into your Jenkins instance again using the same username and the new password that you have just set.
+
+----
+
+### Setting up a Maven project in Jenkins
+
 
 ### Prerequisites:
 1. **Jenkins Installed**: Ensure Jenkins is installed and running.
