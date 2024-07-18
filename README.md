@@ -25,8 +25,37 @@ There are several configuration management tools available, each with its own ap
 
 ## Ansible workflow
 
+1. **Ansible Management Node:**
+   - This is the central control node where Ansible is installed.
+   - From this node, you define and run your automation tasks.
 
+2. **Playbook:**
+   - Playbooks are Ansible’s configuration, deployment, and orchestration language.
+   - They are written in YAML and define the tasks to be executed on managed nodes.
+   - Playbooks allow for the execution of multiple tasks in a specific order.
 
+3. **Inventory:**
+   - The inventory file lists all the managed nodes (hosts) and groups.
+   - This file specifies which machines are being managed by Ansible and how to connect to them.
+   - The default location for the inventory file is `/etc/ansible/hosts`.
+   - In the diagram, the inventory contains groups like `[Group A]`, `[Group B]`, and hosts like `Host1`, `Host2`, etc.
+
+4. **SSH Communication:**
+   - Ansible uses SSH (Secure Shell) to communicate with the managed nodes.
+   - This allows for secure command execution on remote servers without the need for additional software on the managed nodes.
+
+5. **Managed Nodes:**
+   - These are the servers that Ansible manages.
+   - In the diagram, there are different groups of hosts like `Host 1 Group A`, `Host 2 Group B`, and `Host N Group N`.
+
+### Workflow Explanation:
+
+- The **Ansible Management Node** initiates the automation process by executing **playbooks**.
+- The **inventory file** defines which servers will be managed and their grouping.
+- The management node connects to the managed nodes using **SSH**.
+- Tasks defined in the playbooks are executed on the managed nodes as per the defined inventory and roles.
+
+----
 # Installing Ansible on Linux
 
 ## Enable EPEL Repository
