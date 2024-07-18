@@ -114,6 +114,7 @@ Before integrating SonarQube with Jenkins, ensure you have:
 - [Jenkins Documentation](https://www.jenkins.io/doc/)
 
 Follow these steps to effectively integrate SonarQube with Jenkins for continuous code quality analysis in your CI/CD pipeline.
+
 ----
 
 # Deploying WAR File in Tomcat using Jenkins
