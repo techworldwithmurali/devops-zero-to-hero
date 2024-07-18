@@ -47,7 +47,7 @@ Log in with your Jenkins admin credentials.
 2. You can view the build status and console output by clicking on the build number in the **Build History** section.
 
 ----
-Here are the steps to reset the administrator password in Jenkins:
+### How to Reset the Jenkins Admin User's Password
 
 1. **Log in to your Jenkins controller.**
 
@@ -139,7 +139,11 @@ For a Freestyle project, the Maven build step would look like this:
 - **Build > Add build step > Invoke top-level Maven targets**
   - **Maven Version**: Select the Maven installation configured in Jenkins.
   - **Goals**: Enter Maven goals such as `clean install`.
----------
+
+----
+
+### Integrating Nexus with Jenkins
+
 Integrating Nexus with Jenkins allows you to leverage Nexus as a repository manager for storing artifacts produced by Jenkins builds. Here’s a step-by-step guide to integrate Nexus in Jenkins:
 
 ### Prerequisites:
