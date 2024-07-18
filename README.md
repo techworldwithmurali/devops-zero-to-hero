@@ -258,9 +258,7 @@ In this playbook:
 
 - **Extensibility**: With a vast library of core and community modules, Ansible can automate tasks across diverse systems, cloud platforms, and services, facilitating comprehensive infrastructure management.
 
-The list you've provided ranks the top 100 Ansible modules based on their usage statistics as of January 2019. Here’s an overview of some of the most popular modules and their rankings:
-
-### Top Ansible Modules (Based on Usage)
+### Top Ansible Modules
 
 1. **file**: Used for managing files and directories on remote systems.
 2. **include**: Includes and merges tasks from other files into the current playbook.
