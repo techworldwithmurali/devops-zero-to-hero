@@ -230,46 +230,43 @@ SonarQube allows administrators to create users for accessing and managing proje
 
 5. **Save Changes**: Confirm user creation and permissions assignment.
 
----
+----
 
 ## Integrating SonarQube in Maven
 
-Integrating SonarQube with Maven facilitates automated code quality analysis and reporting during builds.
+To integrate SonarQube with Maven, you can follow these steps and use the provided configuration:
 
-### Steps:
-
-1. **Configure SonarQube Scanner Plugin**: Add the SonarQube scanner plugin to Maven's `pom.xml` or global `settings.xml`.
-
+1. **Add SonarQube Maven Plugin Dependency**:
+   Include the SonarQube Maven plugin in your `pom.xml`:
    ```xml
-   <build>
-     <plugins>
-       <plugin>
-         <groupId>org.sonarsource.scanner.maven</groupId>
-         <artifactId>sonar-maven-plugin</artifactId>
-         <version>3.9.1.2184</version>
-       </plugin>
-     </plugins>
-   </build>
+   <dependency>
+       <groupId>org.sonarsource.scanner.maven</groupId>
+       <artifactId>sonar-maven-plugin</artifactId>
+       <version>3.2</version>
+   </dependency>
    ```
 
-2. **SonarQube Configuration**: Configure SonarQube properties in Maven settings to specify SonarQube server URL, authentication details, etc.
-
+2. **Configure SonarQube Profile in `pom.xml`**:
+   Add a profile to your `pom.xml` for SonarQube:
    ```xml
-   <settings>
-     <servers>
-       <server>
-         <id>sonarqube</id>
-         <username>your_username</username>
-         <password>your_password</password>
-       </server>
-     </servers>
-   </settings>
+   <profiles>
+       <profile>
+           <id>sonar</id>
+           <activation>
+               <activeByDefault>true</activeByDefault>
+           </activation>
+           <properties>
+               <!-- Optional URL to server. Default value is http://localhost:9000 -->
+               <sonar.host.url>http://13.233.6.6:9000</sonar.host.url>
+           </properties>
+       </profile>
+   </profiles>
    ```
 
-3. **Run Analysis**: Execute Maven build with SonarQube goals to trigger code analysis and send results to the SonarQube server.
-
+3. **Run SonarQube Analysis with Maven**:
+   Execute the SonarQube analysis using Maven with the specified properties:
    ```bash
-   mvn clean install sonar:sonar
+   mvn sonar:sonar -Dsonar.host.url=http://13.233.6.6:9000 -Dsonar.login=admin -Dsonar.password=Admin@123
    ```
 
-4. **View Results**: Access SonarQube dashboard to view detailed code quality reports and analysis results.
+This setup will integrate SonarQube with your Maven build process and allow you to perform static code analysis as part of your build.
