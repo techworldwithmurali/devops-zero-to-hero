@@ -262,11 +262,11 @@ To integrate SonarQube with Maven, you can follow these steps and use the provid
        </profile>
    </profiles>
    ```
-
+**Note:** Update your sonarqube URL
 3. **Run SonarQube Analysis with Maven**:
    Execute the SonarQube analysis using Maven with the specified properties:
    ```bash
    mvn sonar:sonar -Dsonar.host.url=http://13.233.6.6:9000 -Dsonar.login=admin -Dsonar.password=Admin@123
    ```
-
+**Note:** Update your sonarqube username and password
 This setup will integrate SonarQube with your Maven build process and allow you to perform static code analysis as part of your build.
