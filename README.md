@@ -62,3 +62,6 @@ pipeline {
 - Ensure that the credentials (`Github_credentails` and `Tomcat-credentails`) are correctly configured in Jenkins Credentials Manager with appropriate permissions.
 - Replace placeholders (`http://3.95.5.158:8080`) with the actual URL of your Tomcat server.
 - Adjust `war: '**/*.war'` according to your project's WAR file name and location after the Maven build.
+
+----
+#### Store the Jenkinsfile in GitHub.
