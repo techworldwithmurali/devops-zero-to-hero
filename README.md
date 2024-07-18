@@ -171,29 +171,49 @@ There are generally two main ways to set up SSH for use with Ansible:
 
 2. **Key-Based Authentication (Public Key Authentication)**: This is the recommended and more secure method for SSH authentication in Ansible. It involves generating SSH key pairs (public and private keys) on the control node and then copying the public key to the managed nodes. Ansible then uses the private key to authenticate SSH connections to the managed nodes.
 
-### Setting Up SSH in Ansible
+There are two ways to set up SSH:
+1. Manually
+2. Using `ssh-copy-id`
 
-Here’s how you typically set up SSH for Ansible:
+#### Setting Up the SSH Connection Manually
 
-- **Generate SSH Key Pair**: On the control node (where Ansible is installed):
-  ```bash
-  ssh-keygen -t rsa
-  ```
-  Follow the prompts to generate a new SSH key pair.
+1. **Create the SSH key using the `ssh-keygen` command:**
+   ```sh
+   ssh-keygen
+   ```
+   Follow the prompts to save the key in the default location (`/home/your_username/.ssh/id_rsa`).
 
-- **Copy Public Key to Managed Nodes**: Use `ssh-copy-id` or manually copy the public key to each managed node:
-  ```bash
-  ssh-copy-id username@hostname
-  ```
-  Replace `username` and `hostname` with the appropriate values for your managed nodes.
+2. **Copy the `id_rsa.pub` key to the destination server's `authorized_keys` file:**
+   ```sh
+  cat  ~/.ssh/id_rsa.pub
+   ```
 
-- **Test SSH Connectivity**: Verify that Ansible can connect to managed nodes using SSH:
-  ```bash
-  ansible all -m ping
-  ```
-  This command uses the `ping` module to test connectivity to all managed nodes.
+3. **Connect to the destination server from the source server:**
+   ```sh
+   ssh user_name@server_ip_address
+   ```
+   You should now be able to log in to the destination server from the source server without entering a password.
 
-- **Configure Ansible Inventory**: Ensure your Ansible inventory (`hosts` file) contains the appropriate details (hostname, IP address, SSH port, etc.) for your managed nodes.
+#### Setting Up the SSH Connection Using `ssh-copy-id`
+
+1. **Create the SSH key using the `ssh-keygen` command:**
+   ```sh
+   ssh-keygen
+   ```
+   Follow the prompts to save the key in the default location (`/home/your_username/.ssh/id_rsa`).
+
+2. **Copy the `id_rsa.pub` key to the destination server using the `ssh-copy-id` command:**
+   ```sh
+   ssh-copy-id user_name@server_ip_address
+   ```
+   Replace `user_name` with your username and `server_ip_address` with the destination server's IP address.
+
+3. **Connect to the destination server from the source server:**
+   ```sh
+   ssh user_name@server_ip_address
+   ```
+   You should now be able to log in to the destination server from the source server without entering a password.
+   
 ----
 # Ansible Modules 
 
