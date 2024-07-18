@@ -193,11 +193,13 @@ Default credentials:
 
 Change the default password immediately after login.
 
----
+
 
 ### Conclusion
 
-You have successfully installed SonarQube 8.9.9 on CentOS 7 / Amazon Linux. Customize configurations and security settings as per your requirements. If you encounter any issues, feel free to seek further assistance. Happy coding!
+You have successfully installed SonarQube 8.9.9 on  Amazon Linux. Customize configurations and security settings as per your requirements. If you encounter any issues, feel free to seek further assistance. Happy coding!
+
+----
 ## SonarQube Dashboard Overview
 
 The SonarQube Dashboard provides a comprehensive view of code quality metrics, issues, and project health.
