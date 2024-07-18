@@ -1,6 +1,10 @@
 ### What is Tomcat?
 
-Apache Tomcat is an open-source web server and servlet container developed by the Apache Software Foundation. It implements the Java Servlet, JavaServer Pages (JSP), Java Expression Language, and Java WebSocket technologies. Tomcat provides a "pure Java" HTTP web server environment in which Java code can run. It's widely used for hosting Java applications and is known for its simplicity, stability, and performance.
+- Tomcat is an open source.
+- It is a web server and developed by Apache software foundation.
+- Apache Tomcat is purely java based application and serve java servlets , jsp pages.
+- In tomcat you can deployed the war file.
+- The default port number is 8080
 
 ### Types of Roles Available in Tomcat
 
@@ -13,9 +17,9 @@ In Tomcat, roles are used to define access permissions for users. Here are the c
 5. **Admin-gui**: Allows access to the HTML interface of the Host Manager application.
 6. **Admin-script**: Allows access to the text interface of the Host Manager application.
 
-### How to Install Tomcat 7 in CentOS 7/Amazon Linux
+### How to Install Tomcat 7 in Amazon Linux
 
-In this session, we will discuss how to install Tomcat 7 in CentOS 7 or Amazon Linux.
+In this session, we will discuss how to install Tomcat 7 in Amazon Linux.
 
 #### Prerequisites:
 You must be logged in via SSH as a sudo or root user to install the packages.
@@ -167,6 +171,7 @@ sudo systemctl restart tomcat
 ### Conclusion
 You have successfully installed Tomcat 7. If you face any issues during the installation, feel free to reach out in the comment box.
 
+----
 ### Tomcat Dashboard Overview
 
 The Tomcat dashboard provides a web interface to manage the server, deploy applications, and monitor server status. Here are the key sections:
@@ -176,6 +181,7 @@ The Tomcat dashboard provides a web interface to manage the server, deploy appli
 3. **Host Manager**: Provides a way to manage virtual hosts.
 4. **Server Information**: Displays detailed information about the server and the environment it's running in.
 
+----
 
 ### Deploy WAR File in Tomcat
 
