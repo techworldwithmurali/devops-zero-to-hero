@@ -1,3 +1,31 @@
+### Creating a User in Jenkins
+
+1. **Log in to Jenkins:**
+   - Open your web browser and navigate to Jenkins using your server URL (`localhost:8080` or your custom URL).
+
+2. **Access User Management:**
+   - Click on `Manage Jenkins` on the left sidebar of the Jenkins homepage.
+
+3. **Navigate to Manage Users:**
+   - Select `Manage Users`.
+
+4. **Add a New User:**
+   - Click on `Create User` from the top-left corner.
+
+5. **Fill Out User Details:**
+   - Enter the following details for the new user:
+     - **Username:** sunil
+     - **Password:** (Set a secure password)
+     - **Confirm Password:** (Re-enter the password for confirmation)
+     - Optionally, you can fill out the email address and other fields as needed.
+
+6. **Assign User Roles (Optional):**
+   - Configure any specific roles or permissions for the user if required. This can be done through Jenkins' role-based access control (RBAC) system if it's configured.
+
+7. **Save the User:**
+   - Click on `Create User` or `Save` to create the user.
+
+----
 ### Understanding Master and Slave Nodes in Jenkins
 
 In Jenkins:
