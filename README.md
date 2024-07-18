@@ -175,14 +175,6 @@ In this tutorial, you have learned how to install and complete the initial confi
 
 ----
 
-## 2. Deploying the Jenkins WAR file in Tomcat
-If you have Tomcat installed, you can deploy the Jenkins WAR file into Tomcat. This method allows you to run Jenkins as part of your existing Tomcat server.
-
-## 3. Running the Jenkins WAR file directly
-You can also run the Jenkins WAR file directly using Java. This method is quick and doesn't require a servlet container like Tomcat.
-
-## 4. Installing Jenkins using Docker
-Another way to install Jenkins is using Docker. This method allows you to run Jenkins in a container, which is isolated from your host system and easy to manage.
 
 ### Installing Jenkins on a CentOS/RHEL System Using Yum
 
