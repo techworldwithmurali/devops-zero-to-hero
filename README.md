@@ -1,6 +1,7 @@
 ### Jenkins Overview
 
-**Jenkins** is a popular Continuous Integration/Continuous Delivery (CI/CD) tool that is open source and entirely written in Java. It is widely used for automating various stages of the software development lifecycle.
+- **Jenkins** is a popular Continuous Integration/Continuous Delivery (CI/CD) tool that is open source and entirely written in Java.
+- It is widely used for automating various stages of the software development lifecycle.
 
 #### Key Features:
 - **Open Source**: Freely available for anyone to use and modify.
