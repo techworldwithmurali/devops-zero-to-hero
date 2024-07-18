@@ -223,7 +223,7 @@ pipeline {
 11. **when**: Defines conditional execution of stages or steps based on predefined conditions, such as success, failure, or specific environment variables.
 
 ----
-To build and push artifacts to JFrog Artifactory using Jenkins Declarative Pipeline, you typically integrate with a build tool like Maven or Gradle and then use Artifactory's plugins or REST API for artifact deployment. Below is a basic example demonstrating how to achieve this:
+### Build and Push to Nexus using Jenkins  Declarative Pipeline
 
 ### Example Jenkins Declarative Pipeline
 
