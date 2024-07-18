@@ -8,9 +8,24 @@ Ansible is a configuration management and automation tool that simplifies the ma
 
 There are several configuration management tools available, each with its own approach and strengths:
 
-- **Ansible**: Ansible is agentless, using SSH to connect and manage remote servers.
-- **Chef**: Chef uses a declarative approach to infrastructure automation, focusing on defining system states.
-- **Puppet**: Puppet uses a declarative language to describe system configuration, enforcing desired state on managed systems.
+#### Ansible
+- Uses SSH to communicate with servers and run tasks.
+- YAML-based syntax for defining automation tasks.
+- Known for simplicity, ease of use, and scalability.
+
+#### Chef
+- Uses a master-agent architecture with a Chef server (master) and Chef clients (agents).
+- Recipes (Ruby-based) define tasks, and Cookbooks organize recipes.
+- Supports both push and pull models for configuration management.
+
+#### Puppet
+- Uses a master-agent architecture with a Puppet master (server) and Puppet agents (nodes).
+- Puppet DSL (Domain-Specific Language) defines configuration states.
+- Focuses on enforcing desired system configurations and managing infrastructure as code.
+
+## Ansible workflow
+
+
 
 # Installing Ansible on Linux
 
@@ -54,7 +69,8 @@ Ansible uses several default files and directories for configuration and managem
 The default location for yum repositories on CentOS/RHEL systems is:
 
 - `/etc/yum.repos.d`
----
+
+----
 # Ansible ad-hoc commands
 
 Ansible ad-hoc commands are useful for performing quick tasks without the need for writing a playbook. Here are the three common ways to use Ansible ad-hoc commands:
