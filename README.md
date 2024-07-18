@@ -105,43 +105,41 @@ JFrog Artifactory provides robust repository management capabilities for organiz
 
 ## Integrating JFrog in Maven
 
-Integrating JFrog Artifactory with Maven allows seamless artifact deployment and dependency resolution in Maven builds.
+**Prerequisites:**
+- Java is installed.
+- Maven is installed.
+- Jfrog is installed.
+### **Configuration:**
+- Declare the Jfrog snapshot and release repositories in the pom.xml under the <distributionManagement> tag.
+- To authenticate with Jfrog from Maven, declare the Jfrog username and password in the settings.xml under the <server> tag.
 
-### Steps:
-
-1. **Configure Maven Settings**: Edit `settings.xml` located in Maven's `conf` directory.
-
-2. **Add Artifactory Repository**: Specify JFrog Artifactory repository details including URL, username, and password in `settings.xml`.
-
-3. **Build Configuration**: Update Maven build configurations to include JFrog Artifactory repositories for artifact resolution and deployment.
-
-4. **Testing**: Validate integration by performing Maven builds, ensuring artifacts are fetched from and deployed to JFrog Artifactory repositories.
-
-### Example `settings.xml` Configuration:
+**pom.xml**
 
 ```xml
-<settings>
-  ...
+<distributionManagement>
+    <snapshotRepository>
+      <id>jfrog-snapshots</id>
+      <url>http://your-host:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>jfrog-releases</id>
+      <url>http://your-host:8081/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
+```
+
+**settings.xml**
+```xml
   <servers>
     <server>
-      <id>artifactory-releases</id>
+      <id>jfrog-releases</id>
       <username>your_username</username>
       <password>your_password</password>
     </server>
     <server>
-      <id>artifactory-snapshots</id>
+      <id>jfrog-snapshots</id>
       <username>your_username</username>
       <password>your_password</password>
     </server>
   </servers>
-
-  <mirrors>
-    <mirror>
-      <id>artifactory</id>
-      <mirrorOf>*</mirrorOf>
-      <url>http://localhost:8081/artifactory/maven-public/</url>
-    </mirror>
-  </mirrors>
-  ...
-</settings>
 ```
