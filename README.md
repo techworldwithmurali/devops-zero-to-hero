@@ -1,18 +1,67 @@
-## JFrog Artifactory Overview
+### JFrog Artifactory Overview
 
-JFrog Artifactory is a universal artifact repository manager that supports all major packaging formats, build tools, and CI servers. It enables seamless integration across the DevOps pipeline for managing and distributing software artifacts.
+**JFrog Artifactory** is a universal binary repository manager that supports all major package formats, build tools, and CI servers. It allows for efficient and secure management of artifacts from development to distribution.
 
-### Key Features:
+**Server Specifications**:
+- **CPU**: 4 CPUs
+- **Memory**: 8 GB RAM
+- **Ports**: 8081 (default port for Artifactory), 8082 (can be configured for other purposes)
 
-- **Universal Artifact Repository**: Supports various package formats including Maven, npm, Docker, NuGet, PyPI, and more.
-  
-- **Build Integration**: Integrates with popular build tools and CI servers like Jenkins, Bamboo, TeamCity, etc.
-  
-- **Access Control**: Granular permissions to control access to repositories, artifacts, and operations.
-  
-- **Monitoring and Analytics**: Insights into artifact usage, repository health, and performance metrics.
-  
-- **High Availability**: Clustering and replication for high availability and disaster recovery.
+**Artifact Types Supported**:
+- JAR (Java ARchive)
+- WAR (Web Application Archive)
+- EAR (Enterprise Archive)
+- Docker images
+
+**Popular Artifactory Tools**:
+1. **JFrog Artifactory**
+2. **Sonatype Nexus**
+
+### System Requirements
+
+**Minimal System Requirements for JFrog Artifactory**:
+- **CPU**: 4 cores
+- **Memory**: 8 GB RAM
+- **Disk Space**: Minimum of 100 GB (varies depending on usage)
+- **Operating System**: Linux, Windows, or MacOS
+
+**Recommended System Requirements**:
+- **CPU**: 8 cores or more
+- **Memory**: 16 GB RAM or more
+- **Disk Space**: 200 GB or more, preferably on SSDs for better performance
+- **Operating System**: Enterprise-grade Linux distributions (e.g., CentOS, Ubuntu)
+
+### Pricing and Plans
+
+JFrog Artifactory offers various pricing plans based on the features and support required. The plans typically include:
+
+1. **JFrog Artifactory OSS (Open Source)**:
+   - Free and open-source version.
+   - Limited to a subset of features.
+   - Ideal for small projects and open-source development.
+
+2. **JFrog Artifactory Pro**:
+   - Paid version with additional features.
+   - Supports advanced repository management, high availability, and multi-site replication.
+   - Suitable for medium to large enterprises.
+
+3. **JFrog Artifactory Enterprise**:
+   - Comprehensive solution with all the features of the Pro version plus advanced enterprise-grade capabilities.
+   - Includes features like advanced security, scalability, and integration options.
+   - Ideal for large-scale enterprises with complex artifact management needs.
+
+4. **JFrog Artifactory Enterprise+**:
+   - The most advanced plan, offering full access to the JFrog Platform.
+   - Includes Artifactory, Xray (for security and compliance), Distribution, Pipelines, and Mission Control.
+   - Designed for large organizations with extensive DevOps requirements.
+
+**Pricing**:
+- **OSS**: Free
+- **Pro**: Pricing varies, typically starting at around $98/month per server
+- **Enterprise**: Custom pricing based on needs and scale
+- **Enterprise+**: Custom pricing, typically higher due to comprehensive features and support
+
+For exact pricing, it is recommended to contact JFrog sales or visit their [pricing page](https://jfrog.com/pricing/).
 
 ---
 
