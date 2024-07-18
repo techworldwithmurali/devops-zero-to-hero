@@ -131,8 +131,8 @@ After completing these steps, you can access Jenkins by navigating to `http://<y
 
 8. **Search Box:**
    - Enables searching for specific jobs, builds, or configuration options within Jenkins.
-
-#### Exploring "Manage Jenkins":
+----
+### Exploring "Manage Jenkins":
 
 Under "Manage Jenkins," you'll find various options to configure and manage Jenkins itself. Here are some key sections and options typically available:
 
