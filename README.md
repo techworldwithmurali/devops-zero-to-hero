@@ -223,56 +223,53 @@ pipeline {
 11. **when**: Defines conditional execution of stages or steps based on predefined conditions, such as success, failure, or specific environment variables.
 
 ----
+
 ### Build and Push to Nexus using Jenkins  Declarative Pipeline
 
-### Example Jenkins Declarative Pipeline
+Your Jenkins Pipeline script defines a basic pipeline that clones a Git repository, builds the code using Maven, and pushes artifacts to Nexus. 
 
 ```groovy
 pipeline {
     agent any
     
-    environment {
-        // Define environment variables as needed
-        ARTIFACTORY_URL = 'https://your-artifactory-url'
-        ARTIFACTORY_REPO = 'your-repository'
-        ARTIFACTORY_USER = credentials('artifactory-username')
-        ARTIFACTORY_PASS = credentials('artifactory-password')
+    tools {
+        // Define Maven tool installation
+        maven "Maven-3.9.6"
+    }
+    
+    options {
+        timestamps() // Adds timestamps to the console output
+        buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '2')) // Configure build discard settings
+        disableConcurrentBuilds() // Ensures that only one build executes at a time for this pipeline
     }
     
     stages {
-        stage('Build') {
+        stage('Clone the repo') {
             steps {
-                // Example: Maven build
-                sh 'mvn clean package'
+                // Checkout code from Git repository
+                git branch: 'main', credentialsId: 'Github_credentails', url: 'https://github.com/MooleMuraliDharaReddy/java-app.git'
             }
         }
         
-        stage('Publish to Artifactory') {
+        stage('Build the code') {
             steps {
-                script {
-                    def server = Artifactory.server ARTIFACTORY_URL
-                    def buildInfo = Artifactory.newBuildInfo()
-                    
-                    // Publish artifacts to Artifactory
-                    server.upload spec: buildInfo, fileSpec: '''{
-                        "files": [
-                            {
-                                "pattern": "target/*.jar",
-                                "target": "libs/"
-                            }
-                        ]
-                    }'''
-                }
+                // Build project using Maven
+                sh 'mvn clean install'
             }
         }
-    }
-    
-    post {
-        success {
-            echo 'Build and publish to Artifactory succeeded!'
-        }
-        failure {
-            echo 'Build or publish to Artifactory failed!'
+        
+        stage('Push the artifacts to Nexus') {
+            steps {
+                // Upload artifact to Nexus repository
+                nexusArtifactUploader artifacts: [[artifactId: 'Spring3HibernateApp', file: '/var/lib/jenkins/workspace/jenkins-build-and-deploy/target/Spring3HibernateApp.war', type: 'war']], 
+                                     credentialsId: 'Nexus-credentials', 
+                                     groupId: 'Spring3HibernateApp', 
+                                     nexusUrl: 'http://54.173.248.84:8081', 
+                                     nexusVersion: 'nexus3', 
+                                     protocol: 'http', 
+                                     repository: 'maven-snapshots', 
+                                     version: '1.2-SNAPSHOT'
+            }
         }
     }
 }
@@ -280,21 +277,21 @@ pipeline {
 
 ### Explanation:
 
-1. **Agent**: The pipeline runs on any available agent (`agent any`).
+- **Agent:** `agent any` specifies that this pipeline can execute on any available agent in Jenkins.
+  
+- **Tools:** `maven "Maven-3.9.6"` ensures that the pipeline uses Maven version 3.9.6 for building the project. Make sure this matches the tool installation name in Jenkins Global Tool Configuration.
 
-2. **Environment**: Defines environment variables for Artifactory URL, repository, username, and password. Replace `your-artifactory-url`, `your-repository`, `artifactory-username`, and `artifactory-password` with your actual Artifactory details. Ensure that credentials are securely managed in Jenkins.
+- **Options:**
+  - `timestamps()`: Adds timestamps to the console output for each build step.
+  - `buildDiscarder`: Configures the build discard strategy to keep builds for 5 days and retain a maximum of 2 builds.
+  - `disableConcurrentBuilds()`: Prevents concurrent builds of this pipeline to avoid conflicts.
 
-3. **Stages**:
-   - **Build**: Executes the Maven build (`mvn clean package`). Replace with the build command appropriate for your project (e.g., `gradle build` for Gradle projects).
-   
-   - **Publish to Artifactory**: Uses the Artifactory plugin to upload artifacts (`*.jar` files in this example) to the specified repository (`libs/` directory in Artifactory). Adjust the `fileSpec` pattern and target as per your project's artifact structure and repository setup.
-
-4. **Post Build**:
-   - **Success/Failure**: Provides optional steps to execute after the pipeline completes, based on whether the pipeline succeeds or fails.
+- **Stages:**
+  - **Clone the repo:** Uses the Git plugin to checkout the code from the specified GitHub repository.
+  - **Build the code:** Executes Maven command `mvn clean install` to build the Maven project.
+  - **Push the artifacts to Nexus:** Uses the Nexus Artifact Uploader plugin (`nexusArtifactUploader`) to upload the built WAR artifact to the Nexus repository.
 
 ### Notes:
-
-- Ensure that the Jenkins server has the Artifactory plugin installed and configured properly.
-- Replace `mvn clean package` with your build command (`gradle build`, `ant`, etc.) depending on your project's build tool.
-- Adjust the `fileSpec` JSON structure according to your artifact's file patterns and target directories in Artifactory.
-- Use Jenkins credentials (`credentials('credential-id')`) to securely manage sensitive information like Artifactory username and password.
+- Ensure that the credentials (`Github_credentails` and `Nexus-credentials`) are correctly configured in Jenkins Credentials Manager with appropriate permissions.
+- Replace placeholders (`/var/lib/jenkins/workspace/jenkins-build-and-deploy/target/Spring3HibernateApp.war`, `http://54.173.248.84:8081`, etc.) with actual paths and URLs relevant to your setup.
+- Adjust `groupId`, `artifactId`, `version`, `repository`, and other parameters in `nexusArtifactUploader` according to your project's Maven configuration and Nexus repository setup.
