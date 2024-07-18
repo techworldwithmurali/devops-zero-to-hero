@@ -26,6 +26,51 @@
    - Click on `Create User` or `Save` to create the user.
 
 ----
+
+### Setting up Role-based Authorization Strategy in Jenkins
+In Jenkins, the Role Strategy plugin is used to implement a role-based mechanism for managing user permissions.
+
+#### Prerequisites
+- Jenkins is installed and running.
+- You have administrative access to Jenkins.
+
+#### Steps
+
+1. **Install Role Strategy Plugin:**
+   - Go to `Manage Jenkins` -> `Manage Plugins`.
+   - In the `Available` tab, search for "Role-based Authorization Strategy" or "Role Strategy".
+   - Install the plugin and restart Jenkins if prompted.
+
+2. **Configure Global Roles:**
+   - Go to `Manage Jenkins` -> `Configure Global Security`.
+   - Under `Authorization`, select `Role-Based Strategy`.
+   - Click on `Manage and Assign Roles`.
+   - Click `Add Role` to define new roles or `Manage Roles` to edit existing ones.
+
+3. **Define Global Roles:**
+   - **Overall Roles:** Define permissions that apply globally across Jenkins:
+     - Example permissions: Administer Jenkins, Manage Users, etc.
+   - **Agent Roles:** Define permissions related to controlling agents/nodes.
+   - **Job Roles:** Define permissions related to job creation, configuration, and deletion.
+   - **View Roles:** Define permissions for accessing specific Jenkins views.
+   - **SCM Roles:** Define permissions related to configuring source code management settings.
+
+4. **Configure Item Roles (Optional):**
+   - For more granular control, define roles specific to Jenkins items (Jobs, Pipelines, Folders).
+   - Customize permissions per item type, such as job configuration, build, delete, etc.
+
+5. **Configure Agent Roles (Optional):**
+   - Define roles specific to Jenkins agents/nodes to control actions like agent configuration, launching, and deletion.
+
+6. **Assign Roles to Users and Groups:**
+   - After defining roles, assign them to individual users or groups:
+     - Navigate to `Manage Jenkins` -> `Manage Users`.
+     - Edit a user or group and assign roles under `Role-Based Matrix Authorization Strategy`.
+
+7. **Save Configuration:**
+   - Click `Save` or `Apply` to apply the role configurations.
+
+----
 ### Understanding Master and Slave Nodes in Jenkins
 
 In Jenkins:
