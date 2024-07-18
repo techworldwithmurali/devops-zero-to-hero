@@ -217,7 +217,8 @@ There are two ways to set up SSH:
 ----
 # Ansible Modules 
 
-Ansible modules are fundamental units of work in Ansible, responsible for executing tasks on remote systems managed by Ansible. These modules are designed to perform specific actions like installing packages, managing files, or interacting with cloud resources. Here's an overview of Ansible modules:
+- Ansible modules are fundamental units of work in Ansible, responsible for executing tasks on remote systems managed by Ansible.
+- These modules are designed to perform specific actions like installing packages, managing files, or interacting with cloud resources. Here's an overview of Ansible modules:
 
 
 ### Types of Ansible Modules:
