@@ -174,8 +174,8 @@ There are generally two main ways to set up SSH for use with Ansible:
 There are two ways to set up SSH:
 1. Manually
 2. Using `ssh-copy-id`
-
-#### Setting Up the SSH Connection Manually
+----
+### Setting Up the SSH Connection Manually
 
 1. **Create the SSH key using the `ssh-keygen` command:**
    ```sh
@@ -193,8 +193,8 @@ There are two ways to set up SSH:
    ssh user_name@server_ip_address
    ```
    You should now be able to log in to the destination server from the source server without entering a password.
-
-#### Setting Up the SSH Connection Using `ssh-copy-id`
+----
+### Setting Up the SSH Connection Using `ssh-copy-id`
 
 1. **Create the SSH key using the `ssh-keygen` command:**
    ```sh
