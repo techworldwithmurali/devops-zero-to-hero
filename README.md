@@ -16,32 +16,43 @@ JFrog Artifactory is a universal artifact repository manager that supports all m
 
 ---
 
-## Installation of JFrog Artifactory
+## Installation of JFrog Artifactory in Linux
 
-### Linux Installation
+1. **Prepare the Server:**
+   - Ensure your server meets the required specifications (4 CPUs, 8GB RAM).
+   - Open ports 8081 and 8082 in your firewall.
 
-1. **Prerequisites**: Ensure Java JDK (minimum version required) is installed.
+2. **Download the JFrog Artifactory RPMs Repository File:**
+   ```bash
+   wget https://releases.jfrog.io/artifactory/artifactory-rpms/artifactory-rpms.repo -O jfrog-artifactory-rpms.repo
+   ```
 
-2. **Download**: Obtain the JFrog Artifactory installation package for Linux from [JFrog's official site](https://www.jfrog.com/artifactory/).
+3. **Move the Repository File to the YUM Repositories Directory:**
+   ```bash
+   sudo mv jfrog-artifactory-rpms.repo /etc/yum.repos.d/
+   ```
 
-3. **Installation**: Execute the installation script or commands provided in the downloaded package.
+4. **Update YUM and Install JFrog Artifactory OSS:**
+   ```bash
+   sudo yum update -y && sudo yum install jfrog-artifactory-oss -y
+   ```
 
-4. **Configuration**: Follow on-screen prompts to configure Artifactory settings during installation.
+5. **Start and Enable Artifactory Service:**
+   ```bash
+   sudo systemctl start artifactory
+   sudo systemctl enable artifactory
+   ```
 
-5. **Start Artifactory**: Start the Artifactory service using system-specific commands (`systemctl`, `service`, etc.).
+6. **Verify Artifactory Status:**
+   ```bash
+   sudo systemctl status artifactory
+   ```
 
-### Windows Installation
+7. **Access JFrog Artifactory:**
+   - Open a web browser and navigate to `http://<your-server-ip>:8081/artifactory`.
 
-1. **Prerequisites**: Ensure Java JDK (minimum version required) is installed.
-
-2. **Download**: Download the Windows installer package from [JFrog's official site](https://www.jfrog.com/artifactory/).
-
-3. **Installation**: Run the installer executable and follow the installation wizard instructions.
-
-4. **Configuration**: Configure Artifactory settings as prompted during the installation process.
-
-5. **Start Artifactory**: Start the Artifactory service using Windows Services or command-line tools.
-
+8. **Configure Artifactory (Optional):**
+   - Follow the on-screen setup instructions to configure your instance of JFrog Artifactory.
 ---
 
 ## JFrog Artifactory Dashboard Overview
