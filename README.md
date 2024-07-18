@@ -8,7 +8,7 @@
 - **Open Source**: It is freely available under an open-source license, with options for commercial support and enterprise features.
 - **Language Support**: Supports more than 25 programming languages including Java, C#, JavaScript, TypeScript, PHP, Python, and more.
 - **Default Port**: The default port for accessing the SonarQube web interface is 9000.
-- **Current LTS Version**: As of the latest update, the Long-Term Support (LTS) version is 8.9.10.
+- **Current LTS Version**: As of the latest update, the Long-Term Support (LTS) version is 9.9.6.
 - **Java Requirement**: Requires OpenJDK 11 for running SonarQube.
 
 ### System Requirements:
