@@ -18,6 +18,16 @@ In Tomcat, roles are used to define access permissions for users. Here are the c
 5. **Admin-gui**: Allows access to the HTML interface of the Host Manager application.
 6. **Admin-script**: Allows access to the text interface of the Host Manager application.
 
+```xml
+<role rolename="manager-gui"/>
+<role rolename="manager-status"/>
+<role rolename="manager-script"/>
+<role rolename="manager-jmx"/>
+<role rolename="admin-gui"/>
+<role rolename="admin-script"/>
+
+<user username="tomcat" password="tomcat" roles="manager-gui,admin-gui,manager-status,manager-script,manager-jmx"/>
+```
 ----
 
 ### How to Install Tomcat 7 in Amazon Linux
