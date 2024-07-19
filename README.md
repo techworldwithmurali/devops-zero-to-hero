@@ -1,6 +1,16 @@
-### JFrog Artifactory Overview
+#### INSTRUCTOR DETAILS
 
-**JFrog Artifactory** is a universal binary repository manager that supports all major package formats, build tools, and CI servers. It allows for efficient and secure management of artifacts from development to distribution.
+|  Information             | Details                                                                      |
+|----------------------    |------------------------------------------------------------------------------|
+| **Name**                 | Moole Muralidhara Reddy                                                      |
+| **Email**                | techworldwithmurali@gmail.com                                                |
+| **Website**              | https://www.techworldwithmurali.com               |
+| **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
+
+### What is JFrog Artifactory
+
+- **JFrog Artifactory** is a universal binary repository manager that supports all major package formats, build tools, and CI servers.
+- It allows for efficient and secure management of artifacts from development to distribution.
 
 **Server Specifications**:
 - **CPU**: 4 CPUs
@@ -63,7 +73,7 @@ JFrog Artifactory offers various pricing plans based on the features and support
 
 For exact pricing, it is recommended to contact JFrog sales or visit their [pricing page](https://jfrog.com/pricing/).
 
----
+----
 
 ## Installation of JFrog Artifactory in Linux
 
@@ -102,7 +112,7 @@ For exact pricing, it is recommended to contact JFrog sales or visit their [pric
 
 8. **Configure Artifactory (Optional):**
    - Follow the on-screen setup instructions to configure your instance of JFrog Artifactory.
----
+----
 
 ## JFrog Artifactory Dashboard Overview
 
@@ -118,7 +128,7 @@ The JFrog Artifactory Dashboard provides an intuitive interface for managing rep
   
 - **System Health**: Monitor system health, performance metrics, and usage statistics.
 
----
+----
 
 ## Creation of Users and Groups in JFrog Artifactory
 
@@ -136,7 +146,7 @@ JFrog Artifactory allows administrators to create users and groups to control ac
 
 5. **Assign Permissions**: Assign permissions to users and groups based on repository access requirements.
 
----
+----
 
 ## JFrog Repository Management
 
@@ -150,7 +160,7 @@ JFrog Artifactory provides robust repository management capabilities for organiz
   
 - **Repository Mirroring**: Set up repository mirroring and replication for high availability and disaster recovery.
 
----
+----
 
 ## Integrating JFrog in Maven
 
