@@ -1,3 +1,12 @@
+#### INSTRUCTOR DETAILS
+
+|  Information             | Details                                                                      |
+|----------------------    |------------------------------------------------------------------------------|
+| **Name**                 | Moole Muralidhara Reddy                                                      |
+| **Email**                | techworldwithmurali@gmail.com                                                |
+| **Website**              | https://www.techworldwithmurali.com               |
+| **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
+
 ### What is a Build Tool?
 
 Build tools are used to build the code and generate executable applications from the source code (e.g., `.war` for a Java application). Building incorporates compiling, linking, and packaging the code into a usable or executable form.
@@ -207,3 +216,5 @@ For example:
  - The default repository used by Maven, maintained by the Maven community. It contains a vast number of commonly used libraries.
 ### Remote Repository:
  - Any other repository accessed over the network, typically used for sharing internal or proprietary libraries across a team or organization.
+
+![ Types of Maven Repository- Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-8/images/Day%20%208-%20%20Types%20of%20Maven%20Repository-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
