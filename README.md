@@ -195,11 +195,11 @@
    ```
 -----
 
-1. **What is a Dockerfile?**
+### What is a Dockerfile?
    - A Dockerfile is a text document used to automate the process of creating Docker images.
    - It contains a series of instructions that define how to assemble a Docker image.
 
-2. **Why is Dockerfile required?**
+### Why is Dockerfile required?
    - Docker Hub offers a wide range of pre-existing Docker images.
    - However, customization of these images to meet specific requirements is often necessary.
    - Dockerfile enables users to customize and build Docker images automatically based on their specific needs.
@@ -227,8 +227,6 @@
    ```
 
 ### Simple Example:
-
-Here’s a simple Dockerfile example that demonstrates both comments and an instruction:
 
 ```dockerfile
 # Dockerfile to print "Hello docker!"
@@ -278,8 +276,8 @@ In this example:
    - **Purpose:** Copies files, directories, or remote URLs to the Docker image's filesystem.
    - **Examples:**
      ```dockerfile
-     ADD /root/file /data/
-     ADD ["/root/file", "/data/"]
+     ADD /root/file /usr/local/tomcat
+     ADD ["/root/file", "/usr/local/tomcat"]
      ```
    - **Explanation:** 
      - The `ADD` instruction can be used in shell form or executable form.
@@ -289,8 +287,8 @@ In this example:
    - **Purpose:** Copies files or directories from the Docker build context into the image's filesystem.
    - **Examples:**
      ```dockerfile
-     COPY /root/file /data/
-     COPY ["/root/file", "/data/"]
+     COPY /root/file /usr/local/tomcat
+     COPY ["/root/file", "/usr/local/tomcat"]
      ```
    - **Explanation:** 
      - Similar to `ADD`, `COPY` also has shell and executable forms.
@@ -336,10 +334,7 @@ In this example:
    - **Purpose:** Executes commands in a new layer on top of the current image and commits the results.
    - **Usage:**
      ```dockerfile
-     RUN yum update
-     RUN systemctl start httpd
-     RUN ["yum", "update"]
-     RUN ["systemctl", "start", "httpd"]
+     RUN apt update
      ```
    - **Explanation:** 
      - Shell form (`RUN yum update`): Commands are executed within a shell.
@@ -349,19 +344,18 @@ In this example:
    - **Purpose:** Creates a mount point and/or assigns a volume to the container.
    - **Usage:**
      ```dockerfile
-     VOLUME /data
-     VOLUME /appdata:/appdata
+     VOLUME /opt
+     VOLUME /opt:/usr/local/tomcat
      ```
    - **Explanation:** 
-     - The first form (`VOLUME /data`) creates a mount point with the specified path.
-     - The second form (`VOLUME /appdata:/appdata`) mounts a host directory (`/appdata` on the host) into the container.
+     - The first form (`VOLUME /opt`) creates a mount point with the specified path.
+     - The second form (`VOLUME /opt:/usr/local/tomcat`) mounts a host directory (`/opt` on the host) into the container.
 
 11. **WORKDIR:**
    - **Purpose:** Sets the working directory for any `RUN`, `CMD`, `ENTRYPOINT`, `COPY`, and `ADD` instructions.
    - **Usage:**
      ```dockerfile
-     WORKDIR /app/
-     WORKDIR /java_dst/
+     WORKDIR /usr/local/tomcat
      ```
    - **Explanation:** 
      - Specifies the directory path within the Docker container where subsequent commands are executed.
