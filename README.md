@@ -47,7 +47,7 @@ After logging in to DockerHub, you'll be taken to your Dashboard. Here’s an ov
 - **Documentation:** Access Docker documentation and guides directly from the Dashboard.
 ----
 
-# What is Docker Image
+### What is Docker Image
 
 - A Docker image is a lightweight, standalone, executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files.
 - It serves as the basis for containers, which are isolated environments where applications can run without interfering with each other or the underlying infrastructure.
