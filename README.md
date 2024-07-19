@@ -10,6 +10,8 @@
 
 ### Difference between Containerization and Virtual Machine
 
+![Difference between Containerization and Virtual Machine - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-23/images/Day%20%2023-%20Difference%20between%20Containerization%20and%20Virtual%20Machine-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 ### Virtualization
 - **Definition**: Virtualization enables you to run multiple operating systems on the hardware of a single physical server.
 - **Structure**:
