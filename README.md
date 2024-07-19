@@ -89,6 +89,9 @@ maven 'Maven-3.9.6'
 }
 ```
 -----
+
+### Jenkins Pipeline without Shared Library
+
 Without using a Jenkins shared library, you would need to duplicate the common code across multiple Jenkins pipeline scripts. This approach can lead to maintenance challenges and code redundancy. However, you can still organize and reuse code within the same pipeline script by using functions and script blocks.
 
 ## Example of a Jenkins Pipeline Script Without Shared Library
@@ -100,63 +103,31 @@ Imagine you have several Jenkins pipelines that need to perform the same tasks w
 ```groovy
 pipeline {
     agent any
-
-    environment {
-        MAVEN_HOME = tool 'Maven'  // Assuming Maven is configured in Jenkins tools
+   
+ tools{
+        maven "Maven-3.9.6"
     }
-
+ options {
+  timestamps()
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '2')
+  disableConcurrentBuilds()
+}
     stages {
-        stage('Checkout') {
+        stage('Clone the repo') {
             steps {
-                checkout scm
+              git branch: 'main', changelog: false, credentialsId: 'github-credentials', poll: false, url: 'https://github.com/techworldwithmurali/microservice-one.git'
             }
         }
-
-        stage('Build') {
+        
+        
+         stage('Build the code') {
             steps {
-                script {
-                    mavenBuild()
-                }
+             sh 'mvn clean install'
             }
         }
-
-        stage('Test') {
-            steps {
-                script {
-                    mavenTest()
-                }
-            }
-        }
-
-        stage('Package') {
-            steps {
-                script {
-                    mavenPackage()
-                }
-            }
-        }
+        
+        
     }
-
-    post {
-        always {
-            cleanWs()
-        }
-    }
-}
-
-def mavenBuild() {
-    echo 'Running Maven Build...'
-    sh "${MAVEN_HOME}/bin/mvn clean compile"
-}
-
-def mavenTest() {
-    echo 'Running Maven Tests...'
-    sh "${MAVEN_HOME}/bin/mvn test"
-}
-
-def mavenPackage() {
-    echo 'Packaging with Maven...'
-    sh "${MAVEN_HOME}/bin/mvn package"
 }
 ```
 
@@ -192,7 +163,8 @@ def mavenPackage() {
 
 This Jenkins pipeline script utilizes a shared library to streamline common tasks like cloning a Git repository and building the code. 
 
-# Clone and build the 
+-----
+# Clone and build theCode
 ### 1. Shared Library Scripts
 
 **gitClone.groovy**
@@ -227,7 +199,7 @@ pipeline {
     stages {
         stage('Git clone') {
             steps {
-                gitClone(params.branchName, 'github-credentials', 'https://github.com/telugudevopsguru/microservice-one.git')
+                gitClone(params.branchName, 'github-credentials', 'https://github.com/techworldwithmurali/microservice-one.git')
             }
         }
 
