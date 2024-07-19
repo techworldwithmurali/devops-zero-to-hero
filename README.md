@@ -1,3 +1,13 @@
+#### INSTRUCTOR DETAILS
+
+|  Information             | Details                                                                      |
+|----------------------    |------------------------------------------------------------------------------|
+| **Name**                 | Moole Muralidhara Reddy                                                      |
+| **Email**                | techworldwithmurali@gmail.com                                                |
+| **Website**              | https://www.techworldwithmurali.com               |
+| **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
+
+
 ### Build & Deploy to Tomcat usinge Jenkins Declarative Pipeline 
 This  Jenkins Pipeline script is designed to clone a Git repository, build the Java application using Maven, and deploy the built WAR file to Apache Tomcat.
 
