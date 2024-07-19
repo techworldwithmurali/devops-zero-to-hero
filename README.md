@@ -182,10 +182,6 @@
      - The default network type for standalone containers. Containers on the same bridge network can communicate with each other.
    - **Host Network**:
      - Removes network isolation between the Docker host and Docker containers, using the host's networking directly.
-   - **Overlay Network**:
-     - Used for Docker Swarm services. It allows containers running on different Docker hosts to communicate securely.
-   - **Macvlan Network**:
-     - Assigns a MAC address to each container, making it appear as a physical device on the network.
    - **None Network**:
      - Disables all networking for a container. The container is completely isolated from the network.
 
