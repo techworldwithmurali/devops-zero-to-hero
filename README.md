@@ -22,8 +22,8 @@
 - **Memory**: At least 4GB RAM is recommended for running Jenkins efficiently.
 
 #### Versions:
-- **Latest Version**: 2.451
-- **LTS Version**: 2.440.2
+- **Latest Version**: 2.467
+- **LTS Version**: 2.452.3
 
 ### CI/CD Tools Comparison
 
