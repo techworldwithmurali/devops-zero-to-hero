@@ -5,6 +5,9 @@
 
 ### Ansible Role Structure
 
+![Ansible Role Directory Structure - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-22/images/Day%20%2022-%20Ansible%20Role%20Directory%20Structure%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
+
 When you create an Ansible role using `ansible-galaxy init rolename`, it sets up a directory structure with the following standard directories:
 
 1. **defaults**: Contains default variables for the role. Variables defined here have the lowest priority and are easily overridden.
