@@ -1,3 +1,12 @@
+#### INSTRUCTOR DETAILS
+
+|  Information             | Details                                                                      |
+|----------------------    |------------------------------------------------------------------------------|
+| **Name**                 | Moole Muralidhara Reddy                                                      |
+| **Email**                | techworldwithmurali@gmail.com                                                |
+| **Website**              | https://www.techworldwithmurali.com               |
+| **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
+
 ### What is SonarQube?
 
 **SonarQube** is an open-source platform used for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities. 
@@ -43,7 +52,7 @@ SonarQube offers various plans to cater to different needs:
 
 For the most accurate and up-to-date pricing, it's best to visit the [SonarQube pricing page](https://www.sonarqube.org/plans-and-pricing/) or contact SonarQube sales.
 
----
+----
 
 ## How to Install SonarQube 8.9.9 on Amazon Linux
 
@@ -214,7 +223,7 @@ The SonarQube Dashboard provides a comprehensive view of code quality metrics, i
   
 - **Trends and History**: Tracks code quality trends over time and historical analysis reports.
 
----
+----
 
 ## Creation of User in SonarQube
 
