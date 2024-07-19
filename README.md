@@ -17,6 +17,9 @@ Imagine you have several Jenkins pipelines that need to perform the same tasks w
 
 A typical Jenkins shared library follows a specific folder structure to organize the code and resources effectively.
 
+![Folder Structure of Jenkins Shared Library - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-27/images/Day%20%2027-%20%20Folder%20Structure%20of%20Jenkins%20Shared%20Library-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
+
 ### 1. `src` Directory:
 
 The `src` directory is organized like a typical Java project. This allows you to use the `import` statement to include classes from other parts of the `src` directory.
@@ -93,6 +96,9 @@ maven 'Maven-3.9.6'
 ### Jenkins Pipeline without Shared Library
 
 Without using a Jenkins shared library, you would need to duplicate the common code across multiple Jenkins pipeline scripts. This approach can lead to maintenance challenges and code redundancy. However, you can still organize and reuse code within the same pipeline script by using functions and script blocks.
+
+![Without Jenkins Shared Library - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-27/images/Day%20%2027-%20%20Without%20Jenkins%20Shared%20Library-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 
 ## Example of a Jenkins Pipeline Script Without Shared Library
 
