@@ -386,4 +386,3 @@ In this playbook (`tomcat.yml`):
    ```
 
 This playbook will automate the installation of Apache Tomcat on the specified `tomcat` hosts, performing all necessary setup steps including user and group creation, downloading Tomcat, configuring permissions, and starting the Tomcat service.
-```
