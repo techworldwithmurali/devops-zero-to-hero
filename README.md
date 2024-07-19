@@ -132,23 +132,35 @@ pipeline {
 ```
 
 ### Explanation:
+#### `pipeline { ... }`
+The entire script is defined within the `pipeline` block, which is the declarative syntax for defining a Jenkins pipeline.
 
-1. **Define Environment Variables**:
-   - `MAVEN_HOME`: Path to the Maven installation.
+#### `agent any`
+This specifies that the pipeline can run on any available agent.
 
-2. **Pipeline Stages**:
-   - `Checkout`: Checks out the source code from the repository.
-   - `Build`: Calls the `mavenBuild` function to compile the code.
-   - `Test`: Calls the `mavenTest` function to run tests.
-   - `Package`: Calls the `mavenPackage` function to package the application.
+#### `tools { ... }`
+This block defines the tools that are required for the pipeline.
+- `maven "Maven-3.9.6"`: Specifies that the pipeline should use Maven version 3.9.6.
 
-3. **Common Functions**:
-   - `mavenBuild()`: Defines the steps for building the project using Maven.
-   - `mavenTest()`: Defines the steps for running tests using Maven.
-   - `mavenPackage()`: Defines the steps for packaging the application using Maven.
+#### `options { ... }`
+This block sets various options for the pipeline.
+- `timestamps()`: Adds timestamps to the console output for better log readability.
+- `buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '2')`: Configures the log rotation policy. It keeps build logs for up to 5 days and retains the most recent 2 builds.
+- `disableConcurrentBuilds()`: Ensures that only one instance of this pipeline can run at a time, preventing concurrent builds.
 
-4. **Post Actions**:
-   - `cleanWs()`: Cleans the workspace after the pipeline finishes.
+#### `stages { ... }`
+This block defines the different stages of the pipeline.
+- **Stage: 'Clone the repo'**
+  - **steps { ... }**: The steps to perform in this stage.
+  - `git branch: 'main', changelog: false, credentialsId: 'github-credentials', poll: false, url: 'https://github.com/techworldwithmurali/microservice-one.git'`
+    - Clones the repository from the specified URL.
+    - `branch: 'main'`: Specifies the branch to clone.
+    - `changelog: false`: Disables the changelog generation.
+    - `credentialsId: 'github-credentials'`: Specifies the credentials to use for accessing the repository.
+    - `poll: false`: Disables polling for changes.
+- **Stage: 'Build the code'**
+  - **steps { ... }**: The steps to perform in this stage.
+  - `sh 'mvn clean install'`: Runs the Maven command to clean and build the project.
 
 ### Pros and Cons of Not Using Shared Libraries
 
