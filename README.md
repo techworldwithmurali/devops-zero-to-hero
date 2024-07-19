@@ -1,3 +1,13 @@
+#### INSTRUCTOR DETAILS
+
+|  Information             | Details                                                                      |
+|----------------------    |------------------------------------------------------------------------------|
+| **Name**                 | Moole Muralidhara Reddy                                                      |
+| **Email**                | techworldwithmurali@gmail.com                                                |
+| **Website**              | https://www.techworldwithmurali.com               |
+| **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
+
+
 ### What is GitHub
 - GitHub is a web-based platform used for version control and collaborative software development.
 - It is built around the Git version control system and provides a range of features to facilitate code sharing, collaboration, and project management. 
