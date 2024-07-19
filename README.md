@@ -7,7 +7,7 @@
 | **Website**              | https://www.techworldwithmurali.com               |
 | **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
 
-# What is Ansible playbook
+### What is Ansible playbook
 
 - An Ansible playbook is a configuration management and orchestration tool that defines a set of instructions (tasks) for managing remote systems.
 - It allows users to automate tasks such as software installation, configuration management, and application deployments across multiple servers or devices simultaneously. 
@@ -66,7 +66,7 @@ Here's a simplified example of an Ansible playbook:
 - **Reusability**: Playbooks, tasks, and roles can be reused across different projects and environments, promoting efficiency and standardization in IT operations.
 
 ----
-## How to install httpd and git using ansible playbook?
+### How to install httpd and git using ansible playbook?
 
   Your Ansible playbook for installing `httpd` (Apache HTTP server) and `git` on localhost looks mostly correct. Here’s your playbook formatted properly:
 
@@ -115,7 +115,7 @@ To execute this playbook:
 - Verify the package names (`httpd` and `git`) are correct for your Linux distribution.
 
 ----
-# ansible with_items
+### ansible with_items
 - The `with_items` directive in Ansible (also known as `loop` in newer versions of Ansible) is used to iterate over a list of items, allowing you to perform repetitive tasks more efficiently.
 - It is commonly used in playbooks where you need to apply the same module (task) to multiple items, such as installing multiple packages, creating multiple users, or configuring multiple files.
 
@@ -168,11 +168,11 @@ To execute this playbook:
 
 ----
 
-# Ansible Variables in Playbooks
+### Ansible Variables in Playbooks
 
 Ansible variables allow you to assign values that can be reused throughout your playbook. They are useful for defining configurations, conditions, and more.
 
-## Example: Using Variables in Playbooks
+### Example: Using Variables in Playbooks
 
 ### `vars.yaml`
 
@@ -209,11 +209,11 @@ This will execute the playbook on the `localhost`, installing the specified pack
 
 ----
 
-# Using Tags in Ansible Playbook
+### Using Tags in Ansible Playbook
 
 Tags in Ansible allow you to selectively run or skip specific tasks within a playbook. This provides flexibility in playbook execution based on task categorization or requirements.
 
-## Example: Using Tags in Playbook
+### Example: Using Tags in Playbook
 
 ### `tags.yaml`
 
@@ -268,11 +268,11 @@ This command skips tasks tagged with `java` and `git`, executing all other tasks
 
 ----
 
-# Tomcat Installation Using Ansible Playbook
+### Tomcat Installation Using Ansible Playbook
 
 This Ansible playbook automates the installation of Apache Tomcat on remote hosts.
 
-## Example Playbook: `tomcat.yml`
+### Example Playbook: `tomcat.yml`
 
 ```yaml
 ---
