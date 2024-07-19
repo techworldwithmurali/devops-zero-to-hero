@@ -1,4 +1,13 @@
-### Overview of DockerHub
+#### INSTRUCTOR DETAILS
+
+|  Information             | Details                                                                      |
+|----------------------    |------------------------------------------------------------------------------|
+| **Name**                 | Moole Muralidhara Reddy                                                      |
+| **Email**                | techworldwithmurali@gmail.com                                                |
+| **Website**              | https://www.techworldwithmurali.com               |
+| **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
+
+### What is DockerHub
 
 **DockerHub** is a cloud-based repository that allows you to store and manage Docker images. It provides several key functionalities that are essential for Docker users:
 
