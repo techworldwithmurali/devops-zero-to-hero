@@ -237,6 +237,8 @@ pipeline {
 
 Your Jenkins Pipeline script defines a basic pipeline that clones a Git repository, builds the code using Maven, and pushes artifacts to Nexus. 
 
+![ Day 18-Build and Push to Nexus- Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-18/images/Day%20%2018-Build%20and%20Push%20to%20Nexus%20%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
 ```groovy
 pipeline {
     agent any
