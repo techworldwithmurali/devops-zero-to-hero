@@ -15,7 +15,7 @@
 
 ### Step-by-Step Installation Guide:
 
-### Step 1: Install OpenJDK 8 in CentOS 7 / Amazon Linux
+### Step 1: Install OpenJDK 8 in Amazon Linux
 ```bash
 sudo yum install java-1.8.0-devel -y
 ```
