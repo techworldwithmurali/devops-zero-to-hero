@@ -1,4 +1,8 @@
 ### Jenkins Shared Library - Build the Docker image and Push to AWS ECR
+
+![Dockerizing and Pushing to AWS ECR - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-28/images/Day%20%2027-%20%20Dockerizing%20and%20Pushing%20to%20AWS%20ECR%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
+
 ### Shared Library Scripts
 
 **gitClone.groovy**
