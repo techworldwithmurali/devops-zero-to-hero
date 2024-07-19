@@ -3,7 +3,7 @@
 - A Docker container is a runtime instance of a Docker image.
 - It encapsulates an application along with its dependencies, such as libraries, binaries, and configuration files, into a single, lightweight, executable package.
 - Containers are isolated environments that run on top of a Docker engine or runtime, which provides the necessary operating system-level virtualization features.
-
+----
 ### Key Characteristics of Docker Containers:
 
 1. **Isolation**: Containers provide process isolation from other containers and the host system, ensuring that applications run independently without interference.
@@ -17,7 +17,7 @@
 5. **Consistency**: Containers ensure consistency in application behavior across different environments by packaging everything needed to run the application into a single unit.
 
 6. **Version Control**: Docker containers can be version-controlled and managed using Docker images, allowing for easy updates, rollbacks, and maintenance of applications.
-
+----
 ### Use Cases of Docker Containers:
 
 - **Microservices Architecture**: Containers are often used to deploy microservices-based applications, where each service runs in its own container.
@@ -154,9 +154,9 @@
      ```bash
      docker container stats <container_id>
      ```
-  ---
+----
 
-  # Dockedr Network 
+### Dockedr Network 
 
   Docker Network enables containers to communicate with each other and with external systems. Here are the key points about Docker networking:
 
@@ -182,7 +182,7 @@
 
 4. **Network Management**:
    - Docker provides commands to create, manage, and remove networks.
-
+----
 ### Example Commands for Docker Networking
 
 - **List Networks**:
@@ -232,8 +232,8 @@
    ```bash
    docker exec -it container1 ping container2
    ```
-   
-# Docker Volume 
+ ----  
+### Docker Volume 
 
 Docker volumes are the best way to persist data in Docker. Here are the key points about Docker volumes:
 
