@@ -25,6 +25,9 @@ There are several configuration management tools available, each with its own ap
 
 ## Ansible workflow
 
+![Ansible Workflow - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-20/images/Day%20%2020-Ansible%20Workflow%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
+
 1. **Ansible Management Node:**
    - This is the central control node where Ansible is installed.
    - From this node, you define and run your automation tasks.
