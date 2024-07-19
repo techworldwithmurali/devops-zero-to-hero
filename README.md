@@ -176,7 +176,7 @@ This block defines the different stages of the pipeline.
 This Jenkins pipeline script utilizes a shared library to streamline common tasks like cloning a Git repository and building the code. 
 
 -----
-# Clone and build theCode
+### Clone and build the code
 ### 1. Shared Library Scripts
 
 **gitClone.groovy**
