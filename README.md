@@ -1,6 +1,16 @@
+#### INSTRUCTOR DETAILS
+
+|  Information             | Details                                                                      |
+|----------------------    |------------------------------------------------------------------------------|
+| **Name**                 | Moole Muralidhara Reddy                                                      |
+| **Email**                | techworldwithmurali@gmail.com                                                |
+| **Website**              | https://www.techworldwithmurali.com               |
+| **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
+
 # What is Ansible playbook
 
-An Ansible playbook is a configuration management and orchestration tool that defines a set of instructions (tasks) for managing remote systems. It allows users to automate tasks such as software installation, configuration management, and application deployments across multiple servers or devices simultaneously. Here's an overview of Ansible playbooks:
+- An Ansible playbook is a configuration management and orchestration tool that defines a set of instructions (tasks) for managing remote systems.
+- It allows users to automate tasks such as software installation, configuration management, and application deployments across multiple servers or devices simultaneously. 
 
 ### Key Concepts of Ansible Playbooks
 
