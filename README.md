@@ -1,5 +1,3 @@
-# Ansible
-
 ## What is Ansible?
 
 Ansible is a configuration management and automation tool that simplifies the management of systems and applications. It automates software provisioning, configuration management, and application deployment.
