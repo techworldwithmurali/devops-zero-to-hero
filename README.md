@@ -1,6 +1,7 @@
 ## What is a Shared Library in Jenkins?
 
-A shared library in Jenkins is a reusable collection of Groovy scripts and supporting files that can be shared among multiple Jenkins pipelines. This allows you to centralize commonly used functions, making your Jenkins pipelines more modular, maintainable, and easier to manage.
+- A shared library in Jenkins is a reusable collection of Groovy scripts and supporting files that can be shared among multiple Jenkins pipelines.
+- This allows you to centralize commonly used functions, making your Jenkins pipelines more modular, maintainable, and easier to manage.
 
 ### Key Benefits:
 
@@ -37,8 +38,8 @@ Example structure:
 ```
 shared-library/
 ├── vars/
-│   ├── myGlobalVar.groovy
-│   └── anotherGlobalVar.groovy
+│   ├── gitClone.groovy
+│   └── buildCode.groovy
 ```
 
 ### 3. `resources` Directory:
@@ -62,24 +63,31 @@ Here’s how you can use a shared library in a Jenkins pipeline:
    In Jenkins, go to `Manage Jenkins` > `Configure System`, and add the shared library under `Global Pipeline Libraries`.
 
 2. **Use the Shared Library in a Pipeline Script**:
-   
-   ```groovy
-   @Library('my-shared-library') _
-   
-   pipeline {
-       agent any
-       stages {
-           stage('Build') {
-               steps {
-                   script {
-                       // Use a function from the shared library
-                       myGlobalVar.mavenBuild()
-                   }
-               }
-           }
-       }
-   }
-   ```
+
+```groovy
+  @Library('shared-library') _
+
+pipeline {
+    agent any
+    tools{
+maven 'Maven-3.9.6'
+    }
+
+    stages {
+        stage('Git clone ') {
+            steps {
+                gitClone('main', 'github-credentials', 'https://github.com/techworldwithmurali/microservice-one.git')
+            }
+        }
+        stage ('Build the Code'){
+            steps{
+            buildCode()
+            }
+
+        } 
+    }
+}
+```
 -----
 Without using a Jenkins shared library, you would need to duplicate the common code across multiple Jenkins pipeline scripts. This approach can lead to maintenance challenges and code redundancy. However, you can still organize and reuse code within the same pipeline script by using functions and script blocks.
 
