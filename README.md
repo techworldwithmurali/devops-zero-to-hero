@@ -1,4 +1,4 @@
-#  Jenkins Shared Library
+### Jenkins Shared Library - Build the Docker image and Push to AWS ECR
 ### Shared Library Scripts
 
 **gitClone.groovy**
