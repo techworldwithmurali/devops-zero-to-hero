@@ -286,34 +286,3 @@ Remove a specific volume named `my_volume`:
 ```sh
 docker volume rm my_volume
 ```
-
-### Examples of Using Docker Volumes with Containers:
-
-#### Mounting a Volume to a Container
-Run a container and mount the volume `my_volume` to the container’s `/data` directory:
-```sh
-docker run -d -v my_volume:/data --name my_container nginx
-```
-
-#### Accessing Data in a Volume
-You can run a container with a volume mounted to access the data stored in the volume:
-```sh
-docker run --rm -v my_volume:/data busybox ls /data
-```
-
-### Practical Use Cases
-
-#### Persisting Database Data
-Create a volume for a PostgreSQL database to persist its data:
-```sh
-docker volume create pgdata
-docker run -d -v pgdata:/var/lib/postgresql/data --name my_postgres postgres
-```
-
-#### Sharing Data Between Containers
-Create a volume and use it to share data between two containers:
-```sh
-docker volume create shared_data
-docker run -d -v shared_data:/shared --name container1 busybox
-docker run -d -v shared_data:/shared --name container2 busybox
-```
