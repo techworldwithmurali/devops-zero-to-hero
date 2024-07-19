@@ -1,6 +1,8 @@
-# What is Docker container
+### What is Docker container
 
-A Docker container is a runtime instance of a Docker image. It encapsulates an application along with its dependencies, such as libraries, binaries, and configuration files, into a single, lightweight, executable package. Containers are isolated environments that run on top of a Docker engine or runtime, which provides the necessary operating system-level virtualization features.
+- A Docker container is a runtime instance of a Docker image.
+- It encapsulates an application along with its dependencies, such as libraries, binaries, and configuration files, into a single, lightweight, executable package.
+- Containers are isolated environments that run on top of a Docker engine or runtime, which provides the necessary operating system-level virtualization features.
 
 ### Key Characteristics of Docker Containers:
 
@@ -25,7 +27,7 @@ A Docker container is a runtime instance of a Docker image. It encapsulates an a
 - **DevOps Practices**: Containers are integral to DevOps practices, enabling teams to deliver software faster and more reliably through automation and container orchestration tools like Kubernetes.
 
 - **Cloud-Native Applications**: Containers are well-suited for cloud-native applications due to their scalability, agility, and resource efficiency.
-
+----
 
 ### Docker Container Commands and Usage
 
