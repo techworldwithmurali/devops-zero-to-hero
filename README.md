@@ -1,6 +1,7 @@
 # What is ansible role 
 
-An Ansible role is a reusable and self-contained unit of automation that encapsulates tasks, variables, files, and handlers necessary to accomplish a specific configuration or set of tasks on remote systems. Roles provide a structured way to organize and manage complex automation workflows in Ansible.
+- An Ansible role is a reusable and self-contained unit of automation that encapsulates tasks, variables, files, and handlers necessary to accomplish a specific configuration or set of tasks on remote systems.
+- Roles provide a structured way to organize and manage complex automation workflows in Ansible.
 
 ### Ansible Role Structure
 
