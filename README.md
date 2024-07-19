@@ -1,21 +1,41 @@
 ### Difference between Containerization and Virtual Machine
 
-**Containerization:**
-- **Definition:** Containerization is a form of lightweight virtualization where applications and their dependencies are packaged together into containers.
-- **Isolation:** Containers share the host operating system kernel but are isolated from each other using kernel features like namespaces and cgroups.
-- **Resource Efficiency:** Containers are more lightweight than virtual machines, as they do not require a full guest operating system for each instance.
-- **Performance:** Containers typically offer lower overhead and faster startup times compared to virtual machines.
-- **Portability:** Containers can run on any system that supports containerization (like Docker), ensuring consistent behavior across different environments.
-- **Examples:** Docker, Kubernetes, and Podman are popular containerization platforms.
+### Virtualization
+- **Definition**: Virtualization enables you to run multiple operating systems on the hardware of a single physical server.
+- **Structure**:
+  - **Infrastructure**: The physical hardware of the server.
+  - **Hypervisor**: A layer that allows multiple operating systems (OS) to run on a host machine simultaneously. It manages the VMs.
+  - **Guest Operating Systems**: Each VM runs its own guest OS. This could be different from the host OS.
+  - **Applications**: Each VM can run different applications independently.
 
-**Virtual Machine (VM):**
-- **Definition:** A virtual machine is an emulation of a physical computer that runs an operating system and applications as if they were on dedicated hardware.
-- **Isolation:** Each VM runs its own complete operating system instance, providing strong isolation between VMs.
-- **Resource Requirements:** VMs require more resources (CPU, memory, disk space) because each VM includes a full guest operating system.
-- **Performance:** VMs generally have higher overhead compared to containers due to the need for a hypervisor to manage multiple VMs.
-- **Portability:** VMs can be migrated between different virtualization platforms with varying degrees of compatibility.
-- **Examples:** VMware, VirtualBox, Hyper-V are examples of virtualization platforms that run VMs.
+### Containerization
+- **Definition**: Containerization enables you to deploy multiple applications using the same operating system on a single virtual machine.
+- **Structure**:
+  - **Infrastructure**: The physical hardware of the server.
+  - **Host Operating System**: The OS installed directly on the hardware.
+  - **Docker**: A containerization platform that allows applications to run in isolated environments called containers.
+  - **Containerized Applications**: Applications run in containers, sharing the same OS kernel but isolated from each other.
 
+### Key Differences
+- **Operating System**: 
+  - In virtualization, each VM has its own guest OS, which can be different from the host OS.
+  - In containerization, all containers share the same host OS, but they run in isolated environments.
+- **Resource Efficiency**:
+  - Virtualization generally uses more resources because each VM requires its own OS instance.
+  - Containerization is more efficient as containers share the host OS kernel and thus require fewer resources.
+- **Application Deployment**:
+  - Virtualization is suitable for running multiple OS instances on the same hardware.
+  - Containerization is ideal for deploying multiple applications on the same OS instance, providing lightweight and consistent environments.
+
+### Visual Representation
+- **Virtual Machine Side**:
+  - Applications A, B, and C each run on their own guest operating systems.
+  - A hypervisor manages these guest OSs on the physical infrastructure.
+- **Containerized Applications Side**:
+  - Applications A, B, C, and D are running in containers.
+  - Docker manages these containers on the host OS, which runs on the physical infrastructure.
+
+----
 ### What is Docker?
 
 **Docker** is an open-source platform that enables developers to build, ship, and run applications inside containers. It provides a way to automate the deployment of applications as lightweight, portable, and self-sufficient containers that can run virtually anywhere.
