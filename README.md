@@ -26,44 +26,15 @@ Here's a simplified example of an Ansible playbook:
 
 ```yaml
 ---
-- name: Install and configure Apache web server
-  hosts: web_servers
-  become: yes  # Run tasks with sudo privileges
-
+- hosts: localhost
   tasks:
-    - name: Install Apache package
-      package:
-        name: apache2
-        state: present
+  - name: install httpd
+    yum: name=httpd state=present
+  - name: install git
+    yum: name=git state=present
 
-    - name: Ensure Apache service is started and enabled
-      service:
-        name: apache2
-        state: started
-        enabled: yes
-
-    - name: Copy configuration file
-      copy:
-        src: /path/to/apache.conf
-        dest: /etc/apache2/apache.conf
-        owner: root
-        group: root
-        mode: 0644
-
-    - name: Reload Apache service if config changed
-      service:
-        name: apache2
-        state: reloaded
-      notify:
-        - Restart Apache
-
-  handlers:
-    - name: Restart Apache
-      service:
-        name: apache2
-        state: restarted
 ```
-
+----
 ### How Playbooks Work
 
 1. **Execution Flow**: Ansible playbooks are executed sequentially from top to bottom, performing tasks defined under each play and handling dependencies between tasks.
@@ -73,7 +44,7 @@ Here's a simplified example of an Ansible playbook:
 3. **Reporting and Output**: Ansible provides detailed output during playbook execution, showing the status of each task, any changes made, and potential errors encountered. This helps in debugging and monitoring automation tasks.
 
 4. **Integration with Inventories**: Playbooks operate on hosts defined in Ansible inventory files, allowing for dynamic scaling and management of infrastructure based on defined host groups and variables.
-
+----
 ### Benefits of Ansible Playbooks
 
 - **Automation**: Enables the automation of complex and repetitive tasks, reducing manual intervention and human error.
@@ -84,7 +55,7 @@ Here's a simplified example of an Ansible playbook:
 
 - **Reusability**: Playbooks, tasks, and roles can be reused across different projects and environments, promoting efficiency and standardization in IT operations.
 
------
+----
 ## How to install httpd and git using ansible playbook?
 
   Your Ansible playbook for installing `httpd` (Apache HTTP server) and `git` on localhost looks mostly correct. Here’s your playbook formatted properly:
@@ -133,11 +104,10 @@ To execute this playbook:
 - Ensure you have necessary permissions to install packages (`sudo` or root access if required).
 - Verify the package names (`httpd` and `git`) are correct for your Linux distribution.
 
-This playbook serves as a basic example. You can extend it with more tasks, variables, error handling, or include it in a larger playbook for managing multiple servers or more complex configurations.
-
----
+----
 # ansible with_items
-The `with_items` directive in Ansible (also known as `loop` in newer versions of Ansible) is used to iterate over a list of items, allowing you to perform repetitive tasks more efficiently. It is commonly used in playbooks where you need to apply the same module (task) to multiple items, such as installing multiple packages, creating multiple users, or configuring multiple files.
+- The `with_items` directive in Ansible (also known as `loop` in newer versions of Ansible) is used to iterate over a list of items, allowing you to perform repetitive tasks more efficiently.
+- It is commonly used in playbooks where you need to apply the same module (task) to multiple items, such as installing multiple packages, creating multiple users, or configuring multiple files.
 
 Here’s how your playbook `with_items.yaml` works:
 
@@ -227,11 +197,7 @@ In this example:
 
 This will execute the playbook on the `localhost`, installing the specified packages (`httpd` and `tree` in this case).
 
-### Summary
-
-Ansible variables simplify playbook management by allowing you to define reusable values like package names, file paths, or configuration settings. They can be dynamically assigned or set conditionally based on playbook logic, enhancing flexibility and maintainability in your automation tasks.
-
----
+----
 
 # Using Tags in Ansible Playbook
 
@@ -289,10 +255,6 @@ ansible-playbook tags.yaml --skip-tags "java,git"
 ```
 
 This command skips tasks tagged with `java` and `git`, executing all other tasks.
-
-### Summary
-
-Tags in Ansible playbooks provide granular control over task execution, allowing you to manage playbook runs efficiently based on task categorization or requirements. They enhance playbook flexibility and maintainability by enabling selective task execution.
 
 ----
 
@@ -356,7 +318,7 @@ This Ansible playbook automates the installation of Apache Tomcat on remote host
         enabled: yes
 ```
 
-tomcat.service
+**tomcat.service**
 
 ```xml
 [Unit]
@@ -373,7 +335,7 @@ Restart=Always
 [Install]
 WantedBy=multi-user.target
 ```
-
+**tomcat-users.xml**
 ```xml
 <?xml version='1.0' encoding='utf-8'?>
 <tomcat-users xmlns="http://tomcat.apache.org/xml"
