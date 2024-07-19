@@ -193,7 +193,7 @@ This Jenkins pipeline script utilizes a shared library to streamline common task
 -----
 ### Jenkins Pipeline with Shared Library
 
-![With Jenkins Shared Library - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-27/images/Day%20%2027-%20With%20Jenkins%20Shared%20Library-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+[![With Jenkins Shared Library - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-27/images/Day%20%2027-%20With%20Jenkins%20Shared%20Library-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-27/images/Day%20%2027-%20%20Clone%20and%20Build%20the%20code-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
 
 
 ### Clone and build the code
