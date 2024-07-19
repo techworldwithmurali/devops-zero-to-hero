@@ -1,3 +1,13 @@
+#### INSTRUCTOR DETAILS
+
+|  Information             | Details                                                                      |
+|----------------------    |------------------------------------------------------------------------------|
+| **Name**                 | Moole Muralidhara Reddy                                                      |
+| **Email**                | techworldwithmurali@gmail.com                                                |
+| **Website**              | https://www.techworldwithmurali.com               |
+| **LinkedIn profile**     | [Moole Muralidhara Reddy](https://www.linkedin.com/in/moole-muralidhara-reddy) |
+
+
 ### Difference between Containerization and Virtual Machine
 
 ### Virtualization
@@ -47,7 +57,7 @@
 - **Fast Delivery and Scalability:** Docker containers can be quickly deployed and scaled up or down based on demand.
 - **Resource Optimization:** Docker allows efficient use of system resources by running multiple containers on a single host.
 - **Isolation and Security:** Containers provide isolation of applications and their dependencies, enhancing security by reducing the attack surface.
-
+----
 ### Exploring Docker Components
 
 **Docker Architecture Components:**
@@ -78,7 +88,7 @@
 - **Internal Usage:** Installed within an organization's network, acts as a local repository for Docker images.
 - **Image Availability:** When pulling images, Docker first checks the local registry before resorting to Docker Hub for images not found locally.
 
----
+----
 
 ### Installation of Docker in Amazon Linux
 
@@ -127,7 +137,7 @@
    ```bash
    sudo service docker restart
    ```
-
+----
 ### Installation of Docker in Windows
 
 1. **Download Docker Desktop:**
@@ -140,7 +150,7 @@
 3. **Start Docker:**
    - Docker starts automatically after installation.
    - If not started, you can manually start Docker from the desktop shortcut or start menu.
-
+----
 ### Installation of Docker in Ubuntu
 
 1. **Update package index:**
