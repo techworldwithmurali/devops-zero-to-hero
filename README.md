@@ -1,6 +1,9 @@
 ### Build & Deploy to Tomcat usinge Jenkins Declarative Pipeline 
 This  Jenkins Pipeline script is designed to clone a Git repository, build the Java application using Maven, and deploy the built WAR file to Apache Tomcat.
 
+![Build and Deploy to Tomcat - Tech World with Murali - Moole Muralidhara Reddy.png](https://github.com/techworldwithmurali/devops-zero-to-hero/blob/main/Day-19/images/Day%20%2019-Build%20and%20%20Deploy%20to%20Tomcat%20%20-%20Moole%20Muralidhara%20Reddy%20-%20Tech%20World%20with%20Murali.png)
+
+
 ```groovy
 pipeline {
     agent any
