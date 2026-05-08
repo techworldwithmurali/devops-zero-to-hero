@@ -128,9 +128,6 @@ A comprehensive, structured **40-day** learning journey that takes you from foun
 - Changing the Port Number in Tomcat on Linux  
 - Changing the Log Path in Tomcat  
 - Installing Multiple Tomcat Instances on a Single Server  
-- Installing Tomcat on Windows  
-- Changing the Port Number for Tomcat on Windows  
-- Upgrading Tomcat from Version 7.0.106 to 9.0.87  
 
 ### **Day 15 - Jenkins**  
 - Overview of Jenkins  
