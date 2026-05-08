@@ -147,7 +147,8 @@ A comprehensive, structured **40-day** learning journey that takes you from foun
 - Setting up a Maven project in Jenkins  
 - Integrating Nexus with Jenkins  
 - Integrating JFrog with Jenkins  
-- Integrating SonarQube with Jenkins  
+- Integrating SonarQube with Jenkins
+- Integrating GitHub SSH authentication with Jenkins
 
 ### **Day 18 - Jenkins**  
 - Exploring Build Triggers in Jenkins  
