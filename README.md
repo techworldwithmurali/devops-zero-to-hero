@@ -154,9 +154,7 @@ A comprehensive, structured **40-day** learning journey that takes you from foun
 - Exploring Build Triggers in Jenkins  
 - Restart, Safe Restart, Copy, and Move Jobs in Jenkins  
 - Using Build with Parameters in Jenkins  
-- Creating Users in Jenkins  
-- Setting up Role-Based Authorization Strategy  
-- Integrating Jenkins with Active Directory  
+- Creating Users in Jenkins
 
 ### **Day 19 - Jenkins**  
 - Understanding Master and Slave Nodes  
@@ -166,9 +164,7 @@ A comprehensive, structured **40-day** learning journey that takes you from foun
 ### **Day 20 - Jenkins**  
 - Upstream and Downstream Jobs  
 - Setting up the Build Pipeline  
-- Taking Backup and Restoring Jenkins  
-- Creating a Slack account  
-- Sending notifications from Jenkins to Slack  
+- Sending notifications from Jenkins to Microsoft Teams
 
 ### **Day 21 - Jenkins Pipeline**  
 - Overview of Jenkins Pipelines  
