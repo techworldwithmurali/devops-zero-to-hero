@@ -238,11 +238,6 @@ A comprehensive, structured **40-day** learning journey that takes you from foun
 - Working with Docker Volumes  
 - Maintaining Persistent Data for Docker Containers  
 
-### **Day 33 - Docker**  
-- Reduce Docker Image Size by 80% with Multistage Docker Builds  
-- Writing a Real-Time Dockerfile for a User-Registration Microservice  
-- Automate Dockerfile Creation with Docker Init  
-
 ### **Day 34 - Jenkins Pipeline Projects**  
 - Automating Docker Image Build and Push to DockerHub Using Jenkins Pipeline  
 - Automating Docker Image Build and Push to AWS ECR Using Jenkins Pipeline  
