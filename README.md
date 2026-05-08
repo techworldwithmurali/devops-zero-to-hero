@@ -79,11 +79,7 @@ A comprehensive, structured **40-day** learning journey that takes you from foun
 - Working with `git diff` & `git HEAD`  
 - Deletion of a GitHub Repository  
 - Feature Branching Strategy in Git  
-- Release Branching Strategy in Git  
-- Creation of a GitLab Account  
-- GitLab Dashboard Overview  
-- Creation of a Git Repository in GitLab  
-- Deletion of a GitLab Repository  
+- Release Branching Strategy in Git
 
 ### **Day 9 - Maven**  
 - What is Maven  
